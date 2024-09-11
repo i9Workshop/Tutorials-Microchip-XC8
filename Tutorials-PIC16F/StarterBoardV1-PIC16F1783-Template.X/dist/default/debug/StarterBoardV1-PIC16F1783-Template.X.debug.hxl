@@ -1,0 +1,32 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\i9bal\AppData\Local\Temp\xcAs8u8.\driver_tmp_3.o
+ -Odist/default/debug\StarterBoardV1-PIC16F1783-Template.X.debug.hex
+ -logfile=dist/default/debug\StarterBoardV1-PIC16F1783-Template.X.debug.hxl
+ -addressing=2
+
+### Memory Usage ###
+ Input file ranges:
+  0h - 7h		(C:\Users\i9bal\AppData\Local\Temp\xcAs8u8.\driver_tmp_3.o)
+  FE4h - FFFh		(C:\Users\i9bal\AppData\Local\Temp\xcAs8u8.\driver_tmp_3.o)
+  1000Eh - 10011h		(C:\Users\i9bal\AppData\Local\Temp\xcAs8u8.\driver_tmp_3.o)
+ Unused ranges:
+  8h - FE3h
+  1000h - 1000Dh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\i9bal\AppData\Local\Temp\xcAs8u8.\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00000000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+----------------------------------------------------------
+00000FE0 | -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+----------------------------------------------------------
+00010000 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
+00010010 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+00010020 | --
