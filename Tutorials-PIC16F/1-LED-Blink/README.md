@@ -1,5 +1,5 @@
 # LED Blink
-![Screenshot from 2024-09-12 07-45-03](https://github.com/user-attachments/assets/c5bfd547-91a4-4896-bf32-89b94d0f2f2c)
+![LED-Schematic](https://github.com/user-attachments/assets/96a027a4-b688-44f0-92b1-194a3af776bf)
 <br/>
 
 ## Initialize Peripheral
