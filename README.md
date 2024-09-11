@@ -48,7 +48,7 @@ To be completed soon...
 ![MPLABX-ProjectReady](https://github.com/user-attachments/assets/c0b7f01b-b76a-4e31-8ed1-c7734a2006d7)
 <br/>
 
-9. Create program.h and program.c file. Refer to this [project templete](https://github.com/i9Workshop/Projects-Microchip-XC8/tree/main/Tutorials-Microchip-XC8/Tutorials-PIC16F/StarterBoardV1-PIC16F1783-Template.X).<br/>
+9. Create program.h and program.c file. Refer to this [project templete](https://github.com/i9Workshop/Project-Template-StarterBoardV1-PIC16F1783).<br/>
 ![MPLABX-CreateCfileAndHfileNameProgram](https://github.com/user-attachments/assets/c73b1822-95db-45fd-8e4f-c57ad7862ceb)
 <br/>
 
