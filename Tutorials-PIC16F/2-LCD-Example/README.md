@@ -44,10 +44,16 @@ These fuctions will be used to control pin RS and E on LCD.
 <br/>
 
 ```
+
 ```
 <br/>
 
 ## Loop Program
+<br/>
+
+```
+
+```
 <br/>
 
 <br/>
