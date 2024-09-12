@@ -7,7 +7,7 @@ Schematic 1
 Deciding value for resistor R1 in Schematic 1 is depended on led D1 voltage drop which is the forward voltage, V<sub>F</sub>.
 The brightness of led can be reduced by forward current, I<sub>F</sub> value therefor increasing the resistor value will dim the brigthness.
 Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
->R1 = (V<sub>RB7</sub> - V<sub>F</sub>) / I<sub>F</sub>
+>R1 = (V_RB7 - V<sub>F</sub>) / I<sub>F</sub>
 <br/>
 
 ## Initialize Peripheral
