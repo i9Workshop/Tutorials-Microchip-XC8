@@ -41,7 +41,7 @@ or
 ```
 <br/>
 
-* Toggle pin alternately with interval using loop statement.
+* Toggle pin output alternately with interval using loop statement.
 ```
     LATBbits.LATB6 = 1;
     LATBbits.LATB7 = 0;
