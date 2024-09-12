@@ -1,3 +1,3 @@
 # LCD Example
-Refer to 16x2 LCD [datasheet](https://www.vishay.com/docs/37484/lcd016n002bcfhet.pdf).
+Refer to 16x2 LCD [datasheet](https://academy.cba.mit.edu/classes/output_devices/44780.pdf).
 <br/>
