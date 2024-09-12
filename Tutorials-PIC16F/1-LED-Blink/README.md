@@ -22,6 +22,15 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
     LATBbits.LATB7 = 0;
     TRISBbits.TRISB7 = 0;
 ```
+<br/>
 
 ## Loop Program
+* Toggle pin output by using bitwise operand NOT, '~' then delay the process using loop statement.
+<br/>
+
+```
+    LATBbits.LATB6 = ~LATBbits.LATB6;
+    LATBbits.LATB7 = ~LATBbits.LATB7;
+    delay_ms(1000);
+```
 <br/>
