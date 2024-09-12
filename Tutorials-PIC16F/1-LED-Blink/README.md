@@ -12,7 +12,7 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 
 ## Initialize Peripheral
 * Set pin direction to output at register TRISB - Page 120
-* Set pin for digital I/O at register ANSELB - Page 121
+* Set pin for digital I/O purpose at register ANSELB - Page 121
   - RB6 and RB7 does not connected to analog input peripheral - Page 10 and 11
 * Set pin desired output by writing to register LATB - Page 120
 <br/>
