@@ -1,5 +1,5 @@
 # LED Blink
-![LED-Schematic](https://github.com/user-attachments/assets/96a027a4-b688-44f0-92b1-194a3af776bf)
+![Schematic-LED](https://github.com/user-attachments/assets/18fa0bbd-c256-4b10-8d5b-a74008830b19)
 <br/>
 Schematic 1
 <br/>
