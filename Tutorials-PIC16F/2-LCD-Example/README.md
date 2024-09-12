@@ -39,6 +39,14 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 ```
 <br/>
 
+## Create LCD Functions
+These fuctions will be used to control pin RS and E on LCD.
+<br/>
+
+```
+```
+<br/>
+
 ## Loop Program
 <br/>
 
