@@ -10,6 +10,9 @@ Refer to 16x2 LCD [datasheet](https://academy.cba.mit.edu/classes/output_devices
 Schematic 2
 <br/>
 
+R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected to the ground so the LCD can be used in 4-bit mode.
+<br/>
+
 <br/>
 
 ## Initialize Peripheral
