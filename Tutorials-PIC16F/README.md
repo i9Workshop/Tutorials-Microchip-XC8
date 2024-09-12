@@ -52,16 +52,16 @@ and mid-range mcu [instruction set](https://developerhelp.microchip.com/xwiki/bi
     - Instruction cycle values are calculated from acquired [data](https://github.com/i9Workshop/Tutorials-Microchip-XC8/blob/main/Tutorials-PIC16F/for_loop_instruction_cycle_data.txt) using software in MPLABX.
       
     - NOP( ) use 1 instruction cycle thus 4 clock cycle is used therefor
-      >$\frac{1}{32Mhz} \times{} 4 = 0.125\mus$
+      >$\frac{1}{32Mhz} \times{} 4 = 0.125\mu s$
       
     - A loop by using 8bits variable in for loop use about 44 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 44 = 1.375\mus$
+      >$\frac{1}{32Mhz} \times{} 44 = 1.375\mu s$
       
     - A loop by using 16bits variable in for loop use about 56 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 56 = 1.75\mus$
+      >$\frac{1}{32Mhz} \times{} 56 = 1.75\mu s$
       
     - A loop by using 32bits variable in for loop use about 104 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 104 = 3.25\mus$
+      >$\frac{1}{32Mhz} \times{} 104 = 3.25\mu s$
 <br/>
 
 ```
