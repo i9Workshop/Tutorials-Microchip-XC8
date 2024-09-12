@@ -16,8 +16,14 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 <br/>
 
 ## Initialize Peripheral
+* Writing on LCD only use pins as digital output.
+* Set pin direction to output at register TRISB - Page 120
+* Set pin for digital I/O purpose at register ANSELB - Page 121
+* Set pin direction to output at register TRISC - Page 125
 <br/>
 
+```
+```
 <br/>
 
 ## Loop Program
