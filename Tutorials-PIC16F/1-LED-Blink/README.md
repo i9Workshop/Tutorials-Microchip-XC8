@@ -6,6 +6,7 @@ Deciding value for resistor R1 is depended on led D1 voltage drop which is the f
 The brightness of led can be reduced by forward current, I<sub>F</sub> value therefor increasing the resistor value will dim the brigthness.
 Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 >R1 = (V<sub>RB7</sub> - V<sub>F</sub>) / I<sub>F</sub>
+<br/>
 
 ## Initialize Peripheral
 <br/>
