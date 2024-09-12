@@ -31,14 +31,6 @@ or
     LATBbits.LATB7 = 0;
 ```
 <br/>
-<br/>
-
-## Create LCD Functions
-These fuctions will be used to control pin RS and E on LCD.
-<br/>
-```
-```
-<br/>
 
 ## Loop Program
 * Toggle pin output by using bitwise operand NOT, '~' then delay the process using loop statement.
