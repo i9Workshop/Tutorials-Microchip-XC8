@@ -23,6 +23,19 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 <br/>
 
 ```
+    TRISBbits.TRISB5 = 0;
+    TRISBbits.TRISB4 = 0;
+    TRISBbits.TRISB3 = 0;
+    TRISBbits.TRISB2 = 0;
+    TRISBbits.TRISB1 = 0;
+    TRISCbits.TRISC5 = 0;
+    
+    LATBbits.LATB5 = 0;
+    LATBbits.LATB4 = 0;
+    LATBbits.LATB3 = 0;
+    LATBbits.LATB2 = 0;
+    LATBbits.LATB1 = 0;
+    LATCbits.LATC5 = 0;
 ```
 <br/>
 
