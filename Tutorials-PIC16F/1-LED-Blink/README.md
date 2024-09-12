@@ -32,11 +32,21 @@ or
 
 ## Loop Program
 * Toggle pin output by using bitwise operand NOT, '~' then delay the process using loop statement.
-<br/>
-
 ```
     LATBbits.LATB6 = ~LATBbits.LATB6;
     LATBbits.LATB7 = ~LATBbits.LATB7;
+    delay_ms(1000);
+```
+<br/>
+
+* Togle pin alternately with interval using loop statement.
+```
+    LATBbits.LATB6 = 1;
+    LATBbits.LATB7 = 0;
+    delay_ms(1000);
+    
+    LATBbits.LATB6 = 0;
+    LATBbits.LATB7 = 1;
     delay_ms(1000);
 ```
 <br/>
