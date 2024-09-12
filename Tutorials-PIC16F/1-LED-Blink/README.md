@@ -16,11 +16,17 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 <br/>
 
 ```
+    TRISB = 0b00000000;   // Set pin direction at bit 7th for RB7 and bit 6th for RB6.
+    ANSELB = 0b00000000;  // Set pin for digital I/O, bit 7th and 6th are ignored.
+    LATB = 0b00000000;    // Set pin desired output at bit 7th for RB7 and bit 6th for RB6.
+```
+or
+```
     TRISBbits.TRISB6 = 0;
     LATBbits.LATB6 = 0;
     
-    LATBbits.LATB7 = 0;
     TRISBbits.TRISB7 = 0;
+    LATBbits.LATB7 = 0;
 ```
 <br/>
 
