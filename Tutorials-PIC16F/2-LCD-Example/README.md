@@ -5,7 +5,7 @@
 Refer to 16x2 LCD [datasheet](https://academy.cba.mit.edu/classes/output_devices/44780.pdf).
 <br/>
 
-Image
+![Schematic-LCD](https://github.com/user-attachments/assets/ef843a07-8950-4568-8f80-0b1aa432c005)
 <br/>
 Schematic 2
 <br/>
