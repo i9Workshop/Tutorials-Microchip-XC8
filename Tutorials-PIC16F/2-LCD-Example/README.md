@@ -81,9 +81,10 @@ void lcd_DelayPulse(void) {
 These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 and D7 on LCD.
 <br/>
 
-* E pin pulse function
+* E pin pulse function and send data function
 ```
     void lcd_EPulse(void);
+    void lcd_WriteData(uint8_t data);
 ```
 
 ```
@@ -94,55 +95,21 @@ void lcd_EPulse(void) {
     E_Pin = 0;
     lcd_DelayPulse();
 }
-```
-<br/>
 
-* Send command and data function
-
-```
-    void lcd_WriteCmd(uint8_t command);
-    void lcd_WriteChar(char character);
-```
-
-```
-void lcd_WriteCmd(uint8_t command) {
-    RS_Pin = 0;
-    lcd_DelaySetupTime();
-    
-    // Send higher nibble command
-    D7_Pin = command & 0x01;
-    D6_Pin = (command >> 1) & 0x01;
-    D5_Pin = (command >> 2) & 0x01;
-    D4_Pin = (command >> 3) & 0x01;
+void lcd_WriteData(uint8_t data) {
+    // Send higher nibble data
+    D7_Pin = data & 0x01;
+    D6_Pin = (data >> 1) & 0x01;
+    D5_Pin = (data >> 2) & 0x01;
+    D4_Pin = (data >> 3) & 0x01;
     
     lcd_EPulse();
     
-    // Send lower nibble command
-    D7_Pin = (command >> 4) & 0x01;
-    D6_Pin = (command >> 5) & 0x01;
-    D5_Pin = (command >> 6) & 0x01;
-    D4_Pin = (command >> 7) & 0x01;
-    
-    lcd_EPulse();
-}
-
-void lcd_WriteChar(char character) {
-    RS_Pin = 1;
-    lcd_DelaySetupTime();
-    
-    // Send higher nibble character
-    D7_Pin = character & 0x01;
-    D6_Pin = (character >> 1) & 0x01;
-    D5_Pin = (character >> 2) & 0x01;
-    D4_Pin = (character >> 3) & 0x01;
-    
-    lcd_EPulse();
-    
-    // Send lower nibble character
-    D7_Pin = (character >> 4) & 0x01;
-    D6_Pin = (character >> 5) & 0x01;
-    D5_Pin = (character >> 6) & 0x01;
-    D4_Pin = (character >> 7) & 0x01;
+    // Send lower nibble data
+    D7_Pin = (data >> 4) & 0x01;
+    D6_Pin = (data >> 5) & 0x01;
+    D5_Pin = (data >> 6) & 0x01;
+    D4_Pin = (data >> 7) & 0x01;
     
     lcd_EPulse();
 }
@@ -152,11 +119,28 @@ void lcd_WriteChar(char character) {
 * Write to LCD function
 
 ```
-
+    void lcd_PrintCmd(uint8_t command);
+    void lcd_Initialize(void);
+    void lcd_Goto(uint8_t y, uint8_t x);
+    void lcd_PrintChar(char character);
+    void lcd_PrintString(char *string);
 ```
 
 ```
+void lcd_PrintCmd(uint8_t command) {
+    RS_Pin = 0;
+    lcd_DelaySetupTime();
+    
+    lcd_WriteData(command);
+}
 
+void lcd_Initialize(void) {
+    lcd_PrintCmd(0x02);
+    lcd_PrintCmd(0x28);
+    lcd_PrintCmd(0x0c);
+    lcd_PrintCmd(0x06);
+    lcd_PrintCmd(0x01);
+}
 ```
 <br/>
 
