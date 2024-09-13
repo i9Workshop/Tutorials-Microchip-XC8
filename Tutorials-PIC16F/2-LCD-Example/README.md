@@ -56,7 +56,7 @@ R5 is used to set the minimum brightness of LCD backlight. R/W pin and D0 - D4 a
 <br/>
 
 ## Create LCD Functions
-This delay function is required as datasheet mentioned in page 49 and 58, the address set-up time, $t_{AS}$ is $60ns$ and interval for reliable lcd communication, $t_{cycE}$ is $1000ns$. 
+This delay function is required as datasheet mentioned in page 49 and 58. The address set-up time, $t_{AS}$ is $60ns$ and interval for reliable lcd communication, $t_{cycE}$ is $1000ns$. 
 $60ns$ delay can be achieved by using one NOP( ) instruction which is $125ns$, more than enough.
 Since, the enable pulse width, $PW_{EH}$ timing is $450ns$, more than $500ns$ can be used for a pulse width delay. 
 Function delay_x1p5us(1) is the shortest delay timing, more than enough to achieved required $PW_{EH}$.
