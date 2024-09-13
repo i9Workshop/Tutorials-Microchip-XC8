@@ -149,6 +149,17 @@ void lcd_WriteChar(char character) {
 ```
 <br/>
 
+* Write to LCD function
+
+```
+
+```
+
+```
+
+```
+<br/>
+
 ## Example Program
 <br/>
 
