@@ -5,7 +5,8 @@ and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bi
 <br/>
 
 ## 1.  Device and Clock Configuration
-![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/ece083fe-7023-4d91-9870-358254bb1a0e)
+![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/e18e5460-e5f3-42a6-9b07-049b49da6fc9)
+<br/>
 Schematic 0.1
 <br/>
 
