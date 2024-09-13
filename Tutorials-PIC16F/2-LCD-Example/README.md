@@ -63,7 +63,16 @@ Function delay_x1p5us(1) is the shortest delay timing, more than enough to achie
 <br/>
 
 ```
-void lcdDelay(void) {
+    void lcd_DelaySetupTime(void);
+    void lcd_DelayPulse(void);
+```
+
+```
+void lcd_DelaySetupTime(void) {
+    NOP();
+}
+
+void lcd_DelayPulse(void) {
     delay_x1p5us(1);
 }
 ```
@@ -74,7 +83,17 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
 
 * E pin pulse function
 ```
+    void lcd_EPulse(void);
+```
 
+```
+void lcd_EPulse(void) {
+    E_Pin = 1;
+    lcd_DelayPulse();
+    
+    E_Pin = 0;
+    lcd_DelayPulse();
+}
 ```
 <br/>
 
