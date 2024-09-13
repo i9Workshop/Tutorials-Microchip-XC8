@@ -136,7 +136,9 @@ void lcd_PrintCmd(uint8_t command) {
 }
 
 void lcd_Initialize(void) {
-    // LCD command refer to datasheet page 24
+    delay_ms(10);           // Wait for LCD power supply rise time - Datasheet page 50
+    
+    // LCD command - Datasheet page 24
     lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
     lcd_PrintCmd(0x02);     // Set cursor back to home and its counter to 0
     lcd_PrintCmd(0x01);     // Clear entire display
