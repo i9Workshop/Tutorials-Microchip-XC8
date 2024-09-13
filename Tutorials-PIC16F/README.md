@@ -5,14 +5,17 @@ and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bi
 <br/>
 
 ## 1.  Device and Clock Configuration
-![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/e18e5460-e5f3-42a6-9b07-049b49da6fc9)
+Picture
 <br/>
 Schematic 0.1
 <br/>
 
 * Hardware selection for desired 32MHz system clock frequency.
-    - Crystal oscillator : 8MHz
+    - Crystal oscillator, OSC1 : 8MHz
 <br/>
+
+* Value for C1 and C2 are refered to documentation of [PIC16F877A](https://www.microchip.com/en-us/product/pic16f877a) titled "Oscillator - PICmicro Mid-Range MCU Family" in page 4.
+In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for Crystal Oscillator.
 
 * Set PIC configuration.
   - FOSC use high-speed oscillator, HS.
