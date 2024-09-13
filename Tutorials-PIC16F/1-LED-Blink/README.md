@@ -1,7 +1,7 @@
 # LED Blink
 ![Schematic-LED](https://github.com/user-attachments/assets/18fa0bbd-c256-4b10-8d5b-a74008830b19)
 <br/>
-Schematic 1
+Schematic 1.0
 <br/>
 
 Deciding value for resistor R1 in Schematic 1 is depended on led D1 voltage drop which is the forward voltage, V<sub>F</sub>.
