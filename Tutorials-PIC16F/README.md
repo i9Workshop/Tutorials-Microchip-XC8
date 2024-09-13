@@ -1,7 +1,7 @@
 # Tutorial for PIC16F1783
 
 Refer to Microchip product [datasheet](https://www.microchip.com/en-us/product/pic16f1783) of PIC16F(L)1782/3 
-and mid-range mcu [instruction set](https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/8bit-pic/enhanced-family/mrinst/#).<br/>
+and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/8bit-pic/enhanced-family/mrinst/#).<br/>
 <br/>
 
 ## 1.  Device and Clock Configuration
