@@ -97,6 +97,18 @@ void lcd_EPulse(void) {
 ```
 <br/>
 
+* Send command and data function
+
+```
+    void lcd_WriteCmd(uint8_t command);
+    void lcd_WriteChar(char character);
+```
+
+```
+
+```
+<br/>
+
 ## Example Program
 <br/>
 
