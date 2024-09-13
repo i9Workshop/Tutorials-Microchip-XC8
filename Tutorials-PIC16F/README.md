@@ -7,7 +7,7 @@ and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bi
 ## 1.  Device and Clock Configuration
 ![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/bc10baa0-9812-4073-8cc5-4de902318019)
 <br/>
-Schematic 0.2
+Schematic 0.1
 <br/>
 
 * Hardware selection for desired 32MHz system clock frequency.
