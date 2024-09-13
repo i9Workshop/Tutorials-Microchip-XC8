@@ -46,7 +46,7 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 <br/>
 
 ## Create LCD Functions
-This delay function is required as datasheet mentioned in page 49, the interval for reliable lcd communication, $t_{cycE}$ is $1000ns$. Since, the enable pulse width, $PW_{EH}$ 
+This delay function is required as datasheet mentioned in page 49 and 58, the interval for reliable lcd communication, $t_{cycE}$ is $1000ns$. Since, the enable pulse width, $PW_{EH}$ 
 timing is $450ns$, more than $500ns$ can be used for a pulse width delay. Function delay_x1p5us(1) is the shortest delay timing, more than enough to achieved required $PW_{EH}$.
 <br/>
 
