@@ -4,6 +4,7 @@
 
 Refer to 16x2 LCD [datasheet](https://academy.cba.mit.edu/classes/output_devices/44780.pdf).
 <br/>
+<br/>
 
 ![Schematic-LCD](https://github.com/user-attachments/assets/ef843a07-8950-4568-8f80-0b1aa432c005)
 <br/>
@@ -15,12 +16,21 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 
 <br/>
 
-## Initialize Peripheral
+## Define and Initialize Peripheral
 * Writing on LCD only use pins as digital output.
 * Set pin direction to output at register TRISB - Page 120
 * Set pin for digital I/O purpose at register ANSELB - Page 121
 * Set pin direction to output at register TRISC - Page 125
 <br/>
+
+```
+#define RS_Pin      LATBbits.LATB5
+#define E_Pin       LATBbits.LATB4
+#define D4_Pin      LATBbits.LATB3
+#define D5_Pin      LATBbits.LATB2
+#define D6_Pin      LATBbits.LATB1
+#define D7_Pin      LATCbits.LATC5
+```
 
 ```
     TRISBbits.TRISB5 = 0;
@@ -36,12 +46,12 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
     ANSELBbits.ANSB2 = 0;
     ANSELBbits.ANSB1 = 0;
     
-    LATBbits.LATB5 = 0;
-    LATBbits.LATB4 = 0;
-    LATBbits.LATB3 = 0;
-    LATBbits.LATB2 = 0;
-    LATBbits.LATB1 = 0;
-    LATCbits.LATC5 = 0;
+    RS_Pin = 0;
+    E_Pin = 0;
+    D4_Pin = 0;
+    D5_Pin = 0;
+    D6_Pin = 0;
+    D7_Pin = 0;
 ```
 <br/>
 
@@ -60,6 +70,7 @@ void lcdDelay(void) {
 These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 and D7 on LCD.
 <br/>
 
+* E pin pulse function
 ```
 
 ```
