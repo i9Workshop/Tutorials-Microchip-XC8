@@ -147,6 +147,7 @@ void lcd_Initialize(void) {
 }
 
 void lcd_ClearAll(void) {
+    lcd_PrintCmd(0x28);
     lcd_PrintCmd(0x01);
 }
 
