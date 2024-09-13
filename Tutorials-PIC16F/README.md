@@ -14,7 +14,7 @@ Schematic 0.1
     - Crystal oscillator, OSC1 : 8MHz
 <br/>
 
-* Value for C1 and C2 are refered to documentation of [PIC16F877A](https://www.microchip.com/en-us/product/pic16f877a) titled "Oscillator - PICmicro Mid-Range MCU Family" in page 4.
+* Value for C1 and C2 are refered to documentation of [PIC16F877A](https://www.microchip.com/en-us/product/pic16f877a) titled "Oscillator - PICmicro Mid-Range MCU Family" in page 4.<br/>
 In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for Crystal Oscillator.
 <br/>
 
