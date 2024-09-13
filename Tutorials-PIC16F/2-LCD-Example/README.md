@@ -121,6 +121,7 @@ void lcd_WriteData(uint8_t data) {
 ```
     void lcd_PrintCmd(uint8_t command);
     void lcd_Initialize(void);
+    void lcd_ClearAll(void);
     void lcd_Goto(uint8_t y, uint8_t x);
     void lcd_PrintChar(char character);
     void lcd_PrintString(char *string);
@@ -135,10 +136,15 @@ void lcd_PrintCmd(uint8_t command) {
 }
 
 void lcd_Initialize(void) {
-    lcd_PrintCmd(0x02);
-    lcd_PrintCmd(0x28);
-    lcd_PrintCmd(0x0c);
-    lcd_PrintCmd(0x06);
+    // LCD command refer to datasheet page 24
+    lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
+    lcd_PrintCmd(0x02);     // Set cursor back to home and its counter to 0
+    lcd_PrintCmd(0x01);     // Clear entire display
+    lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
+    lcd_PrintCmd(0x06);     // Cursor is set to shift right
+}
+
+void lcd_ClearAll(void) {
     lcd_PrintCmd(0x01);
 }
 ```
