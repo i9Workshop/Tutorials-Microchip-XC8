@@ -57,7 +57,7 @@ void lcdDelay(void) {
 ```
 <br/>
 
-These fuctions will be used to control pin RS and E on LCD.
+These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 and D7 on LCD.
 <br/>
 
 ```
