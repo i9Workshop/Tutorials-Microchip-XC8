@@ -172,7 +172,7 @@ void lcd_PrintChar(char character) {
 }
 
 void lcd_PrintString(char *string) {
-    while((*string)!=0) {
+    while(*string!=0) {
         lcd_PrintChar(*string);
         string++;
     }
