@@ -105,7 +105,47 @@ void lcd_EPulse(void) {
 ```
 
 ```
+void lcd_WriteCmd(uint8_t command) {
+    RS_Pin = 0;
+    lcd_DelaySetupTime();
+    
+    // Send higher nibble command
+    D7_Pin = command & 0x01;
+    D6_Pin = (command >> 1) & 0x01;
+    D5_Pin = (command >> 2) & 0x01;
+    D4_Pin = (command >> 3) & 0x01;
+    
+    lcd_EPulse();
+    
+    // Send lower nibble command
+    D7_Pin = (command >> 4) & 0x01;
+    D6_Pin = (command >> 5) & 0x01;
+    D5_Pin = (command >> 6) & 0x01;
+    D4_Pin = (command >> 7) & 0x01;
+    
+    lcd_EPulse();
+}
 
+void lcd_WriteChar(char character) {
+    RS_Pin = 1;
+    lcd_DelaySetupTime();
+    
+    // Send higher nibble character
+    D7_Pin = character & 0x01;
+    D6_Pin = (character >> 1) & 0x01;
+    D5_Pin = (character >> 2) & 0x01;
+    D4_Pin = (character >> 3) & 0x01;
+    
+    lcd_EPulse();
+    
+    // Send lower nibble character
+    D7_Pin = (character >> 4) & 0x01;
+    D6_Pin = (character >> 5) & 0x01;
+    D5_Pin = (character >> 6) & 0x01;
+    D4_Pin = (character >> 7) & 0x01;
+    
+    lcd_EPulse();
+}
 ```
 <br/>
 
