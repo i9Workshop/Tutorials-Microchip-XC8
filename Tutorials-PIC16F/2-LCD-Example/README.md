@@ -30,6 +30,12 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
     TRISBbits.TRISB1 = 0;
     TRISCbits.TRISC5 = 0;
     
+    ANSELBbits.ANSB5 = 0;
+    ANSELBbits.ANSB4 = 0;
+    ANSELBbits.ANSB3 = 0;
+    ANSELBbits.ANSB2 = 0;
+    ANSELBbits.ANSB1 = 0;
+    
     LATBbits.LATB5 = 0;
     LATBbits.LATB4 = 0;
     LATBbits.LATB3 = 0;
@@ -40,6 +46,17 @@ R5 is used to set the minimum brightness of LCD backlight. D0 - D4 are connected
 <br/>
 
 ## Create LCD Functions
+This delay function is required as datasheet mentioned in page 49, the interval for reliable lcd communication, $t_{cycE}$ is $1000ns$. Since, the enable pulse width, $PW_{EH}$ 
+timing is $450ns$, more than $500ns$ can be used for a pulse width delay. Function delay_x1p5us(1) is the shortest timing, more than enough to achieved required $PW_{EH}$.
+<br/>
+
+```
+void lcdDelay(void) {
+    delay_x1p5us(1);
+}
+```
+<br/>
+
 These fuctions will be used to control pin RS and E on LCD.
 <br/>
 
