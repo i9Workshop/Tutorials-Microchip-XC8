@@ -5,6 +5,7 @@ and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bi
 <br/>
 
 ## 1.  Device and Clock Configuration
+
 ![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/ab182c40-9e38-42b5-b5cf-1f6537c42b45)
 <br/>
 Schematic 0.1
@@ -51,7 +52,12 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 <br/>
 
 ## 2.  Master Clear Circuit
+
+![Schematic-Reset-Button](https://github.com/user-attachments/assets/6d4fee26-f7db-4ccb-8c50-045f21f4250a)
+<br/>
 Schematic 0.2
+<br/>
+
 <br/>
 
 ## 3.  Create Delay Function
