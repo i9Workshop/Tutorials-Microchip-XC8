@@ -50,7 +50,11 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 ```
 <br/>
 
-## 2.  Create Delay Function
+## 2.  Master Clear Circuit
+
+<br/>
+
+## 3.  Create Delay Function
 
 * This function will be used in many applications for this tutorial.
 <br/>
