@@ -51,13 +51,22 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 ```
 <br/>
 
-## 2.  Master Clear Circuit
+## 2.  Master Reset Circuit
 
 ![Schematic-Reset-Button](https://github.com/user-attachments/assets/6d4fee26-f7db-4ccb-8c50-045f21f4250a)
 <br/>
 Schematic 0.2
 <br/>
 
+Deciding value for resistor R1 is depending on voltage at pin $\overline{MClr}$, $V_{MClr}$ which is voltage accross R1 and current accross R1, $I_{R1}$. Refer to datasheet page 364.
+* $I_{R1}$ will be MCU weak pull-up current, $I_{PUR}$ therefor
+  >$I_{R1} = I_{PUR} = 140\mu A$
+* Minimum $V_{MClr}$ will be input high voltage, $V_{IH}$ which is<br/>
+  >$V_{MClr} = 0.8 \times{} V_{cc} =  0.8 \times{} 5V = 4V$
+* Minimum value for R1 is
+  >$R1 = \frac{V_{MClr}}{I_{R1}} = \frac{4V}{140\mu A} = 28.6k\Omega$
+* Maximum value for R1 is
+  >$R1 = \frac{5V}{140\mu A} = 35.7k\Omega$
 <br/>
 
 ## 3.  Create Delay Function
