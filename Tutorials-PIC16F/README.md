@@ -51,7 +51,7 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 <br/>
 
 ## 2.  Master Clear Circuit
-
+Schematic 0.2
 <br/>
 
 ## 3.  Create Delay Function
