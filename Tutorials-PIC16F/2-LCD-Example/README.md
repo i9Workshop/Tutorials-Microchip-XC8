@@ -146,41 +146,41 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
       lcd_PrintCmd(0x06);     // Cursor is set to shift right
   }
-
-void lcd_ClearAll(void) {
-    lcd_PrintCmd(0x01);
-}
-
-void lcd_Goto(uint8_t y, uint8_t x) {
-    switch(y) {
-        case 0:
-            lcd_PrintCmd(0x08 + x);
-            break;
-            
-        case 1:
-            lcd_PrintCmd(0x0C + x);
-            break;
-            
-        default:
-            lcd_PrintCmd(0x08 + x);
-            break;
-    }
-}
-
-void lcd_PrintChar(char character) {
-    RS_Pin = 1;
-    lcd_DelaySetupTime();
-    
-    lcd_WriteData(character);
-}
-
-void lcd_PrintString(char *string) {
-    while(*string!=0) {
-        lcd_PrintChar(*string);
-        string++;
-    }
-}
-```
+  
+  void lcd_ClearAll(void) {
+      lcd_PrintCmd(0x01);
+  }
+  
+  void lcd_Goto(uint8_t y, uint8_t x) {
+      switch(y) {
+          case 0:
+              lcd_PrintCmd(0x08 + x);
+              break;
+          
+          case 1:
+              lcd_PrintCmd(0x0C + x);
+              break;
+          
+          default:
+              lcd_PrintCmd(0x08 + x);
+              break;
+      }
+  }
+  
+  void lcd_PrintChar(char character) {
+      RS_Pin = 1;
+      lcd_DelaySetupTime();
+      
+      lcd_WriteData(character);
+  }
+  
+  void lcd_PrintString(char *string) {
+      while(*string!=0) {
+          lcd_PrintChar(*string);
+          string++;
+      }
+  }
+  ```
 <br/>
 
 ## Example Program
