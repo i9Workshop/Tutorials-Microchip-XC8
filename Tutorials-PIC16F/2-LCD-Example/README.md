@@ -83,69 +83,69 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
 <br/>
 
 * E pin pulse function and send data function
-```
+  ```
     void lcd_EPulse(void);
     void lcd_WriteData(uint8_t data);
-```
+  ```
 
-```
-void lcd_EPulse(void) {
-    E_Pin = 1;
-    lcd_DelayPulse();
+  ```
+  void lcd_EPulse(void) {
+      E_Pin = 1;
+      lcd_DelayPulse();
     
-    E_Pin = 0;
-    lcd_DelayPulse();
-}
-
-void lcd_WriteData(uint8_t data) {
-    // Send low nibble data
-    D7_Pin = data & 0x01;
-    D6_Pin = (data >> 1) & 0x01;
-    D5_Pin = (data >> 2) & 0x01;
-    D4_Pin = (data >> 3) & 0x01;
-    
-    lcd_EPulse();
-    
-    // Send higher nibble data
-    D7_Pin = (data >> 4) & 0x01;
-    D6_Pin = (data >> 5) & 0x01;
-    D5_Pin = (data >> 6) & 0x01;
-    D4_Pin = (data >> 7) & 0x01;
-    
-    lcd_EPulse();
-}
-```
+      E_Pin = 0;
+      lcd_DelayPulse();
+  }
+  
+  void lcd_WriteData(uint8_t data) {
+      // Send low nibble data
+      D7_Pin = data & 0x01;
+      D6_Pin = (data >> 1) & 0x01;
+      D5_Pin = (data >> 2) & 0x01;
+      D4_Pin = (data >> 3) & 0x01;
+      
+      lcd_EPulse();
+      
+      // Send higher nibble data
+      D7_Pin = (data >> 4) & 0x01;
+      D6_Pin = (data >> 5) & 0x01;
+      D5_Pin = (data >> 6) & 0x01;
+      D4_Pin = (data >> 7) & 0x01;
+      
+      lcd_EPulse();
+  }
+  ```
 <br/>
 
 * Write to LCD function
 
-```
-    void lcd_PrintCmd(uint8_t command);
-    void lcd_Initialize(void);
-    void lcd_ClearAll(void);
-    void lcd_Goto(uint8_t y, uint8_t x);
-    void lcd_PrintChar(char character);
-    void lcd_PrintString(char *string);
-```
+  ```
+  void lcd_PrintCmd(uint8_t command);
+  void lcd_Initialize(void);
+  void lcd_ClearAll(void);
+  void lcd_Goto(uint8_t y, uint8_t x);
+  void lcd_PrintChar(char character);
+  void lcd_PrintString(char *string);
+  ```
 
-```
-void lcd_PrintCmd(uint8_t command) {
-    RS_Pin = 0;
-    lcd_DelaySetupTime();
-    
-    lcd_WriteData(command);
-}
-
-void lcd_Initialize(void) {
-    delay_ms(10);           // Wait for LCD power supply rise time - Datasheet page 50
-    
-    // LCD command - Datasheet page 24
-    lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
-    lcd_PrintCmd(0x02);     // Set cursor back to home and its counter to 0
-    lcd_PrintCmd(0x01);     // Clear entire display
-    lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
-    lcd_PrintCmd(0x06);     // Cursor is set to shift right
-}
+  ```
+  void lcd_PrintCmd(uint8_t command) {
+      RS_Pin = 0;
+      lcd_DelaySetupTime();
+      
+      lcd_WriteData(command);
+  }
+  
+  void lcd_Initialize(void) {
+      delay_ms(10);           // Wait for LCD power supply rise time - Datasheet page 50
+      
+      // LCD command - Datasheet page 24
+      lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
+      lcd_PrintCmd(0x02);     // Set cursor back to home and its counter to 0
+      lcd_PrintCmd(0x01);     // Clear entire display
+      lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
+      lcd_PrintCmd(0x06);     // Cursor is set to shift right
+  }
 
 void lcd_ClearAll(void) {
     lcd_PrintCmd(0x01);
