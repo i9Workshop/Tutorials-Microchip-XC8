@@ -98,7 +98,7 @@ void lcd_EPulse(void) {
 }
 
 void lcd_WriteData(uint8_t data) {
-    // Send higher nibble data
+    // Send low nibble data
     D7_Pin = data & 0x01;
     D6_Pin = (data >> 1) & 0x01;
     D5_Pin = (data >> 2) & 0x01;
@@ -106,7 +106,7 @@ void lcd_WriteData(uint8_t data) {
     
     lcd_EPulse();
     
-    // Send lower nibble data
+    // Send higher nibble data
     D7_Pin = (data >> 4) & 0x01;
     D6_Pin = (data >> 5) & 0x01;
     D5_Pin = (data >> 6) & 0x01;
