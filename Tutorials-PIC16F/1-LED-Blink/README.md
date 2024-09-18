@@ -24,6 +24,8 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 #define led2        LATBbits.LATB7
 ```
 
+<br/>
+
 ```
     TRISB = 0b00000000;   // Set pin direction at bit 7th for RB7 and bit 6th for RB6.
     ANSELB = 0b00000000;  // Set pin for digital I/O purpose, bit 7th and 6th are ignored.
