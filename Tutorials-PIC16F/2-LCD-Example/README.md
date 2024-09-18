@@ -196,6 +196,35 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
 <br/>
 
 ```
+void programInitialize(void) {
+    TRISBbits.TRISB5 = 0;
+    TRISBbits.TRISB4 = 0;
+    TRISBbits.TRISB3 = 0;
+    TRISBbits.TRISB2 = 0;
+    TRISBbits.TRISB1 = 0;
+    TRISCbits.TRISC5 = 0;
+    
+    ANSELBbits.ANSB5 = 0;
+    ANSELBbits.ANSB4 = 0;
+    ANSELBbits.ANSB3 = 0;
+    ANSELBbits.ANSB2 = 0;
+    ANSELBbits.ANSB1 = 0;
+    
+    RS_Pin = 0;
+    E_Pin = 0;
+    D4_Pin = 0;
+    D5_Pin = 0;
+    D6_Pin = 0;
+    D7_Pin = 0;
+    
+    lcd_Initialize();
+    
+    lcd_Goto(0, 0);
+    lcd_PrintString("LCD Example 1.0");
+}
+```
+
+```
 
 ```
 <br/>
