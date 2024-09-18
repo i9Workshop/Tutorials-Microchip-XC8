@@ -141,28 +141,30 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       
       // LCD command - Datasheet page 24
       lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
-      lcd_PrintCmd(0x02);     // Set cursor back to home and its counter to 0
-      lcd_PrintCmd(0x01);     // Clear entire display
+      lcd_PrintCmd(0x02);     // Set DDRAM address counter to 0
       lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
       lcd_PrintCmd(0x06);     // Cursor is set to shift right
+      lcd_PrintCmd(0x01);     // Clear entire display
+      lcd_PrintCmd(0x80);     // Set cursor back to home
   }
-  
+
   void lcd_ClearAll(void) {
+      lcd_PrintCmd(0x02);
       lcd_PrintCmd(0x01);
   }
   
   void lcd_Goto(uint8_t y, uint8_t x) {
       switch(y) {
           case 0:
-              lcd_PrintCmd(0x08 + x);
+              lcd_PrintCmd(0x80 + x);
               break;
           
           case 1:
-              lcd_PrintCmd(0x0C + x);
+              lcd_PrintCmd(0xC0 + x);
               break;
           
           default:
-              lcd_PrintCmd(0x08 + x);
+              lcd_PrintCmd(0x80 + x);
               break;
       }
   }
@@ -171,7 +173,7 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       RS_Pin = 1;
       lcd_DelaySetupTime();
       
-      lcd_WriteData(character);
+      lcd_WriteData(character);;
   }
   
   void lcd_PrintString(char *string) {
