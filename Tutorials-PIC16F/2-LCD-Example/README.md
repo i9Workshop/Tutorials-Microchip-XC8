@@ -98,19 +98,19 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
   }
   
   void lcd_WriteData(uint8_t data) {
-      // Send low nibble data
-      D7_Pin = data & 0x01;
-      D6_Pin = (data >> 1) & 0x01;
-      D5_Pin = (data >> 2) & 0x01;
-      D4_Pin = (data >> 3) & 0x01;
+      // Send upper nibble data
+      D7_Pin = (data >> 7) & 0x01;
+      D6_Pin = (data >> 6) & 0x01;
+      D5_Pin = (data >> 5) & 0x01;
+      D4_Pin = (data >> 4) & 0x01;
       
       lcd_EPulse();
       
-      // Send higher nibble data
-      D7_Pin = (data >> 4) & 0x01;
-      D6_Pin = (data >> 5) & 0x01;
-      D5_Pin = (data >> 6) & 0x01;
-      D4_Pin = (data >> 7) & 0x01;
+      // Send lower nibble data
+      D7_Pin = (data >> 3) & 0x01;
+      D6_Pin = (data >> 2) & 0x01;
+      D5_Pin = (data >> 1) & 0x01;
+      D4_Pin = data & 0x01;
       
       lcd_EPulse();
   }
