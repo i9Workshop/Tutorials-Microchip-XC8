@@ -243,9 +243,9 @@ void programLoop(void) {
 }
 
 void lcd_PrintInt32(int32_t number) {
-    uint8_t  i1 = 0,
-             i2 = 0,
-             totalDigit = 0;
+    uint8_t i1 = 0,
+            i2 = 0,
+            totalDigit = 0;
     
     char numberRevChar[11]; // Declare array to store number in reverse char format
     char numberChar[11]; // Declare array to store number in char format
@@ -277,9 +277,9 @@ void lcd_PrintInt32(int32_t number) {
 }
 
 void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZero) {
-    uint8_t  i1 = 0,
-             i2 = 0,
-             totalDigit = 0;
+    uint8_t i1 = 0,
+            i2 = 0,
+            totalDigit = 0;
     
     char numberRevChar[11]; // Declare array to store number in reverse char format
     char numberChar[11]; // Declare array to store number in char format
