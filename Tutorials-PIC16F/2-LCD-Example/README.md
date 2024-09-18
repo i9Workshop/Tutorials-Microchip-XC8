@@ -265,7 +265,6 @@ void lcd_PrintInt32(int32_t number) {
         char tempC = (char)(tempN -10 * number);
         numberRevChar[i1] = tempC + 48;
         i1++;
-        
     } while(number);
     
     totalDigit = i1; // Get total number of digit
@@ -302,7 +301,6 @@ void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZe
         char tempC = (char)(tempN -10 * number);
         numberRevChar[i1] = tempC + 48;
         i1++;
-        
     } while(number);
     
     totalDigit = i1; // Get total number of digit
