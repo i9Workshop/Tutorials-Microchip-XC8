@@ -74,7 +74,7 @@ void lcd_DelaySetupTime(void) {
 }
 
 void lcd_DelayPulse(void) {
-    delay_x1p5us(1);
+    delay_x1o5us(1);
 }
 ```
 <br/>
