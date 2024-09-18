@@ -92,7 +92,7 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
   void lcd_EPulse(void) {
       E_Pin = 1;
       lcd_DelayPulse();
-    
+      
       E_Pin = 0;
       lcd_DelayPulse();
   }
