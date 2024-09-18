@@ -114,7 +114,8 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       
       lcd_EPulse();
       
-      delay_x1o5us(26);   // Execution time for instruction >37us, t = 26 x 1.5us = 39us
+      delay_x1o5us(26);    // Execution time for instruction >37us,
+                           // t = 26 x 1.5us = 39us
   }
   ```
 <br/>
@@ -149,7 +150,8 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       lcd_PrintCmd(0x01);     // Clear entire display
       lcd_PrintCmd(0x80);     // Set cursor back to home
       
-      delay_x24o25us(63);     // Execution time to clear display instruction, lcd_PrintCmd(0x01) >1.52ms, t = 63 x 24.25us = 1.53ms
+      delay_x24o25us(63);     // Execution time to clear display instruction, lcd_PrintCmd(0x01) >1.52ms,
+                              // t = 63 x 24.25us = 1.53ms
   }
 
   void lcd_ClearAll(void) {
