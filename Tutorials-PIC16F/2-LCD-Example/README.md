@@ -114,8 +114,8 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       
       lcd_EPulse();
       
-      delay_x1o5us(26);    // Execution time for instruction >37us,
-                           // t = 26 x 1.5us = 39us
+      delay_x1o5us(25);    // Execution time for instruction >37us,
+                           // t = 25 x 1.5us = 37.5us
   }
   ```
 <br/>
