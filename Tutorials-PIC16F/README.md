@@ -92,25 +92,25 @@ Deciding value for resistor R1 is depending on voltage at pin $\overline{MClr}$,
 <br/>
 
 ```
-void delay_x1p5us(uint8_t delay);
-void delay_x24p25us(uint16_t delay);
+void delay_x1o5us(uint8_t delay);
+void delay_x24o25us(uint16_t delay);
 void delay_ms(uint32_t delay);
 ```
 
 ```
 // Delay x1.5us
-void delay_x1p5us(uint8_t delay) {
+void delay_x1o5us(uint8_t delay) {
     for(uint8_t i=0; i<delay; i++) NOP();
 }
 
 // Delay x24.25us
-void delay_x24p25us(uint16_t delay) {
-    for(uint16_t i=0; i<delay; i++) delay_x1p5us(15);
+void delay_x24o25us(uint16_t delay) {
+    for(uint16_t i=0; i<delay; i++) delay_x1o5us(15);
 }
 
 // Delay x1ms
 void delay_ms(uint32_t delay) {
-    for(uint32_t i=0; i<delay; i++) delay_x24p25us(41);
+    for(uint32_t i=0; i<delay; i++) delay_x24o25us(41);
 }
 ```
 <br/>
