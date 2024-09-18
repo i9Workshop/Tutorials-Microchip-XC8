@@ -195,6 +195,11 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
 ## Example Program
 
 ```
+    void lcd_PrintInt32(int32_t number);
+    void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZero);
+```
+
+```
 void programInitialize(void) {
     TRISBbits.TRISB5 = 0;
     TRISBbits.TRISB4 = 0;
@@ -225,7 +230,93 @@ void programInitialize(void) {
 
 ```
 void programLoop(void) {
+    int32_t counter = 0;
+    
+    while(1) {
+        lcd_Goto(1, 0);
+        lcd_PrintDigitInt32(counter, 4, false, true);
+        
+        counter++;
+        
+        delay_ms(500);
+    }
+}
 
+void lcd_PrintInt32(int32_t number) {
+    uint8_t  i1 = 0,
+            i2 = 0,
+            totalDigit = 0;
+    
+    char numberRevChar[11]; // Declare array to store number in reverse char format
+    char numberChar[11]; // Declare array to store number in char format
+    
+    // Initialise array
+    memset(numberRevChar, 0, 11);
+    memset(numberChar, 0, 11);
+    
+    if(number<0) { // Condition if number is negative value
+        lcd_PrintChar('-');
+        number = labs(number);
+    }
+    
+    do { // Store a single number in reverse to numberRevChar[]
+        int32_t tempN = number;
+        number /= 10;
+        char tempC = (char)(tempN -10 * number);
+        numberRevChar[i1] = tempC + 48;
+        i1++;
+        
+    } while(number);
+    
+    totalDigit = i1; // Get total number of digit
+    
+    for(i1=totalDigit, i2=0; i1>0; i1--, i2++) { // Reverse numberRevChar[]
+        numberChar[i2] = numberRevChar[i1-1];
+    }
+    
+    lcd_PrintString(numberChar);
+}
+
+void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZero) {
+    uint8_t  i1 = 0,
+            i2 = 0,
+            totalDigit = 0;
+    
+    char numberRevChar[11]; // Declare array to store number in reverse char format
+    char numberChar[11]; // Declare array to store number in char format
+    
+    // Initialise array
+    memset(numberRevChar, 0, 11);
+    memset(numberChar, 0, 11);
+    
+    if(number<0) { // Condition if number is negative value
+        if(enSign) lcd_PrintChar('-');
+        number = labs(number);
+    } else {
+        if(enSign) lcd_PrintChar(' ');
+    }
+    
+    do { // Store a single number in reverse to numberRevChar[]
+        int32_t tempN = number;
+        number /= 10;
+        char tempC = (char)(tempN -10 * number);
+        numberRevChar[i1] = tempC + 48;
+        i1++;
+        
+    } while(number);
+    
+    totalDigit = i1; // Get total number of digit
+    
+    for(i1=0; i1<(noDigit-totalDigit); i1++) {
+        if(enZero) lcd_PrintChar('0');
+        else lcd_PrintChar(' ');
+    }
+    
+    for(i1=totalDigit, i2=0; i1>0; i1--, i2++) { // Reverse numberRevChar[]
+        numberChar[i2] = numberRevChar[i1-1];
+    }
+    
+    lcd_PrintString(numberChar);
 }
 ```
 <br/>
