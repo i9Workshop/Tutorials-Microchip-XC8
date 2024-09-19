@@ -23,11 +23,13 @@ Schematic 3.1
 ```
 
 ```
+    // Initialize pin direction as input
     TRISAbits.TRISA1 = 1;
     TRISAbits.TRISA2 = 1;
     TRISAbits.TRISA3 = 1;
     TRISAbits.TRISA4 = 1;
-    
+
+    // Initialize pin for digital I/O
     ANSELAbits.ANSA1 = 0;
     ANSELAbits.ANSA2 = 0;
     ANSELAbits.ANSA3 = 0;
@@ -35,6 +37,8 @@ Schematic 3.1
 ```
 
 ```
+    // Scan push buttons
+    
     if(!pb_Up) {
         lcd_Goto(1, 0);
         lcd_PrintString("Up   "); // Print on LCD
