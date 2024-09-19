@@ -15,7 +15,7 @@ Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and
 * Maximum value for R7 is
   >$R7 = \frac{V_{CC} - V_{MClr}}{I_{R1}} = \frac{5V - 4V}{140\mu A} = 7.1k\Omega$
 * If R1 is more than $7.1k\Omega$, make sure $V_{MClr}$ does not fall below 4V.
-* If R1 is less than $7.1k\Omega$, make sure pull down current accross it when button is pressed not high to cause interruption of MCU operation.
+* If R1 is less than $7.1k\Omega$, make sure pull down current accross it when button is pressed not high to cause interruption of MCU required current operation.
 <br/>
 
 ## Define and Initialize Peripheral
