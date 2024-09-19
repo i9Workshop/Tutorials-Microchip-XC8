@@ -52,9 +52,33 @@ The value for debounce capacitor is suggested in datasheet page 2.
   ```
 <br/>
 
-* Use bitwise operand left shift, '<<' or right shift, '>>' to read the clock pulse thus determine the rotation direction.
+* Use bitwise operand left shift, '<<' to read the clock pulse thus determine the rotation direction.
   ```
+  uint8_t encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bits data, encoderData
   
+  if(encoderData==0x03) { // Condition if both clock are high
+      // Do nothing
+  }
+  
+  else if(encoderData==0x02) { // Condition if clock A start first
+      lcd_Goto(1, 0);
+      lcd_PrintString("CW ");
+      
+      pb_DelayDebounce();
+      
+      lcd_Goto(1, 0);
+      lcd_PrintString("     ");
+  }
+  
+  else if(encoderData==0x01) { // Condition if clock B start first
+      lcd_Goto(1, 0);
+      lcd_PrintString("CCW");
+      
+      pb_DelayDebounce();
+      
+      lcd_Goto(1, 0);
+      lcd_PrintString("     ");
+  }
   ```
 <br/>
 
