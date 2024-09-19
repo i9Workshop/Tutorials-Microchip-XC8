@@ -19,7 +19,7 @@ void delay_ms(uint32_t delay) {
 
 void programInitialize(void) {
     TRISBbits.TRISB6 = 0;
-    LATBbits.LATB6 = 0;
+    TRISBbits.TRISB7 = 0;
     
     led1 = 0;
     led2 = 0;
