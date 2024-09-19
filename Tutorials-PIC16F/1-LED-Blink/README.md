@@ -20,8 +20,8 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 <br/>
 
 ```
-#define led1        LATBbits.LATB6
-#define led2        LATBbits.LATB7
+#define led1        LATBbits.LATB7
+#define led2        LATBbits.LATB6
 ```
 
 <br/>
