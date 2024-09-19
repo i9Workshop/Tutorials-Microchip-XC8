@@ -12,8 +12,8 @@ extern "C" {
 #endif
     
     
-#define led1        LATBbits.LATB6
-#define led2        LATBbits.LATB7
+#define led1        LATBbits.LATB7
+#define led2        LATBbits.LATB6
 
 #define RS_Pin      LATBbits.LATB5
 #define E_Pin       LATBbits.LATB4
