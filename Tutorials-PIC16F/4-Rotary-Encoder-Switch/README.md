@@ -44,7 +44,9 @@ The value for debounce capacitor is suggested in datasheet page 2.
       if(!res_Sw) {
           led1 = 1;
           pb_DelayDebounce();
-      } else {
+      }
+      
+      else {
           led1 = 0;
       }
   ```
