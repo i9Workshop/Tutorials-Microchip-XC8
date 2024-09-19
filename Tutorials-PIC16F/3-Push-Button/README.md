@@ -1,7 +1,7 @@
 # Push Button
 <br/>
 
-![Schematic-Push-Buttons](https://github.com/user-attachments/assets/767ebfb7-9a48-46ac-a747-46ab0940dbf2)
+![Schematic-Push-Buttons](https://github.com/user-attachments/assets/f68fbd5a-b14a-4a7d-9735-05d4d7512e5e)
 <br/>
 Schematic 3.1
 <br/>
