@@ -41,7 +41,12 @@ The value for debounce capacitor is suggested in datasheet page 2.
 ## Read Encoder Switch and Clock Pulse
 * Method to read the switch is the same as push button.
   ```
-  
+      if(!res_Sw) {
+          led1 = 1;
+          pb_DelayDebounce();
+      } else {
+          led1 = 0;
+      }
   ```
 <br/>
 
