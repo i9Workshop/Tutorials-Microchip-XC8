@@ -6,14 +6,16 @@
 Schematic 3.1
 <br/>
 
-Schematic 3.1 are circuits of active low push buttons. Program will be executed if button is pressed. 
+Schematic 3.1 are circuits of active low push buttons. Program will be executed if button is pressed. C5 is used to debounce mechanical noise to input pin which can also be remove by using delay in program. 
 Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and current accros R7, $I_{R7}$. Refer to datasheet page 364.
 * $I_{R7}$ will be MCU weak pull-up current, $I_{PUR}$ therefor
   >$I_{R7} = I_{PUR} = 140\mu A$
-* z
-  >$$
-* x
-  >$$
+* Minimum $V_{RA1}$ will be input high voltage, $V_{IH}$ which is
+  >$V_{RA1} = 0.8 \times{} V_{CC} = 0.8 \times{} 5V = 4V$
+* Minimum value for R7 is
+  >$R7 = \frac{V_{MClr}}{I_{R1}} = \frac{4V}{140\mu A} = 28.6k\Omega$
+* Maximum value for R7 is
+  >$R7 = \frac{5V}{140\mu A} = 35.7k\Omega$
 <br/>
 
 ## Define and Initialize Peripheral
