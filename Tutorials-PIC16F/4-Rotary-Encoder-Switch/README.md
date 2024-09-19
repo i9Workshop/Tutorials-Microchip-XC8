@@ -18,8 +18,23 @@ The value for debounce capacitor is suggested in datasheet page 2.
 <br/>
 
 ## Define and Initialize Peripheral
+* Set pin direction to output at register TRISA - Page 114
+* Set pin for digital I/O purpose at register ANSELA - Page 115
+* Set pin direction to output at register TRISC - Page 125
+<br/>
+
+```
+#define res_Sw          PORTAbits.RA5
+#define res_ClkA        PORTCbits.RC0
+#define res_ClkB        PORTCbits.RC2
 ```
 
+```
+    TRISAbits.TRISA5 = 1;
+    TRISCbits.TRISC0 = 1;
+    TRISCbits.TRISC2 = 1;
+    
+    ANSELAbits.ANSA5 = 0;
 ```
 <br/>
 
