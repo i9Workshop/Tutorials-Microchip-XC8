@@ -97,6 +97,9 @@ void programLoop(void) {
     lcd_Goto(1, 0);
     lcd_PrintDigitInt32(0, 5, false, true);
     
+    lcd_Goto(1, 6);
+    lcd_PrintString("Dir");
+    
     while(1) {
         if(!res_Sw) {
             led1 = 1;
