@@ -88,6 +88,12 @@ void programLoop(void) {
     uint8_t encoderData = 0;
     uint16_t counter = 0;
     
+    lcd_Goto(0, 0);
+    lcd_PrintString("Rotary Encoder");
+    
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32(0, 5, false, true);
+    
     while(1) {
         if(!res_Sw) {
             led1 = 1;
