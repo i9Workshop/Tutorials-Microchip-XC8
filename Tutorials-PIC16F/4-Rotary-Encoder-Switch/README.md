@@ -82,7 +82,7 @@ The value for debounce capacitor is suggested in datasheet page 2.
   ```
 <br/>
 
-* There are other reliable methods to read encoder clock pulse.
+* There are other reliable methods to read encoder clock pulses.
 <br/>
 
 ## Example Program
