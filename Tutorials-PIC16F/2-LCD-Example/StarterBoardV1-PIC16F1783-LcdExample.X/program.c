@@ -153,7 +153,7 @@ void lcd_PrintChar(char character) {
     RS_Pin = 1;
     lcd_DelaySetupTime();
     
-    lcd_WriteData(character);;
+    lcd_WriteData(character);
 }
 
 void lcd_PrintString(char *string) {
