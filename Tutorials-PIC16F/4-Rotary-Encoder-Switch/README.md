@@ -84,6 +84,48 @@ The value for debounce capacitor is suggested in datasheet page 2.
 
 ## Example Program
 ```
-
+void programLoop(void) {
+    uint8_t encoderData = 0;
+    uint16_t counter = 0;
+    
+    while(1) {
+        if(!res_Sw) {
+            led1 = 1;
+            pb_DelayDebounce();
+        } else {
+            led1 = 0;
+        }
+        
+        encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bits data, encoderData
+        
+        if(encoderData==0x03) {
+            // Do nothing
+        }
+        
+        else if(encoderData==0x02) { // Condition if clock A start first
+            if(counter<60000) counter++;
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(counter, 5, false, true);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("CW ");
+            
+            delay_ms(50);
+        }
+        
+        else if(encoderData==0x01) { // Condition if clock B start first
+            if(counter>0) counter--;
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(counter, 5, false, true);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("CCW");
+            
+            delay_ms(50);
+        }
+    }
+}
 ```
 <br/>
