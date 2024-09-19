@@ -57,7 +57,7 @@ void programInitialize(void) {
     lcd_Initialize();
     
     lcd_Goto(0, 0);
-    lcd_PrintString("LCD Example 1.0");
+    lcd_PrintString("Push Buttons");
 }
 
 void programLoop(void) {
