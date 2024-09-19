@@ -28,12 +28,12 @@ Schematic 3.1
 <br/>
 
 ## Read Pin Value
+```
 
+```
 <br/>
 
 ## Example Program
-<br/>
-
 ```
     // Scan push buttons
     
