@@ -1,12 +1,16 @@
 # Push Button
 <br/>
 
-![Schematic-Push-Buttons](https://github.com/user-attachments/assets/70e3f197-adb4-4834-838a-030b79877f63)
+![Schematic-Push-Buttons](https://github.com/user-attachments/assets/767ebfb7-9a48-46ac-a747-46ab0940dbf2)
 <br/>
 Schematic 3.1
 <br/>
 
 ## Define and Initialize Peripheral
+* Set pin direction to input at register TRISA - Page 114
+* Set pin for digital I/O purpose at register ANSELA - Page 115
+<br/>
+
 ```
 #define pb_Up       PORTAbits.RA1
 #define pb_Down     PORTAbits.RA2
