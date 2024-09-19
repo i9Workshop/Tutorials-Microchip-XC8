@@ -6,7 +6,7 @@
 Schematic 3.1
 <br/>
 
-Schematic 3.1 are circuits of active low push buttons. Program will be executed if button is pressed. C5 is used to debounce mechanical noise to input pin which can also be remove by using delay in program. 
+Schematic 3.1 are circuits of active low push buttons. Program will be executed if button is pressed. C5 is used to remove bouncing mechanical noise at input pin which can also be remove by using delay in program. 
 Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and current accros R7, $I_{R7}$. Refer to datasheet page 364.
 * $I_{R7}$ will be MCU weak pull-up current, $I_{PUR}$ therefor
   >$I_{R7} = I_{PUR} = 140\mu A$
@@ -44,15 +44,30 @@ Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and
 <br/>
 
 ## Read Pin Value
-Reads from PORTA register to read pin digital value as stated in datasheet page 114. Use if statement to practically use the register as switch.
+Reads from PORTA register to read pin digital value as stated in datasheet page 114. Use if statement to practically use the register as switch. Create delay fuction to debounce mechanical noise.
 <br/>
+```
+    void pb_DelayDebounce(void);
+```
+
+```
+// Delay to debounce mechanical noise
+void pb_DelayDebounce(void) {
+    delay_ms(200);
+}
+```
+
 ```
 if(PORTAbits.RA1) { // Condition is true if pin RA1 is high
     // Do something if pin is high
+    
+    pb_DelayDebounce();
 }
 
 else if(!PORTAbits.RA1) { // Condition is true if pin RA1 is low
     // Do something if pin is low
+    
+    pb_DelayDebounce();
 }
 ```
 <br/>
