@@ -32,8 +32,16 @@ Schematic 3.1
 <br/>
 
 ## Read Pin Value
+Reads from PORTA register to read pin digital value. Use if statement to practically use the register as switch.
+<br/>
 ```
+if(PORTAbits.RA1) { // Condition is true if pin RA1 is high
+    // Do something if pin is high
+}
 
+else if(!PORTAbits.RA1) { // Condition is true if pin RA1 is low
+    // Do something if pin is low
+}
 ```
 <br/>
 
