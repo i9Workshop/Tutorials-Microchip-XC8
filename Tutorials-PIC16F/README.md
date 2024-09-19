@@ -63,8 +63,10 @@ Deciding value for resistor R1 is depending on voltage at pin $\overline{MClr}$,
   >$I_{R1} = I_{PUR} = 140\mu A$
 * Minimum $V_{MClr}$ will be input high voltage, $V_{IH}$ which is<br/>
   >$V_{MClr} = 0.8 \times{} V_{cc} =  0.8 \times{} 5V = 4V$
-* Maximum value for R1 is
+* Value for R1 is
   >$R1 = \frac{V_{CC} - V_{MClr}}{I_{R1}} = \frac{5V - 4V}{140\mu A} = 7.1k\Omega$
+* If R1 is more than 7.1k$\Omega$, make sure $V_{MClr}$ does not fall below 4V.
+* If R1 is less than 7.1k$\Omega$, make sure pull down current accross it when button is pressed not high to cause interruption of MCU operation.
 <br/>
 
 ## 3.  Create Delay Function
