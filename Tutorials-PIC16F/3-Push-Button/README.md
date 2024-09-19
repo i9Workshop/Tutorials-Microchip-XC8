@@ -6,6 +6,16 @@
 Schematic 3.1
 <br/>
 
+Schematic 3.1 are circuits of active low push buttons. Program will be executed if button is pressed. 
+Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and current accros R7, $I_{R7}$. Refer to datasheet page 364.
+* $I_{R7}$ will be MCU weak pull-up current, $I_{PUR}$ therefor
+  >$I_{R7} = I_{PUR} = 140\mu A$
+* z
+  >$$
+* x
+  >$$
+<br/>
+
 ## Define and Initialize Peripheral
 * Set pin direction to input at register TRISA - Page 114
 * Set pin for digital I/O purpose at register ANSELA - Page 115
