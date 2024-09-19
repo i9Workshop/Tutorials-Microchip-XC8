@@ -29,7 +29,7 @@ Schematic 3.1
     TRISAbits.TRISA3 = 1;
     TRISAbits.TRISA4 = 1;
 
-    // Initialize pin for digital I/O
+    // Initialize pin as digital I/O
     ANSELAbits.ANSA1 = 0;
     ANSELAbits.ANSA2 = 0;
     ANSELAbits.ANSA3 = 0;
