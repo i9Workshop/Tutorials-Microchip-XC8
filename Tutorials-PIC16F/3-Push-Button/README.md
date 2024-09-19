@@ -7,14 +7,6 @@ Schematic 3.1
 <br/>
 
 ## Define and Initialize Peripheral
-<br/>
-
-## Read Pin Value
-<br/>
-
-## Example Program
-<br/>
-
 ```
 #define pb_Up       PORTAbits.RA1
 #define pb_Down     PORTAbits.RA2
@@ -35,6 +27,14 @@ Schematic 3.1
     ANSELAbits.ANSA3 = 0;
     ANSELAbits.ANSA4 = 0;
 ```
+<br/>
+
+## Read Pin Value
+
+<br/>
+
+## Example Program
+<br/>
 
 ```
     // Scan push buttons
