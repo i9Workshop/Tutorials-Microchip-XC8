@@ -32,7 +32,7 @@ Schematic 3.1
 <br/>
 
 ## Read Pin Value
-Reads from PORTA register to read pin digital value. Use if statement to practically use the register as switch.
+Reads from PORTA register to read pin digital value as stated in datasheet page 114. Use if statement to practically use the register as switch.
 <br/>
 ```
 if(PORTAbits.RA1) { // Condition is true if pin RA1 is high
@@ -47,7 +47,7 @@ else if(!PORTAbits.RA1) { // Condition is true if pin RA1 is low
 
 ## Example Program
 ```
-    // Scan push buttons
+    // Scan active low push buttons
     
     if(!pb_Up) {
         lcd_Goto(1, 0);
