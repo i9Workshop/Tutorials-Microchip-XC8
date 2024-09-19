@@ -67,7 +67,7 @@ The value for debounce capacitor is suggested in datasheet page 2.
       pb_DelayDebounce();
       
       lcd_Goto(1, 0);
-      lcd_PrintString("     ");
+      lcd_PrintString("   ");
   }
   
   else if(encoderData==0x01) { // Condition if clock B start first
@@ -77,7 +77,7 @@ The value for debounce capacitor is suggested in datasheet page 2.
       pb_DelayDebounce();
       
       lcd_Goto(1, 0);
-      lcd_PrintString("     ");
+      lcd_PrintString("   ");
   }
   ```
 <br/>
