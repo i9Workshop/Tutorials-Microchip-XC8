@@ -24,6 +24,10 @@ C12 is used to debounce mechanical noise.
 <br/>
 
 * Initialize ADC module for 12bits data result.
+
+  ```
+      void var_Initialize(void);
+  ```
   
   ```
   void var_Initialize(void) {
@@ -51,6 +55,10 @@ C12 is used to debounce mechanical noise.
 * Shift and combine both ADC results data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
 
 ```
+    uint16_t var_Read(void);
+```
+
+```
 uint16_t var_Read(void) {
     ADCON0bits.CHS = 0;     // Set ADC positive differential input to channel 0
     ADCON2bits.CHSN = 15;   // Set ADC negative differential input to ADNREF
@@ -69,4 +77,24 @@ uint16_t var_Read(void) {
 <br/>
 
 ## Example Program
+```
+void programLoop(void) {
+    lcd_Goto(0, 0);
+    lcd_PrintString("Var Resistor");
+    
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32(0, 4, false, true);
+    
+    while(1) {
+        led1 = ~led1; // LCD refresh and read variable resistor voltage rate indicator
+        
+        uint16_t varValue = var_Read(); // read digital value of analog input
+        
+        lcd_Goto(1, 0);
+        lcd_PrintDigitInt32(varValue, 4, false, true);
+        
+        delay_ms(50); // LCD refresh and read variable resistor voltage rate
+    }
+}
+```
 <br/>
