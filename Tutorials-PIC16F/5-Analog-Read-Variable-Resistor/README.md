@@ -50,6 +50,9 @@ C12 is used to debounce mechanical noise.
 ## Read Digital Value of Analog
 * Set ADC positive and negative differential input.
 * Turn on ADC module and wait for acquisition time.
+  - The acquisition time for Schematic 5.1 is $4.88\mu s$ where $R_{S}$ is $10.1k\Omega$.
+    >$T_{C} = 1.63\mu s$<br/>
+    >$T_{ACQ} = 2\mu s + 1.63\mu s + 1.25\mu s$<br/>
 * Start conversion and wait for it to complete.
 * Read ADC result or create a function to return 16bits data type and return the result.
 * Shift and combine both ADC results data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
