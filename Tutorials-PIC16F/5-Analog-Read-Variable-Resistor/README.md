@@ -69,6 +69,7 @@ uint16_t var_Read(void) {
     ADCON0bits.ADON = 1;    // Turn on ADC module
     
     delay_x1o5us(4);        // Wait acquisition time - Page 152 and 153
+                            // delay = 4.88us / 1.5us = 3.25, thus use 4 to achive more than 3.88us
     
     ADCON0bits.GO = 1;      // Start conversion
     while(ADCON0bits.GO);   // Wait for ADC conversion to complete
