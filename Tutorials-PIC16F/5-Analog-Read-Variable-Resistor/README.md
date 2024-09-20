@@ -17,10 +17,28 @@ C12 is used to debounce mechanical noise.
 * Set pin direction to output at register TRISA - Page 114
 * Set pin for digital I/O purpose at register ANSELA - Page 115
 
-```
-    TRISAbits.TRISA0 = 1;
-    ANSELAbits.ANSA0 = 1;
-```
+  ```
+      TRISAbits.TRISA0 = 1;
+      ANSELAbits.ANSA0 = 1;
+  ```
+
+* Initialize ADC module
+  ```
+  void var_Initialize(void) {
+      // Datasheet page 147
+      ADCON0bits.ADON = 0;    // Turn off ADC module
+      ADCON0bits.ADRMD = 0;   // Set ADC data format for a 12bits result
+      
+      // Datasheet page 148
+      ADCON1bits.ADFM = 0;    // Set ADC result to use sign-magnitude format
+      ADCON1bits.ADCS = 0;    // Set ADC peripheral clock to FOSC/2
+      ADCON1bits.ADPREF = 0;  // Set ADC positive voltage reference to MCU's VDD
+      ADCON1bits.ADNREF = 0;  // Set ADC negative voltage reference to MCU's VSS
+      
+      // Datasheet page 149
+      ADCON2bits.TRIGSEL = 0;
+  }
+  ```
 <br/>
 
 ## Read Digital Value of Analog
