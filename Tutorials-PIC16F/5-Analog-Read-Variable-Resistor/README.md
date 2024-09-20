@@ -16,6 +16,7 @@ C12 is used to debounce mechanical noise.
 ## Initialize Peripheral
 * Set pin direction to output at register TRISA - Page 114
 * Set pin for digital I/O purpose at register ANSELA - Page 115
+  
   ```
       TRISAbits.TRISA0 = 1;
       ANSELAbits.ANSA0 = 1;
@@ -23,6 +24,7 @@ C12 is used to debounce mechanical noise.
 <br/>
 
 * Initialize ADC module for 12bits data result.
+  
   ```
   void var_Initialize(void) {
       // Datasheet page 147
