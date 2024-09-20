@@ -1,0 +1,391 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1783 ]
+[d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\memset.c
+[v _memset memset `(*.4v  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"26 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"5 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\program.c
+[v _delay_x1o5us delay_x1o5us `(v  1 e 1 0 ]
+"10
+[v _delay_x24o25us delay_x24o25us `(v  1 e 1 0 ]
+"15
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+"20
+[v _programInitialize programInitialize `(v  1 e 1 0 ]
+"54
+[v _programLoop programLoop `(v  1 e 1 0 ]
+"74
+[v _lcd_DelaySetupTime lcd_DelaySetupTime `(v  1 e 1 0 ]
+"79
+[v _lcd_DelayPulse lcd_DelayPulse `(v  1 e 1 0 ]
+"84
+[v _lcd_EPulse lcd_EPulse `(v  1 e 1 0 ]
+"92
+[v _lcd_WriteData lcd_WriteData `(v  1 e 1 0 ]
+"113
+[v _lcd_PrintCmd lcd_PrintCmd `(v  1 e 1 0 ]
+"120
+[v _lcd_Initialize lcd_Initialize `(v  1 e 1 0 ]
+"145
+[v _lcd_Goto lcd_Goto `(v  1 e 1 0 ]
+"161
+[v _lcd_PrintChar lcd_PrintChar `(v  1 e 1 0 ]
+"168
+[v _lcd_PrintString lcd_PrintString `(v  1 e 1 0 ]
+"209
+[v _lcd_PrintDigitInt32 lcd_PrintDigitInt32 `(v  1 e 1 0 ]
+"250
+[v _var_Initialize var_Initialize `(v  1 e 1 0 ]
+"265
+[v _var_Read var_Read `(us  1 e 2 0 ]
+[s S139 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"1158 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc\pic16f1783.h
+[s S148 . 1 `uc 1 TRISA 1 0 :8:0 
+]
+[u S150 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES150  1 e 1 @140 ]
+[s S39 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1228
+[s S48 . 1 `uc 1 TRISB 1 0 :8:0 
+]
+[u S50 . 1 `S39 1 . 1 0 `S48 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES50  1 e 1 @141 ]
+[s S91 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1298
+[s S100 . 1 `uc 1 TRISC 1 0 :8:0 
+]
+[u S102 . 1 `S91 1 . 1 0 `S100 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES102  1 e 1 @142 ]
+"1945
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+[s S260 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+`uc 1 ADRMD 1 0 :1:7 
+]
+"1995
+[s S269 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S273 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S276 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[u S279 . 1 `S260 1 . 1 0 `S269 1 . 1 0 `S273 1 . 1 0 `S276 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES279  1 e 1 @157 ]
+[s S304 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 ADNREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2082
+[s S313 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS 1 0 :3:4 
+]
+[u S317 . 1 `S304 1 . 1 0 `S313 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES317  1 e 1 @158 ]
+[s S334 . 1 `uc 1 CHSN0 1 0 :1:0 
+`uc 1 CHSN1 1 0 :1:1 
+`uc 1 CHSN2 1 0 :1:2 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 TRIGSEL0 1 0 :1:4 
+`uc 1 TRIGSEL1 1 0 :1:5 
+`uc 1 TRIGSEL2 1 0 :1:6 
+`uc 1 TRIGSEL3 1 0 :1:7 
+]
+"2153
+[s S343 . 1 `uc 1 CHSN 1 0 :4:0 
+`uc 1 TRIGSEL 1 0 :4:4 
+]
+[u S346 . 1 `S334 1 . 1 0 `S343 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES346  1 e 1 @159 ]
+[s S65 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2298
+[s S74 . 1 `uc 1 LATB 1 0 :8:0 
+]
+[u S76 . 1 `S65 1 . 1 0 `S74 1 . 1 0 ]
+[v _LATBbits LATBbits `VES76  1 e 1 @269 ]
+[s S191 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2368
+[s S200 . 1 `uc 1 LATC 1 0 :8:0 
+]
+[u S202 . 1 `S191 1 . 1 0 `S200 1 . 1 0 ]
+[v _LATCbits LATCbits `VES202  1 e 1 @270 ]
+[s S165 . 1 `uc 1 ANSA0 1 0 :1:0 
+`uc 1 ANSA1 1 0 :1:1 
+`uc 1 ANSA2 1 0 :1:2 
+`uc 1 ANSA3 1 0 :1:3 
+`uc 1 ANSA4 1 0 :1:4 
+`uc 1 ANSA5 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ANSA7 1 0 :1:7 
+]
+"3246
+[s S174 . 1 `uc 1 ANSELA 1 0 :8:0 
+]
+[u S176 . 1 `S165 1 . 1 0 `S174 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES176  1 e 1 @396 ]
+[s S117 . 1 `uc 1 ANSB0 1 0 :1:0 
+`uc 1 ANSB1 1 0 :1:1 
+`uc 1 ANSB2 1 0 :1:2 
+`uc 1 ANSB3 1 0 :1:3 
+`uc 1 ANSB4 1 0 :1:4 
+`uc 1 ANSB5 1 0 :1:5 
+]
+"3309
+[s S124 . 1 `uc 1 ANSELB 1 0 :6:0 
+]
+[u S126 . 1 `S117 1 . 1 0 `S124 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES126  1 e 1 @397 ]
+"26 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"32
+} 0
+"54 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\program.c
+[v _programLoop programLoop `(v  1 e 1 0 ]
+{
+"64
+[v programLoop@varValue varValue `us  1 a 2 41 ]
+"71
+} 0
+"265
+[v _var_Read var_Read `(us  1 e 2 0 ]
+{
+"279
+} 0
+"209
+[v _lcd_PrintDigitInt32 lcd_PrintDigitInt32 `(v  1 e 1 0 ]
+{
+"229
+[v lcd_PrintDigitInt32@tempN tempN `l  1 a 4 33 ]
+"231
+[v lcd_PrintDigitInt32@tempC tempC `uc  1 a 1 37 ]
+"215
+[v lcd_PrintDigitInt32@numberChar numberChar `[11]uc  1 a 11 22 ]
+"214
+[v lcd_PrintDigitInt32@numberRevChar numberRevChar `[11]uc  1 a 11 11 ]
+"210
+[v lcd_PrintDigitInt32@i1 i1 `uc  1 a 1 40 ]
+"212
+[v lcd_PrintDigitInt32@totalDigit totalDigit `uc  1 a 1 39 ]
+"211
+[v lcd_PrintDigitInt32@i2 i2 `uc  1 a 1 38 ]
+"209
+[v lcd_PrintDigitInt32@number number `l  1 p 4 0 ]
+[v lcd_PrintDigitInt32@noDigit noDigit `uc  1 p 1 4 ]
+[v lcd_PrintDigitInt32@enSign enSign `a  1 p 1 5 ]
+[v lcd_PrintDigitInt32@enZero enZero `a  1 p 1 6 ]
+"248
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\memset.c
+[v _memset memset `(*.4v  1 e 2 0 ]
+{
+"5
+[v memset@p p `*.4uc  1 a 1 5 ]
+"3
+[v memset@dest dest `*.4v  1 p 1 0 ]
+[v memset@c c `i  1 p 2 1 ]
+[v memset@n n `ui  1 p 2 3 ]
+"10
+} 0
+"168 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\program.c
+[v _lcd_PrintString lcd_PrintString `(v  1 e 1 0 ]
+{
+[v lcd_PrintString@string string `*.26uc  1 p 2 6 ]
+"173
+} 0
+"161
+[v _lcd_PrintChar lcd_PrintChar `(v  1 e 1 0 ]
+{
+[v lcd_PrintChar@character character `uc  1 p 1 wreg ]
+[v lcd_PrintChar@character character `uc  1 p 1 wreg ]
+[v lcd_PrintChar@character character `uc  1 p 1 5 ]
+"166
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\labs.c
+[v _labs labs `(l  1 e 4 0 ]
+{
+[v labs@a a `l  1 p 4 0 ]
+"4
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 p 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 1 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 p 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 p 1 2 ]
+"51
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"145 C:\Microchip\Projects-GitHub\StarterBoardV1\StarterBoardV1-PIC16F1783-AnalogReadVariableResistor.X\program.c
+[v _lcd_Goto lcd_Goto `(v  1 e 1 0 ]
+{
+[v lcd_Goto@y y `uc  1 p 1 wreg ]
+[v lcd_Goto@y y `uc  1 p 1 wreg ]
+[v lcd_Goto@x x `uc  1 p 1 6 ]
+[v lcd_Goto@y y `uc  1 p 1 7 ]
+"159
+} 0
+"20
+[v _programInitialize programInitialize `(v  1 e 1 0 ]
+{
+"52
+} 0
+"250
+[v _var_Initialize var_Initialize `(v  1 e 1 0 ]
+{
+"263
+} 0
+"120
+[v _lcd_Initialize lcd_Initialize `(v  1 e 1 0 ]
+{
+"137
+} 0
+"113
+[v _lcd_PrintCmd lcd_PrintCmd `(v  1 e 1 0 ]
+{
+[v lcd_PrintCmd@command command `uc  1 p 1 wreg ]
+[v lcd_PrintCmd@command command `uc  1 p 1 wreg ]
+[v lcd_PrintCmd@command command `uc  1 p 1 5 ]
+"118
+} 0
+"92
+[v _lcd_WriteData lcd_WriteData `(v  1 e 1 0 ]
+{
+[v lcd_WriteData@data data `uc  1 p 1 wreg ]
+[v lcd_WriteData@data data `uc  1 p 1 wreg ]
+"94
+[v lcd_WriteData@data data `uc  1 p 1 4 ]
+"111
+} 0
+"84
+[v _lcd_EPulse lcd_EPulse `(v  1 e 1 0 ]
+{
+"90
+} 0
+"79
+[v _lcd_DelayPulse lcd_DelayPulse `(v  1 e 1 0 ]
+{
+"82
+} 0
+"74
+[v _lcd_DelaySetupTime lcd_DelaySetupTime `(v  1 e 1 0 ]
+{
+"77
+} 0
+"15
+[v _delay_ms delay_ms `(v  1 e 1 0 ]
+{
+"16
+[v delay_ms@i i `ul  1 a 4 10 ]
+"15
+[v delay_ms@delay delay `ul  1 p 4 6 ]
+"17
+} 0
+"10
+[v _delay_x24o25us delay_x24o25us `(v  1 e 1 0 ]
+{
+"11
+[v delay_x24o25us@i i `us  1 a 2 4 ]
+"10
+[v delay_x24o25us@delay delay `us  1 p 2 2 ]
+"12
+} 0
+"5
+[v _delay_x1o5us delay_x1o5us `(v  1 e 1 0 ]
+{
+[v delay_x1o5us@delay delay `uc  1 p 1 wreg ]
+"6
+[v delay_x1o5us@i i `uc  1 a 1 1 ]
+"5
+[v delay_x1o5us@delay delay `uc  1 p 1 wreg ]
+[v delay_x1o5us@delay delay `uc  1 p 1 0 ]
+"7
+} 0
