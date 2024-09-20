@@ -14,7 +14,7 @@ C12 is used to debounce mechanical noise.
 <br/>
 
 ## Initialize Peripheral
-* Set pin direction to output at register TRISA - Page 114
+* Set pin direction to input at register TRISA - Page 114
 * Set pin for digital I/O purpose at register ANSELA - Page 115
   
   ```
