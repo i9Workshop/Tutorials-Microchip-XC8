@@ -22,6 +22,7 @@ C12 is used to debounce mechanical noise.
       ANSELAbits.ANSA0 = 1;
   ```
 
+<br/>
 * Initialize ADC module for 12bits data result.
   ```
   void var_Initialize(void) {
