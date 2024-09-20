@@ -8,7 +8,7 @@ Refer to rotary encoder switch [datasheet](https://docs.rs-online.com/6487/09007
 
 <br/>
 
-![Schematic-Rotary-Encoder-Switch](https://github.com/user-attachments/assets/1e8da036-7bf8-43f0-b487-4c006e3b45b0)
+![Schematic-Rotary-Encoder-Switch](https://github.com/user-attachments/assets/db09a72c-7099-4bbe-929c-eb5851c6cc7b)
 <br/>
 Schematic 4.1
 <br/>
