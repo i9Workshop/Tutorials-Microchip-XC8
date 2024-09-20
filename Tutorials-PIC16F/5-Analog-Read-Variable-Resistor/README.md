@@ -22,7 +22,7 @@ C12 is used to debounce mechanical noise.
       ANSELAbits.ANSA0 = 1;
   ```
 
-* Initialize ADC module
+* Initialize ADC module for 12bits data result.
   ```
   void var_Initialize(void) {
       // Datasheet page 147
@@ -36,12 +36,34 @@ C12 is used to debounce mechanical noise.
       ADCON1bits.ADNREF = 0;  // Set ADC negative voltage reference to MCU's VSS
       
       // Datasheet page 149
-      ADCON2bits.TRIGSEL = 0;
+      ADCON2bits.TRIGSEL = 0; // Disable auto-conversion trigger source
   }
   ```
 <br/>
 
 ## Read Digital Value of Analog
+* Set ADC positive and negative differential input.
+* Turn on ADC module and wait for acquisition time.
+* Start conversion and wait for it to complete.
+* Read ADC result or create a function to return 16bits data type and return the result.
+* Shift and combine both ADC result data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
+
+```
+uint16_t var_Read(void) {
+    ADCON0bits.CHS = 0;     // Set ADC positive differential input to channel 0
+    ADCON2bits.CHSN = 15;   // Set ADC negative differential input to ADNREF
+    
+    ADCON0bits.ADON = 1;    // Turn on ADC module
+    
+    delay_x1o5us(4);        // Wait acquisition time - Page 152 and 153
+    
+    ADCON0bits.GO = 1;      // Start conversion
+    while(ADCON0bits.GO);   // Wait for ADC conversion to complete
+    
+    // Return ADC result
+    return (uint16_t)(ADRESH<<4) | (ADRESH>>4);
+}
+```
 <br/>
 
 ## Example Program
