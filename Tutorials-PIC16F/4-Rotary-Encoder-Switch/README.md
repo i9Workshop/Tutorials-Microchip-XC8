@@ -20,9 +20,9 @@ The minimum value for debounce capacitor is suggested in datasheet page 2.
 <br/>
 
 ## Define and Initialize Peripheral
-* Set pin direction to output at register TRISA - Page 114
+* Set pin direction to input at register TRISA - Page 114
 * Set pin for digital I/O purpose at register ANSELA - Page 115
-* Set pin direction to output at register TRISC - Page 125
+* Set pin direction to input at register TRISC - Page 125
 <br/>
 
 ```
