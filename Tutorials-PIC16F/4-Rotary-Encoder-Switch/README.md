@@ -14,7 +14,7 @@ Schematic 4.1
 <br/>
 <br/>
 Schematic 4.1 shows the circuitory of rotary encoder switch which are same as [push button circuit](https://github.com/i9Workshop/Tutorials-Microchip-XC8/tree/main/Tutorials-PIC16F/3-Push-Button) in Schematic 3.1.<br/>
-The value for debounce capacitor is suggested in datasheet page 2.
+The minimum value for debounce capacitor is suggested in datasheet page 2.
 <br/>
 
 <br/>
