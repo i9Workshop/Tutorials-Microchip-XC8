@@ -50,7 +50,7 @@ C12 is used to debounce mechanical noise.
 ## Read Digital Value of Analog
 * Set ADC positive and negative differential input.
 * Turn on ADC module and wait for acquisition time.
-  - The acquisition time for Schematic 5.1 is $4.88\mu s$ where $R_{S}$ is $10.1k\Omega$.
+  - The acquisition time for Schematic 5.1 is $4.88\mu s$ where $R_{S}$ is $10.1k\Omega$(more than recommended value).
     >$T_{C} = 1.63\mu s$<br/>
     >$T_{ACQ} = 2\mu s + 1.63\mu s + 1.25\mu s$<br/>
 * Start conversion and wait for it to complete.
@@ -69,7 +69,7 @@ uint16_t var_Read(void) {
     ADCON0bits.ADON = 1;    // Turn on ADC module
     
     delay_x1o5us(4);        // Wait acquisition time - Page 152 and 153
-                            // delay = 4.88us / 1.5us = 3.25, thus use 4 to achive more than 4.88us
+                            // delay = 4.88us / 1.5us = 3.25, use 4 to achieve more than 4.88us
     
     ADCON0bits.GO = 1;      // Start conversion
     while(ADCON0bits.GO);   // Wait for ADC conversion to complete
