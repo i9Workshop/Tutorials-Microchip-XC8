@@ -46,7 +46,7 @@ C12 is used to debounce mechanical noise.
 * Turn on ADC module and wait for acquisition time.
 * Start conversion and wait for it to complete.
 * Read ADC result or create a function to return 16bits data type and return the result.
-* Shift and combine both ADC result data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
+* Shift and combine both ADC results data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
 
 ```
 uint16_t var_Read(void) {
