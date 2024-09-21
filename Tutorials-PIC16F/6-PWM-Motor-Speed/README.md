@@ -12,7 +12,7 @@ Saperate the circuitory adds the advantage which protects the MCU from damage if
 Diagram 6.1
 <br/>
 
-Diagram 6.1 shows a typical connections for a dc brush motor driver sold in markets. $V_{Motor}$ is depended on the driver rating itself.
+Diagram 6.1 shows a typical connections for a dc brush motor driver sold in markets. Power supply voltage for the motor, $V_{Motor}$ is depended on the driver rating itself.
 <br/>
 
 <br/>
