@@ -42,7 +42,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
       TRISCbits.TRISC3 = 0;
       LATCbits.LATC3 = 0;
   ```
-  <br/>
+<br/>
 
 * Initialize timer 2 and PWM module.
 
