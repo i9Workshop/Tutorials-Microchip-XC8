@@ -4,3 +4,8 @@
 
 Programmable Switch Mode Controller, PSMC is a high-performance pulse width modulator, PWM that can be configured to operate in one of several modes to support single or multiple phase applications.
 <br/>
+
+Diagram 7.1
+<br/>
+Explaination.
+<br/>
