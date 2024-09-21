@@ -22,6 +22,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * Set pin direction to output at register TRISB - Page 120
 * Set pin for digital I/O purpose at register ANSELB - Page 121
   - PWM peripheral is digital output.
+* Set alternate pin function control register APFCON at CCP1SEL to use RB0.
 * Set pin direction to output at register TRISC - Page 125
 * Use macro to define motor direction can replace long register name in the code.
 
@@ -31,11 +32,14 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
   ```
   
   ```
-      TRISBbits.TRISB0 = 0;    // Pin for PWM
+      // Pin for PWM
+      TRISBbits.TRISB0 = 0;
       ANSELBbits.ANSB0 = 0;
+      APFCONbits.CCP1SEL = 1;  // Set alternate pin function to use RB0 for CCP1 output
       LATBbits.LATB0 = 0;
-      
-      TRISCbits.TRISC3 = 0;    // Pin for motor direction
+
+      // Pin for motor direction
+      TRISCbits.TRISC3 = 0;
       LATCbits.LATC3 = 0;
   ```
   <br/>
