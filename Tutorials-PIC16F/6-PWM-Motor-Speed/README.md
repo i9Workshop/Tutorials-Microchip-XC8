@@ -25,7 +25,6 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * Set alternate pin function control register APFCON at CCP1SEL to use RB0 - Page 111
 * Set pin direction to output at register TRISC - Page 125
 * Use macro to define motor direction can replace long register name in the code.
-  
   ```
   #define motor_Left()        LATCbits.LATC3 = 1
   #define motor_Right()       LATCbits.LATC3 = 0
@@ -44,10 +43,20 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
   ```
 <br/>
 
-* Initialize timer 2 and PWM module.
-
+* Initialize timer 2 and PWM module for 10bits resolution. Refer to Table 25-1 in page 253.
   ```
-  
+  void motor_Initialize(void) {
+      // Datasheet page 188
+      T2CONbits.T2OUTPS = 0;      // Set timer 2 output postscaler ratio to 1:1
+      T2CONbits.T2CKPS = 2;       // Set timer 2 clock prescaler to 16
+      
+      PR2 = 0xFF;                 // Set timer 2 period register to 0xFF
+      
+      T2CONbits.TMR2ON = 1;       // Turn on timer 2 module
+      
+      // Datasheet page 255
+      CCP1CONbits.CCP1M = 12;     // Set CCP register to use PWM mode
+  }
   ```
 <br/>
 
