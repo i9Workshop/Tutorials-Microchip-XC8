@@ -44,7 +44,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 
 <br/>
 
-* Initialize timer 2 and PWM module for 10bits resolution. Refer to Table 25-1 in page 253.
+* Initialize timer 2 and PWM module for 10bit resolution. Refer to Table 25-1 in page 253.
   
   ```
   void motor_Initialize(void) {
