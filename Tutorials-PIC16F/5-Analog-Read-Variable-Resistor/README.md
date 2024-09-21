@@ -47,7 +47,7 @@ C12 is used to debounce mechanical noise.
   ```
 <br/>
 
-## Read Digital Value of Analog
+## Read Digital Value of Analog Input
 * Set ADC positive and negative differential input.
 * Turn on ADC module and wait for acquisition time.
 * Calculation for acquisition time is in the datasheet page 152 and 153.
