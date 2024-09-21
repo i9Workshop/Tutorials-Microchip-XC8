@@ -143,7 +143,7 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
       delay_ms(10);           // Wait for LCD power supply rise time - Datasheet page 50
       
       // LCD command - Datasheet page 24
-      lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
+      lcd_PrintCmd(0x28);     // Set LCD to 4bit mode
       lcd_PrintCmd(0x02);     // Set DDRAM address counter to 0
       lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
       lcd_PrintCmd(0x06);     // Cursor is set to shift right
