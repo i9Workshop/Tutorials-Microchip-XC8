@@ -36,7 +36,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
       LATBbits.LATB0 = 0;
       
       TRISCbits.TRISC3 = 0;    // Pin for motor direction
-      LATCbits.LATC0 = 0;
+      LATCbits.LATC3 = 0;
   ```
   <br/>
 
