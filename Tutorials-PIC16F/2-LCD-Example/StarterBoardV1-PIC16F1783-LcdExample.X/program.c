@@ -116,7 +116,7 @@ void lcd_Initialize(void) {
     lcd_PrintCmd(0x32);
     
     // LCD command - Datasheet page 24
-    lcd_PrintCmd(0x28);     // Set LCD to 4-bit mode
+    lcd_PrintCmd(0x28);     // Set LCD to 4bit mode
     lcd_PrintCmd(0x02);     // Set DDRAM address counter to 0
     lcd_PrintCmd(0x0C);     // Display is set ON, cursor is set OFF, cursor blink is set OFF
     lcd_PrintCmd(0x06);     // Cursor is set to shift right
