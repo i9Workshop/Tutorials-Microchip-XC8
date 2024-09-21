@@ -23,7 +23,7 @@ C12 is used to debounce mechanical noise.
   ```
 <br/>
 
-* Initialize ADC module for 12bits data result.
+* Initialize ADC module for 12bit data result.
 
   ```
       void var_Initialize(void);
@@ -33,7 +33,7 @@ C12 is used to debounce mechanical noise.
   void var_Initialize(void) {
       // Datasheet page 147
       ADCON0bits.ADON = 0;    // Turn off ADC module
-      ADCON0bits.ADRMD = 0;   // Set ADC data format for a 12bits result
+      ADCON0bits.ADRMD = 0;   // Set ADC data format for a 12bit result
       
       // Datasheet page 148
       ADCON1bits.ADFM = 0;    // Set ADC result to use sign-magnitude format
@@ -55,8 +55,8 @@ C12 is used to debounce mechanical noise.
     >$T_{C} = 1.63\mu s$<br/>
     >$T_{ACQ} = 2\mu s + 1.63\mu s + 1.25\mu s = 4.88\mu s$<br/>
 * Start conversion and wait for it to complete.
-* Read ADC result or create a function to return 16bits data type and return the result.
-* Shift and combine both ADC results data bits high, ADRESH and low, ADRESL to arrange it into 16bits data form.
+* Read ADC result or create a function to return 16bit data type and return the result.
+* Shift and combine both ADC results data bits high, ADRESH and low, ADRESL to arrange it into 16bit data form.
 
 ```
     uint16_t var_Read(void);
