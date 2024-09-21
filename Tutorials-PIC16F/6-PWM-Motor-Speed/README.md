@@ -41,5 +41,15 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 ```
 <br/>
 
+* Initialize PWM module.
+
+  ```
+  
+  ```
+<br/>
+
+## Set PWM Output to Pin
+<br/>
+
 ## Example Program
 <br/>
