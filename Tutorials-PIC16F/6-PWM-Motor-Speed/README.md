@@ -19,6 +19,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 ## Define and Initialize Peripheral
+
 * Set pin direction to output at register TRISB - Page 120
 * Set pin for digital I/O purpose at register ANSELB - Page 121
   - PWM is digital output.
@@ -63,6 +64,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 ## Set PWM Output to Pin
+
 * The duty cycle of 10bit PWM module is between 0 to 1023.
 * Use 16bit data type of a variable then shift it to the register CCPR1L for MSB part and DC1B for LSB part.
   
@@ -75,4 +77,95 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 ## Example Program
+
+```
+void programLoop(void) {
+    uint16_t motorSpeed = 0;
+    
+    lcd_Goto(0, 0);
+    lcd_PrintString("PWM Motor Speed");
+    
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32(0, 4, false, true);
+    
+    while(1) {
+        if(!pb_Up) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Up   "); // Print on LCD
+            
+            if(motorSpeed<1023) motorSpeed +=25; // motorSpeed increment by 25
+            
+            if(motorSpeed > 1023) {
+                lcd_Goto(1, 0);
+                lcd_PrintDigitInt32(1023, 4, false, true);
+            }
+            
+            else {
+                lcd_Goto(1, 0);
+                lcd_PrintDigitInt32(motorSpeed, 4, false, true);
+            }
+            
+            delay_ms(90); // Wait for a while
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     "); // Print nothing on LCD
+            
+            delay_ms(10); // Wait for a while
+        }
+        
+        if(!pb_Down) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Down ");
+            
+            if(motorSpeed>0) motorSpeed -=25; // motorSpeed decrement by 25
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(motorSpeed, 4, false, true);
+            
+            delay_ms(90);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            delay_ms(10);
+        }
+        
+        if(!pb_Left) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Left ");
+            
+            motor_Left();
+            if(motorSpeed > 1023) motor_SetSpeed(1023);
+            else motor_SetSpeed(motorSpeed);
+            
+            while(!pb_Left);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            pb_DelayDebounce();
+        } else {
+            motor_SetSpeed(0);
+        }
+        
+        if(!pb_Right) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Right");
+            
+            motor_Right();
+            if(motorSpeed > 1023) motor_SetSpeed(1023);
+            else motor_SetSpeed(motorSpeed);
+            
+            while(!pb_Right);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            pb_DelayDebounce();
+        } else {
+            motor_SetSpeed(0);
+        }
+    }
+}
+```
 <br/>
