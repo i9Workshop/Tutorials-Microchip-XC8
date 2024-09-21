@@ -25,6 +25,8 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * Set alternate pin function control register APFCON at CCP1SEL to use RB0 - Page 111
 * Set pin direction to output at register TRISC - Page 125
 * Use macro to define motor direction can replace long register name in the code.
+
+  <br/>
   
   ```
   #define motor_Left()        LATCbits.LATC3 = 1
