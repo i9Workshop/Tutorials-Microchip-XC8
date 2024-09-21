@@ -7,7 +7,7 @@ DC brush motor uses very high power than MCU thus a driver circuit is needed to 
 Saperate the circuitory adds the advantage which protects the MCU from damage if fault occurs at driver circuit.
 <br/>
 
-![DC Brush Motor Driver](https://github.com/user-attachments/assets/76036b17-c88a-4c2b-88d5-91d7dc167d80)
+![DC Brush Motor Driver](https://github.com/user-attachments/assets/b1ee6b56-5233-4721-9f76-1066054598e4)
 <br/>
 Diagram 6.1
 <br/>
