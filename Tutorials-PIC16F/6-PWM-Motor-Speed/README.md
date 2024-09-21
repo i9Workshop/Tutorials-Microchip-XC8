@@ -4,7 +4,7 @@
 <br/>
 DC brush motor rotation speed can be controlled by using PWM. 
 DC brush motor uses very high power supply than MCU thus a driver circuit is needed to control direction and speed. 
-Saperate the circuitory adds the advantage which protects the MCU from damage if fault occurs at driver circuit.
+Saperation of driver and MCU circuitory adds the advantage which protects the MCU from damage if fault occurs at driver circuit.
 <br/>
 
 ![DC Brush Motor Driver](https://github.com/user-attachments/assets/633dbbe0-339f-41f6-a6da-73c433815a58)
