@@ -1,4 +1,4 @@
-# Pulse Width Modulation Motor Speed
+# Pulse Width Modulation - Motor Speed
 
 ![Motor-DC-Brush-1](https://github.com/user-attachments/assets/8efb1921-d0e7-4e3f-af0b-922a036f3b66)
 <br/>
