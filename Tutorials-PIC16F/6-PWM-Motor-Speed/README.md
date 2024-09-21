@@ -19,6 +19,19 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 ## Define and Initialize Peripheral
+* Set pin direction to output at register TRISB - Page 120
+* Set pin for digital I/O purpose at register ANSELB - Page 121
+  - PWM peripheral is digital output.
+* Set pin direction to output at register TRISC - Page 125
+
+```
+    TRISBbits.TRISB0 = 0;    // Pin for PWM
+    ANSELBbits.ANSB0 = 0;
+    LATBbits.LATB0 = 0;
+    
+    TRISCbits.TRISC3 = 0;    // Pin for motor direction
+    LATCbits.LATC0 = 0;
+```
 <br/>
 
 ## Example Program
