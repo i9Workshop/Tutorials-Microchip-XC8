@@ -63,6 +63,15 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 ## Set PWM Output to Pin
+* The duty cycle of 10bit PWM module is between 0 to 1023.
+* Use 16bit data type of a variable then shit it to the register CCPR1L for MSB part and DC1B for LSB part.
+  
+  ```
+  void motor_SetSpeed(uint16_t pwm) {
+      CCPR1L = (uint8_t)(pwm>>2);     // CCPR1L is the MSB of the PWM duty cycle
+      CCP1CONbits.DC1B = pwm & 0x03;  // DC1B is the LSB of the PWM duty cycle
+  }
+  ```
 <br/>
 
 ## Example Program
