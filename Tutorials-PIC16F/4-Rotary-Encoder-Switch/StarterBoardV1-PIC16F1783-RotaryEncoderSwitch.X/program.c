@@ -74,7 +74,7 @@ void programLoop(void) {
             led1 = 0;
         }
         
-        encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bits data, encoderData
+        encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bit data, encoderData
         
         if(encoderData==0x03) {
             // Do nothing
