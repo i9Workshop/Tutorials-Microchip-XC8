@@ -41,6 +41,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
       LATCbits.LATC3 = 0;
   ```
 
+
 * Initialize timer 2 and PWM module for 10bits resolution. Refer to Table 25-1 in page 253.
   
   ```
