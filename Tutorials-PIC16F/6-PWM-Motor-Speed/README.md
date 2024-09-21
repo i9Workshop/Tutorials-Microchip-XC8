@@ -24,22 +24,21 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
   - PWM peripheral is digital output.
 * Set pin direction to output at register TRISC - Page 125
 * Use macro to define motor direction can replace long register name in the code.
-<br/>
 
-```
-#define motor_Left()        LATCbits.LATC3 = 1
-#define motor_Right()       LATCbits.LATC3 = 0
-```
-
-```
-    TRISBbits.TRISB0 = 0;    // Pin for PWM
-    ANSELBbits.ANSB0 = 0;
-    LATBbits.LATB0 = 0;
-    
-    TRISCbits.TRISC3 = 0;    // Pin for motor direction
-    LATCbits.LATC0 = 0;
-```
-<br/>
+  ```
+  #define motor_Left()        LATCbits.LATC3 = 1
+  #define motor_Right()       LATCbits.LATC3 = 0
+  ```
+  
+  ```
+      TRISBbits.TRISB0 = 0;    // Pin for PWM
+      ANSELBbits.ANSB0 = 0;
+      LATBbits.LATB0 = 0;
+      
+      TRISCbits.TRISC3 = 0;    // Pin for motor direction
+      LATCbits.LATC0 = 0;
+  ```
+  <br/>
 
 * Initialize PWM module.
 
