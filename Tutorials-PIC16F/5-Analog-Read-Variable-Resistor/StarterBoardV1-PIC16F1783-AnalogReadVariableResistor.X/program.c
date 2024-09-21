@@ -250,7 +250,7 @@ void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZe
 void var_Initialize(void) {
     // Datasheet page 147
     ADCON0bits.ADON = 0;    // Turn off ADC module
-    ADCON0bits.ADRMD = 0;   // Set ADC data format for a 12bits result
+    ADCON0bits.ADRMD = 0;   // Set ADC data format for a 12bit result
     
     // Datasheet page 148
     ADCON1bits.ADFM = 0;    // Set ADC result to use sign-magnitude format
