@@ -56,7 +56,7 @@ The minimum value for debounce capacitor is suggested in datasheet page 2.
 
 * Use bitwise operand left shift, '<<' to read the clock pulse thus determine the rotation direction.
   ```
-      uint8_t encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bits data, encoderData
+      uint8_t encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bit data, encoderData
       
       if(encoderData==0x03) { // Condition if both clock are high
           // Do nothing
@@ -110,7 +110,7 @@ void programLoop(void) {
             led1 = 0;
         }
         
-        encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bits data, encoderData
+        encoderData = ((res_ClkA<<1) | res_ClkB) & 0x03; // Clock pulse is written into 8bit data, encoderData
         
         if(encoderData==0x03) {
             // Do nothing
