@@ -40,7 +40,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
   ```
   <br/>
 
-* Initialize Timer 2 and PWM module.
+* Initialize timer 2 and PWM module.
 
   ```
   
