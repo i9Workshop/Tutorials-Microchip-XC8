@@ -21,10 +21,11 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 ## Define and Initialize Peripheral
 * Set pin direction to output at register TRISB - Page 120
 * Set pin for digital I/O purpose at register ANSELB - Page 121
-  - PWM peripheral is digital output.
+  - PWM peripheral is digital output
 * Set alternate pin function control register APFCON at CCP1SEL to use RB0 - Page 111
 * Set pin direction to output at register TRISC - Page 125
-* Use macro to define motor direction can replace long register name in the code.
+* Use macro to define motor direction can replace long register name in the code
+  
   ```
   #define motor_Left()        LATCbits.LATC3 = 1
   #define motor_Right()       LATCbits.LATC3 = 0
@@ -44,6 +45,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 <br/>
 
 * Initialize timer 2 and PWM module for 10bits resolution. Refer to Table 25-1 in page 253.
+  
   ```
   void motor_Initialize(void) {
       // Datasheet page 188
