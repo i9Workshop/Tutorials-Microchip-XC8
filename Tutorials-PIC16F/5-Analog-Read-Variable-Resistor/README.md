@@ -93,7 +93,7 @@ void programLoop(void) {
     while(1) {
         led1 = ~led1; // LCD refresh and read variable resistor voltage rate indicator
         
-        uint16_t varValue = var_Read(); // read digital value of analog input
+        uint16_t varValue = var_Read(); // Read digital value of analog input
         
         lcd_Goto(1, 0);
         lcd_PrintDigitInt32(varValue, 4, false, true);
