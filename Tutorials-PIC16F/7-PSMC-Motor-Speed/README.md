@@ -6,6 +6,6 @@ Programmable Switch Mode Controller, PSMC is a high-performance pulse width modu
 <br/>
 
 Diagram 7.1
-<br/>
+
 Explaination.
 <br/>
