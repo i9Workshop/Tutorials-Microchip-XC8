@@ -27,6 +27,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * Use macro to define motor direction can replace long register name in the code.
 
 <br/>
+
   ```
   #define motor_Left()        LATCbits.LATC3 = 1
   #define motor_Right()       LATCbits.LATC3 = 0
