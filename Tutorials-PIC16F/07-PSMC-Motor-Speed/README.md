@@ -12,3 +12,18 @@ Diagram 7.1
 
 Refer to tutorial [PWM motor speed](https://github.com/i9Workshop/Tutorials-Microchip-XC8/tree/main/Tutorials-PIC16F/6-PWM-Motor-Speed).
 <br/>
+
+## Define and Initialize Peripheral
+
+<br/>
+
+## Example Program
+
+<br/>
+
+## MPLabX Code
+
+* link
+<br/>
+
+<br/>
