@@ -320,7 +320,8 @@ void lcd_PrintDigitInt32(int32_t number, uint8_t noDigit, bool enSign, bool enZe
 <br/>
 
 ## MPLabX Code
-https://github.com/i9Workshop/StarterBoardV1-LcdExample
+
+* https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-LcdExample
 <br/>
 
 <br/>
