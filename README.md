@@ -14,7 +14,7 @@ To be completed soon...
 
 <br/>
 
-## Create MPLABX Project
+## Create MPLabX Project
 
 1.  Create new project.<br/>
 ![MPLABX-CreateNewProject](https://github.com/user-attachments/assets/0bf2c85f-e732-49f7-ab3e-7218e977fa6a)
