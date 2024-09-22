@@ -117,7 +117,7 @@ void delay_ms(uint32_t delay) {
 
 ## MPLabX Code
 
-* https://github.com/i9Workshop/StarterBoardV1-ClockConfigAndLedBlink/tree/main
+* https://github.com/i9Workshop/StarterBoardV1-ClockConfigAndLedBlink
 
 <br/>
 
