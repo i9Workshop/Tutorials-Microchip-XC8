@@ -80,7 +80,7 @@ or
 
 ## MPLabX Code
 
-https://github.com/i9Workshop/StarterBoardV1-ClockConfigAndLedBlink/tree/main
+https://github.com/i9Workshop/StarterBoardV1-ClockConfigAndLedBlink
 <br/>
 
 <br/>
