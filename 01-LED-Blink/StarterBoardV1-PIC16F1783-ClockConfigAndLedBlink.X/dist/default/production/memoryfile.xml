@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\StarterBoardV1-PIC16F1783-ClockConfigAndLedBlink.X.production.hex">
+    <memory name="program">
+      <units>words</units>
+      <length>4096</length>
+      <used>140</used>
+      <free>3956</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>512</length>
+      <used>17</used>
+      <free>495</free>
+    </memory>
+  </executable>
+</project>
