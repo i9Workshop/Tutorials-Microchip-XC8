@@ -2,7 +2,7 @@
 
 ![Motor-DC-Brush-1](https://github.com/user-attachments/assets/8efb1921-d0e7-4e3f-af0b-922a036f3b66)
 <br/>
-DC brush motor rotation speed can be controlled by using PWM. 
+DC brush motor rotation speed can be control by using PWM. 
 DC brush motor uses very high power supply than MCU thus a driver circuit is needed to control direction and speed. 
 Saperation of driver and MCU circuitory adds the advantage which protects the MCU from damage if fault occurs at driver circuit.
 <br/>
