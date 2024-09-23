@@ -4,7 +4,7 @@
 
 Programmable Switch Mode Controller, PSMC is a high-performance pulse width modulator, PWM that can be configured to operate in one of several modes to support single or multiple phase applications. 
 PSMC module has 16bit duty cycle resolution. PSMC module has its own timer thus can free up timer 2 module for another purpose. 
-Besides that, PSMC can be use to control Electronics Speed Controller, ESC a driver for three phase brushless motor.
+Besides that, PSMC can be use to control Electronics Speed Controller, ESC a driver for three phase brushless, BLDC motor.
 <br/>
 
 ![DC-Brush-Motor-Driver-PSMC](https://github.com/user-attachments/assets/23eef140-f639-43d2-bcb2-e475978d1759)
