@@ -2,7 +2,7 @@
 ![RES-1](https://github.com/user-attachments/assets/ae58243e-5199-4a48-b2e9-a9a76bc397ba)
 ![RES-2](https://github.com/user-attachments/assets/a1f6082f-09ba-4ee3-b585-bb08a92fb0f4)
 <br/>
-This rotary encoder has two clock outputs A and B, equiped with a pressable knob switch. Both clock outputs can be use to determine the rotation direction. 
+This rotary encoder has two clock outputs A and B, equiped with a pressable knob switch. Both clock outputs can be used to determine the rotation direction. 
 Refer to rotary encoder switch [datasheet](https://docs.rs-online.com/6487/0900766b813ecfbe.pdf).
 <br/>
 
