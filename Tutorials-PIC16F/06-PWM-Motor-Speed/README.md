@@ -68,7 +68,7 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 
 ## Set PWM Output to Pin
 
-* The duty cycle of 10bit PWM module is between 0 to 1023.
+* Duty cycle of 10bit PWM module is between 0 to 1023.
 * Use 16bit data type of a variable then shift it to the register CCPR1L for MSB part and DC1B for LSB part.
   
   ```
