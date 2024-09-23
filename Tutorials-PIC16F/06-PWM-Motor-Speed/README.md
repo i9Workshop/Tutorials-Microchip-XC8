@@ -48,6 +48,9 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * Initialize timer 2 and PWM module for 10bit resolution. Refer to Table 25-1 in page 253.
   
   ```
+      void motor_Initialize(void);
+  ```
+  ```
   void motor_Initialize(void) {
       // Datasheet page 188
       T2CONbits.T2OUTPS = 0;      // Set timer 2 output postscaler ratio to 1:1
@@ -68,6 +71,9 @@ Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direct
 * The duty cycle of 10bit PWM module is between 0 to 1023.
 * Use 16bit data type of a variable then shift it to the register CCPR1L for MSB part and DC1B for LSB part.
   
+  ```
+      void motor_SetSpeed(uint16_t pwm);
+  ```
   ```
   void motor_SetSpeed(uint16_t pwm) {
       CCPR1L = (uint8_t)(pwm>>2);     // CCPR1L is the MSB of the PWM duty cycle
