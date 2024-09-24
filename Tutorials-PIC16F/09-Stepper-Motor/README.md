@@ -1,4 +1,4 @@
-# Two Phase Stepper Motor
+# Bipolar Stepper Motor
 <br/>
 
 ## Define and Initialize Peripheral
