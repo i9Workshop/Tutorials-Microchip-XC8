@@ -20,7 +20,7 @@ Rotation of stepper motor needs sequencial coil activation to move the rotor. Th
 * Full step - Activation of one coil at one time.
   >$A \rightarrow B \rightarrow \overline{A} \rightarrow \overline{B}$
 * Half step - Activation of both coil at one time to position the rotor pole in between two coils.
-  >$$
+  >$A \rightarrow AB \rightarrow B \rightarrow \overline{A}B \rightarrow \overline{A} \rightarrow \overline{A}\overline{B} \rightarrow \overline{B} \rightarrow A\overline{B}$
 * Micro step - Activation of coils required sophisticated driver to control current flow in the coil to achieved minute position of the rotor by using the same method of half step sequences.
 <br/>
 
