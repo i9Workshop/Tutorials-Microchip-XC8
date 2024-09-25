@@ -8,6 +8,12 @@ Bipolar stepper motor has a stator drived by two coil. Hence, a driver which can
 
 <br/>
 
+![Diagram-Stepper-Motor](https://github.com/user-attachments/assets/6276f312-ebeb-426c-beb8-196cbf77a9c7)
+<br/>
+Diagram 9.1
+
+Diagram 9.1 on the right is a simplified model of stepper motor using a single magnet pole for a $180^\circ$ for a full step rotation. The actual stepper motor has many magnet pole and coil to make a very small step. The typical wire arrangment respective to the coil winding is in Diagram 9.1 on the left.
+
 ## Define and Initialize Peripheral
 
 <br/>
