@@ -8,7 +8,7 @@ Bipolar stepper motor is a bruhless motor which has a stator drived by two set o
 
 <br/>
 
-![Diagram-Stepper-Motor](https://github.com/user-attachments/assets/ae45dc4f-b7b1-485d-a0ce-15162de08f46)
+![Diagram-Stepper-Motor-2](https://github.com/user-attachments/assets/94a916c2-7e2c-4d01-be13-d6acf3dd0a63)
 <br/>
 Diagram 9.1
 
