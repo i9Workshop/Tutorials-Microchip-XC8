@@ -8,7 +8,7 @@ Bipolar stepper motor has a stator drived by two coil. Hence, a driver which can
 
 <br/>
 
-![Diagram-Stepper-Motor](https://github.com/user-attachments/assets/a2658671-7061-4ac1-9dd6-8242d79ddaa4)
+![Diagram-Stepper-Motor](https://github.com/user-attachments/assets/5d429ffb-5293-48a5-94c3-37f269928e87)
 <br/>
 Diagram 9.1
 
