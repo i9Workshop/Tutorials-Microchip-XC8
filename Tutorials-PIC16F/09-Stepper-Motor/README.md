@@ -16,11 +16,12 @@ Diagram 9.1 on the right is a simplified model of stepper motor using a single m
 The actual stepper motor has many magnet pole on the rotor and multiple coil to make a very small step. The typical wires arrangment respective to the coil windings is in Diagram 9.1 on the left.
 <br/>
 
-Rotation of actual stepper motor needs squencial coil activation to move the rotor. There can be three mode of steps which are.
+Rotation of stepper motor needs squencial coil activation to move the rotor. There can be three mode of steps which are.
 * Single-phase step, activation of one coil at one time.
   >$A \rightarrow B \rightarrow \overline{A} \rightarrow \overline{B}$
 * Half step,
-* >$$
+  >$$
+* 
 <br/>
 
 <br/>
