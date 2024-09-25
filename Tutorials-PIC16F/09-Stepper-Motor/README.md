@@ -21,7 +21,7 @@ Rotation of stepper motor needs squencial coil activation to move the rotor. The
   >$A \rightarrow B \rightarrow \overline{A} \rightarrow \overline{B}$
 * Half step - Activation of both coil at one time to position the rotor pole in between coil.
   >$$
-* Micro step - Activation of coils required sophisticated driver to control current flow in the coil to to achieved minute position of the rotor by using half step sequence.
+* Micro step - Activation of coils required sophisticated driver to control current flow in the coil to achieved minute position of the rotor by using half step sequence.
 <br/>
 
 <br/>
