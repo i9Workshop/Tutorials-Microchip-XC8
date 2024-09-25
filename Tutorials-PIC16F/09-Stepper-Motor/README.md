@@ -17,11 +17,11 @@ The actual stepper motor has many magnet pole on the rotor and multiple coil to 
 <br/>
 
 Rotation of stepper motor needs squencial coil activation to move the rotor. There can be three mode of steps which are.
-* Single-phase step, activation of one coil at one time.
+* Full step - Activation of one coil at one time.
   >$A \rightarrow B \rightarrow \overline{A} \rightarrow \overline{B}$
-* Half step,
+* Half step - Activation of both coil at one time to position the rotor pole in between coil.
   >$$
-* 
+* Micro step - Activation of coils required sophisticated driver to control current flow in the coil to to control minute movement of the rotor by using half step sequence.
 <br/>
 
 <br/>
