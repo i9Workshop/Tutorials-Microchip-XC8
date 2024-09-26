@@ -7,7 +7,7 @@ DC brush motor uses very high power supply than MCU thus a driver circuit is nee
 Saperation of driver and MCU circuitory adds the advantage which protects the MCU from damage if fault occurs at driver circuit.
 <br/>
 
-![Circuit-DC-Brush-Motor-CCP](https://github.com/user-attachments/assets/c2a7047f-7e65-4205-a777-05048fb90bbe)
+![Circuit-DC-Brush-Motor-CCP](https://github.com/user-attachments/assets/f8359692-110c-469f-99c7-7d7d31066bed)
 <br/>
 Diagram 6.1
 <br/>
