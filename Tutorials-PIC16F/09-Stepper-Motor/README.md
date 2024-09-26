@@ -194,7 +194,7 @@ void programLoop(void) {
             smotor_Rest();
         }
         
-        if(!pb_Down) { // Set stepper motor to original angle position
+        if(!pb_Down) { // Rotate stepper motor to original angle position
             while(angleStep>0) {
                 stepMotor--;
                 if(stepMotor<1) stepMotor = 8;
