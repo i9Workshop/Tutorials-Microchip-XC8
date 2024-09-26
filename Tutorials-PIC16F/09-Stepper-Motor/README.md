@@ -13,7 +13,7 @@ Bipolar stepper motor is a bruhless motor which has a stator drived by two set o
 Diagram 9.1
 
 Diagram 9.1 on the right is a simplified model of stepper motor using a single magnet pole as rotor for a $90^\circ$ full step rotation. 
-The actual stepper motor has many magnet pole on the rotor and multiple coil to make a very small step. The typical wires arrangment respective to the coil windings is in Diagram 9.1 on the left.
+The actual stepper motor has many magnet pole on the rotor and multiple coil to make a very small degree of step refer to its own datasheet. The typical wires arrangment respective to the coil windings is in Diagram 9.1 on the left.
 <br/>
 
 Rotation of stepper motor needs sequencial coil activation to move the rotor. There can be three mode of steps which are.
