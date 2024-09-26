@@ -56,6 +56,11 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
       TRISCbits.TRISC1 = 0;
       TRISCbits.TRISC3 = 0;
       TRISCbits.TRISC4 = 0;
+      
+      LATBbits.LATB0 = 0;
+      LATCbits.LATC1 = 0;
+      LATCbits.LATC3 = 0;
+      LATCbits.LATC4 = 0;
   ```
 <br/>
 
