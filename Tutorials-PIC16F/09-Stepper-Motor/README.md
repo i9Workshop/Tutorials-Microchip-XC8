@@ -61,6 +61,87 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
 
 ## Create Function for Stepper Motor
 
+* Define states for stepper motor.
+  ```
+  #define NEUTRAL             0
+  #define CLOCKWISE           1
+  #define COUNTER_CLOCKWISE   2
+  ```
+  
+* Stepper motor coil activation function.
+  ```
+  // Set stepper motor at rest
+  void smotor_Rest(void) {
+      smotor_Out1 = 0;
+      smotor_Out2 = 0;
+      smotor_Out3 = 0;
+      smotor_Out4 = 0;
+  }
+  
+  // Set stepper motor half-step sequence
+  uint8_t smotor_MoveStep(uint8_t step) {
+      switch(step) {
+          case 1: // A
+              smotor_Out1 = 1;
+              smotor_Out2 = 0;
+              smotor_Out3 = 0;
+              smotor_Out4 = 0;
+              return step;
+              
+          case 2: // AB
+              smotor_Out1 = 1;
+              smotor_Out2 = 0;
+              smotor_Out3 = 1;
+              smotor_Out4 = 0;
+              return step;
+              
+          case 3: // B
+              smotor_Out1 = 0;
+              smotor_Out2 = 0;
+              smotor_Out3 = 1;
+              smotor_Out4 = 0;
+              return step;
+              
+          case 4: // A!B
+              smotor_Out1 = 0;
+              smotor_Out2 = 1;
+              smotor_Out3 = 1;
+              smotor_Out4 = 0;
+              return step;
+              
+          case 5: // !A
+              smotor_Out1 = 0;
+              smotor_Out2 = 1;
+              smotor_Out3 = 0;
+              smotor_Out4 = 0;
+              return step;
+              
+          case 6: // !A!B
+              smotor_Out1 = 0;
+              smotor_Out2 = 1;
+              smotor_Out3 = 0;
+              smotor_Out4 = 1;
+              return step;
+              
+          case 7: // !B
+              smotor_Out1 = 0;
+              smotor_Out2 = 0;
+              smotor_Out3 = 0;
+              smotor_Out4 = 1;
+              return step;
+              
+          case 8: // A!B
+              smotor_Out1 = 1;
+              smotor_Out2 = 0;
+              smotor_Out3 = 0;
+              smotor_Out4 = 1;
+              return step;
+              
+          default:
+              return 0;
+      }
+  }
+  ```
 <br/>
 
 ## Example Program
