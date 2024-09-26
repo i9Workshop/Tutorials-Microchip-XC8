@@ -59,7 +59,7 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
   ```
 <br/>
 
-## Create Function for Step Sequence
+## Create Function for Stepper Motor
 
 <br/>
 
