@@ -67,8 +67,14 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
   #define CLOCKWISE           1
   #define COUNTER_CLOCKWISE   2
   ```
+  <br/>
   
 * Stepper motor coil activation function.
+  ```
+  void smotor_Rest(void);
+  void smotor_MoveStep(uint8_t step);
+  ```
+  
   ```
   // Set stepper motor at rest
   void smotor_Rest(void) {
@@ -79,66 +85,66 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
   }
   
   // Set stepper motor half-step sequence
-  uint8_t smotor_MoveStep(uint8_t step) {
+  void smotor_MoveStep(uint8_t step) {
       switch(step) {
           case 1: // A
               smotor_Out1 = 1;
               smotor_Out2 = 0;
               smotor_Out3 = 0;
               smotor_Out4 = 0;
-              return step;
+              break;
               
           case 2: // AB
               smotor_Out1 = 1;
               smotor_Out2 = 0;
               smotor_Out3 = 1;
               smotor_Out4 = 0;
-              return step;
+              break;
               
           case 3: // B
               smotor_Out1 = 0;
               smotor_Out2 = 0;
               smotor_Out3 = 1;
               smotor_Out4 = 0;
-              return step;
+              break;
               
           case 4: // A!B
               smotor_Out1 = 0;
               smotor_Out2 = 1;
               smotor_Out3 = 1;
               smotor_Out4 = 0;
-              return step;
+              break;
               
           case 5: // !A
               smotor_Out1 = 0;
               smotor_Out2 = 1;
               smotor_Out3 = 0;
               smotor_Out4 = 0;
-              return step;
+              break;
               
           case 6: // !A!B
               smotor_Out1 = 0;
               smotor_Out2 = 1;
               smotor_Out3 = 0;
               smotor_Out4 = 1;
-              return step;
+              break;
               
           case 7: // !B
               smotor_Out1 = 0;
               smotor_Out2 = 0;
               smotor_Out3 = 0;
               smotor_Out4 = 1;
-              return step;
+              break;
               
           case 8: // A!B
               smotor_Out1 = 1;
               smotor_Out2 = 0;
               smotor_Out3 = 0;
               smotor_Out4 = 1;
-              return step;
+              break;
               
           default:
-              return 0;
+              break;
       }
   }
   ```
