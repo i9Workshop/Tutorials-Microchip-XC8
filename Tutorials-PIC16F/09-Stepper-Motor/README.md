@@ -37,6 +37,30 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
 
 ## Define and Initialize Peripheral
 
+* Set pin direction to output at register TRISB - Page 120
+* Set pin for digital I/O purpose at register ANSELB - Page 121
+* Set pin direction to output at register TRISC - Page 125
+
+  ```
+  #define smotor_Out1        LATCbits.LATC1
+  #define smotor_Out2        LATBbits.LATB0
+  #define smotor_Out3        LATCbits.LATC4
+  #define smotor_Out4        LATCbits.LATC3
+  ```
+  
+  ```
+      // Pin to input stepper motor driver
+      TRISBbits.TRISB0 = 0;
+      ANSELBbits.ANSB0 = 0;
+      
+      TRISCbits.TRISC1 = 0;
+      TRISCbits.TRISC3 = 0;
+      TRISCbits.TRISC4 = 0;
+  ```
+<br/>
+
+## Create Function for Step Sequence
+
 <br/>
 
 ## Example Program
