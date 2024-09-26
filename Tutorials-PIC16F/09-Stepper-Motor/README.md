@@ -167,7 +167,7 @@ void programLoop(void) {
     uint8_t direction = NEUTRAL; // Set direction as neutral in the beginning
     
     while(1) {
-        while(!pb_Right) {
+        while(!pb_Right) { // Rotate stepper motor clockwise
             stepMotor++; // Increment for step
             if(stepMotor>8) stepMotor = 1; // If step is larger then 8th then step will become 1st
             
@@ -185,7 +185,7 @@ void programLoop(void) {
             smotor_Rest();
         }
         
-        while(!pb_Left) {
+        while(!pb_Left) { // Rotate stepper motor counter clockwise
             stepMotor--; // Decrement for step
             if(stepMotor<1) stepMotor = 8; // If step is lesser then 1st then step will become 8th
             
@@ -203,7 +203,7 @@ void programLoop(void) {
             smotor_Rest();
         }
         
-        if(!pb_Down) {
+        if(!pb_Down) { // Set stepper motor to original angle position
             while(angleStep>0) {
                 stepMotor--;
                 if(stepMotor<1) stepMotor = 8;
