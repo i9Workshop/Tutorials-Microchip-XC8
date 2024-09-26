@@ -198,10 +198,10 @@ void programLoop(void) {
                 
                 angleStep--;
                 
-                delay_ms(delay);
-                
                 lcd_Goto(1, 0);
                 lcd_PrintDigitInt32(angleStep, 8, true, true);
+                
+                delay_ms(delay);
                 
                 smotor_Rest();
             }
@@ -214,10 +214,10 @@ void programLoop(void) {
                 
                 angleStep++;
                 
-                delay_ms(delay);
-                
                 lcd_Goto(1, 0);
                 lcd_PrintDigitInt32(angleStep, 8, true, true);
+                
+                delay_ms(delay);
                 
                 smotor_Rest();
             }
