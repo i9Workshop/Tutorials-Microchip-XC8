@@ -105,7 +105,7 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
               smotor_Out4 = 0;
               break;
               
-          case 4: // A!B
+          case 4: // !AB
               smotor_Out1 = 0;
               smotor_Out2 = 1;
               smotor_Out3 = 1;
