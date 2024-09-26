@@ -76,7 +76,7 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
   ```
   
   ```
-  // Set stepper motor at rest
+  // Set stepper motor driver at rest
   void smotor_Rest(void) {
       smotor_Out1 = 0;
       smotor_Out2 = 0;
@@ -152,6 +152,97 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
 
 ## Example Program
 
+```
+void programLoop(void) {
+    lcd_Goto(0, 0);
+    lcd_PrintString("Stepper Motor");
+    
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32(0, 8, true, true); // Display angle step on LCD
+    
+    uint8_t stepMotor = 1; // Variable for stepper motor sequence
+    uint32_t delay = 10; // Variable for wait before next motor step
+    int32_t angleStep = 0; // Variable to track angle step
+    
+    uint8_t direction = NEUTRAL; // Set direction as neutral in the beginning
+    
+    while(1) {
+        while(!pb_Right) {
+            stepMotor++; // Increment for step
+            if(stepMotor>8) stepMotor = 1; // If step is larger then 8th then step will become 1st
+            
+            smotor_MoveStep(stepMotor); // Move stepper motor
+            
+            angleStep++; // Increment for distance
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(angleStep, 8, true, true); // Display angle step on LCD
+            
+            delay_ms(delay); // Wait before next step
+            
+            direction = CLOCKWISE; // Set direction to clockwise
+            
+            smotor_Rest();
+        }
+        
+        while(!pb_Left) {
+            stepMotor--; // Decrement for step
+            if(stepMotor<1) stepMotor = 8; // If step is lesser then 1st then step will become 8th
+            
+            smotor_MoveStep(stepMotor); // Move stepper motor
+            
+            angleStep--; // Increment for distance
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(angleStep, 8, true, true); // Display angle step on LCD
+            
+            delay_ms(delay); // Wait before next step
+            
+            direction = COUNTER_CLOCKWISE; // Set direction to counter clockwise
+            
+            smotor_Rest();
+        }
+        
+        if(!pb_Down) {
+            while(angleStep>0) {
+                stepMotor--;
+                if(stepMotor<1) stepMotor = 8;
+                
+                smotor_MoveStep(stepMotor);
+                
+                angleStep--;
+                
+                delay_ms(delay);
+                
+                lcd_Goto(1, 0);
+                lcd_PrintDigitInt32(angleStep, 8, true, true);
+                
+                if(angleStep==0) direction = NEUTRAL;
+                
+                smotor_Rest();
+            }
+            
+            while(angleStep<0) {
+                stepMotor++;
+                if(stepMotor>8) stepMotor = 1;
+                
+                smotor_MoveStep(stepMotor);
+                
+                angleStep++;
+                
+                delay_ms(delay);
+                
+                lcd_Goto(1, 0);
+                lcd_PrintDigitInt32(angleStep, 8, true, true);
+                
+                if(angleStep==0) direction = NEUTRAL;
+                
+                smotor_Rest();
+            }
+        }
+    }
+}
+```
 <br/>
 
 ## MPLabX Code
