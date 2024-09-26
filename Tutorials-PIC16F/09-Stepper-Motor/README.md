@@ -8,7 +8,7 @@ Bipolar stepper motor is a bruhless motor which has a stator drived by two set o
 
 <br/>
 
-![Diagram-Stepper-Motor-2](https://github.com/user-attachments/assets/94a916c2-7e2c-4d01-be13-d6acf3dd0a63)
+![Diagram Stepper Motor](https://github.com/user-attachments/assets/d8f28c1d-f577-48aa-8398-9e57d2670817)
 <br/>
 Diagram 9.1
 
@@ -22,6 +22,15 @@ Rotation of stepper motor needs sequencial coil activation to move the rotor. Th
 * Half step - Activation of both coil at one time to position the rotor pole in between two coils.
   >$A \rightarrow AB \rightarrow B \rightarrow \overline{A}B \rightarrow \overline{A} \rightarrow \overline{A}\overline{B} \rightarrow \overline{B} \rightarrow A\overline{B}$
 * Micro step - Activation of coils required sophisticated driver to control current flow in the coil to achieved minute position of the rotor by using the same method of half step sequences.
+<br/>
+
+<br/>
+
+![Circuit-Stepper-Motor](https://github.com/user-attachments/assets/b1e354c7-303e-452e-b174-a78e3b33f7dc)
+<br/>
+Schematic 9.2
+
+Explain.
 <br/>
 
 <br/>
