@@ -8,7 +8,7 @@ Bipolar stepper motor is a bruhless motor which has a stator drived by two set o
 
 <br/>
 
-![Diagram-Stepper-Motor](https://github.com/user-attachments/assets/92ea69bf-3b95-49f8-9cb4-40c0f3993bd8)
+![Diagram-Bipolar-Stepper-Motor](https://github.com/user-attachments/assets/834abaef-2383-4b4b-98f7-db8e2546a791)
 <br/>
 Diagram 9.1
 
@@ -26,7 +26,7 @@ Rotation of stepper motor needs sequencial coil activation to move the rotor. Th
 
 <br/>
 
-![Circuit-Stepper-Motor](https://github.com/user-attachments/assets/b1e354c7-303e-452e-b174-a78e3b33f7dc)
+![Circuit-Bipolar-Stepper-Motor](https://github.com/user-attachments/assets/2b538998-2047-4957-ae03-ff01379ccd49)
 <br/>
 Schematic 9.2
 
