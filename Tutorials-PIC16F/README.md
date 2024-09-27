@@ -124,7 +124,7 @@ void delay_ms(uint32_t delay) {
     Value for $T_{PWRT}$ and $T_{T_{OST}}$ are refered to Table 30-10 in page 374.
     >$T_{DPU} = T_{PWRT} + T_{OST} = 140ms + 1024Cycle_{Instruction} = 140ms + (1024*\frac{1}{32Mhz} \times{} 4) = 140ms + 128\mu s = 140.128ms$
 
-  
+  <br/>
   ```
   void main(void) {
       delay_ms(200); // Wait for power up, depended on PSU to power up timing
