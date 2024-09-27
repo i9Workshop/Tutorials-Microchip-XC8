@@ -123,8 +123,19 @@ void delay_ms(uint32_t delay) {
   - Total device power up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from power-up timer timing, $T_{PWRT}$  and oscillator start-up timer timing, $T_{T_{OST}}$.
     Value for $T_{PWRT}$ and $T_{T_{OST}}$ are refered to Table 30-10 in page 374.
     >$T_{DPU} = T_{PWRT} + T_{OST} = 140ms + 1024Cycle_{Instruction} = 140ms + (1024*\frac{1}{32Mhz} \times{} 4) = 140ms + 128\mu s = 140.128ms$
-
-
+  
+  ```
+  void main(void) {
+      delay_ms(200); // Wait for power up, depended on PSU to power up timing
+      delay_ms(141); // Wait for device to start up
+      
+      programInitialize(); // Itialize prorgram
+      
+      while(1) {
+          programLoop(); // Main prorgram
+      }
+  }
+  ```
 <br/>
 
 ## MPLabX Code
