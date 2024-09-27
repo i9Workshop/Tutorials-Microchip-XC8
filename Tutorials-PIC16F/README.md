@@ -121,7 +121,7 @@ void delay_ms(uint32_t delay) {
 
 * Refer to MCU datasheet for device power up timing, $T_{DPU}$.
   - Figure 5-3: Reset Start-Up Sequence in page 49 shows that total device power up timing is from power-up timer and oscillator start-up timer.
-    >$T_{DPU} = T_{PWRT} + T_{OST} = 140ms + 1024T_{OSC} = 140ms + (1024*\frac{1}{32Mhz}) = 140ms + 32\mu s = 140.032ms$
+    >$T_{DPU} = T_{PWRT} + T_{OST} = 140ms + 1024T_{OSC} = 140ms + (1024*\frac{1}{32Mhz} \times{} 4) = 140ms + 128\mu s = 140.128ms$
 
 
 <br/>
