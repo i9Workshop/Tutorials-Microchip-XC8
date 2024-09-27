@@ -115,6 +115,17 @@ void delay_ms(uint32_t delay) {
 ```
 <br/>
 
+## 4.  Wait for PSU and Device Power Up in Code
+
+* Power supply unit, PSU power up timing is depended on the circuit specification.
+
+* Refer to MCU datasheet for device power up timing, $T_{DPU}$.
+  - Figure 5-3: Reset Start-Up Sequence in page 49 shows that total device power up timing is from power-up timer and oscillator start-up timer.
+    >$T_{DPU} = T_{PWRT} + T_{OST} = 140ms + 1024T_{OSC} = 140ms + (1024*\frac{1}{32Mhz}) = 140ms + 32\mu s = 140.032ms$
+
+
+<br/>
+
 ## MPLabX Code
 
 * https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-ClockConfigAndLedBlink
