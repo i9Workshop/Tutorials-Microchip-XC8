@@ -5,9 +5,10 @@
 Refer to SG90 servo motor [datasheet](http://www.ee.ic.ac.uk/pcheung/teaching/DE1_EE/stores/sg90_datasheet.pdf). 
 Servo motor used PWM with period of 2ms to communicate with internal controller to send angle data. Angle data is read from the timing of on time, $T_{ON}$.
 
-* $T_{ON}$ = 1ms, move the motor to $-90^\circ$ position.
-* $T_{ON}$ = 1.5ms, move the motor to $0^\circ$ position.
-* $T_{ON}$ = 2ms, move the motor to $90^\circ$ position.
+* $T_{ON}$ = 1ms, move the rotor to $-90^\circ$ position.
+* $T_{ON}$ = 1.5ms, move the rotor to $0^\circ$ position.
+* $T_{ON}$ = 2ms, move the rotor to $90^\circ$ position.
+* Rotor position can be steered using $T_{ON}$ between 1ms to 2ms.
 <br/>
 
 ## Initialize Peripheral
