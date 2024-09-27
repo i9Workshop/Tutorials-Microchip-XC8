@@ -117,7 +117,7 @@ void delay_ms(uint32_t delay) {
 
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
 
-* Power supply unit, PSU power up timing is depended on the circuit specification.
+* Power supply unit power up timing is depended on the circuit specification.
 
 * Refer to MCU datasheet for device start up timing, $T_{DSU}$.
   - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from power-up timer timing, $T_{PWRT}$  and oscillator start-up timer timing, $T_{OST}$.
