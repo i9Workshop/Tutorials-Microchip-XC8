@@ -1,4 +1,4 @@
-# Servo Motor - Timer
+# Servo Motor Angle
 <br/>
 
 ## Initialize Peripheral
