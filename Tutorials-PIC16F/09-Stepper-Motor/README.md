@@ -50,6 +50,7 @@ Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper moto
   
   ```
       // Pin to input stepper motor driver
+      
       TRISBbits.TRISB0 = 0;
       ANSELBbits.ANSB0 = 0;
       
