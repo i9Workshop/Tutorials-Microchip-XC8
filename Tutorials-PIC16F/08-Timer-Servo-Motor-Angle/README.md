@@ -18,7 +18,22 @@ Circuit 8.1
 Servo motor only needs power supply depended on its own specification usually 6V. RB0 is GPIO pin from microcontroller.
 <br/>
 
+<br/>
+
 ## Initialize Peripheral
+
+* Set pin direction to output at register TRISB - Page 120
+* Set pin for digital I/O purpose at register ANSELB - Page 121
+
+  ```
+  #define servo_PWM       LATBbits.LATB0
+  ```
+  
+  ```
+  // Pin for servo PWM
+  TRISBbits.TRISB0 = 0;
+  ANSELBbits.ANSB0 = 0;
+  ```
 <br/>
 
 ## Create Motor Function
