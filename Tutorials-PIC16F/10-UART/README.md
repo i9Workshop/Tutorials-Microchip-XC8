@@ -11,11 +11,13 @@ CP2102 intergrated circuit in the picture above is an USB to UART bridge device 
 CP2102 device [driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) is needed to use VCP. 
 Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf) and [user guide](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=documentation).
 <br/>
+<br/>
 
 Schematic 10.1
 
 Explaination.
 <br/>
+
 <br/>
 
 ## Initialize Peripheral
