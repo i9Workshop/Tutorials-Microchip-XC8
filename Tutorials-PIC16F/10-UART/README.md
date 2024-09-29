@@ -4,5 +4,8 @@ UART is a digital communication peripheral which can receive and transmit data u
 UART can use 8bit or 9bit data signal depended on the module configuration.
 <br/>
 
+<br/>
+
 ## Initialize Peripheral
+
 <br/>
