@@ -10,6 +10,8 @@ UART can use 8bit or 9bit data signal depended on the module configuration.
 Intergrated circuit module in the picture above is an USB to UART bridge device which can be used to transfer data between MCU and a computer using virtual com port, VCP. 
 Device [driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) is needed to use VCP. 
 Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf) and [user guide](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=documentation).
+
+A software is also needed to monitor serial data transmitted or received. Thus, software can be developed to control a MCU from a computer.
 <br/>
 <br/>
 
