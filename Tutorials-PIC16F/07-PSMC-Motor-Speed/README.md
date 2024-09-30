@@ -9,7 +9,7 @@ Besides that, PSMC can be used to control Electronics Speed Controller, ESC a dr
 
 ![Circuit-DC-Brush-Motor-PSMC](https://github.com/user-attachments/assets/9913a465-a0c6-485b-9c1b-a10e87f14319)
 <br/>
-Diagram 7.1
+Circuit 7.1
 
 Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/Tutorials-Microchip-XC8/tree/main/Tutorials-PIC16F/6-PWM-Motor-Speed).
 <br/>
