@@ -15,7 +15,7 @@ A software is also needed to monitor serial data transmitted or received in a co
 <br/>
 <br/>
 
-![Circuit-UART-Bridge](https://github.com/user-attachments/assets/fe6e34b0-97ea-47b8-9504-826c5b1ca26b)
+![Circuit-UART-Bridge](https://github.com/user-attachments/assets/2968cac9-9230-44ba-80d2-58b6b94a516c)
 <br/>
 Circuit 10.1
 
