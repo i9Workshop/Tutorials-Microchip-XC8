@@ -17,7 +17,8 @@ Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-
 <br/>
 Circuit 10.1
 
-UART communication wires are cross connected to each other between tranmit and receive pin and vice versa. RC6 is the MCU transmit pin while RC7 is the receive pin.
+UART communication wires are cross connected to each other between tranmit and receive, such that MCU Tx pin connected to VCP Rx pin and vice versa. 
+RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
 
 <br/>
