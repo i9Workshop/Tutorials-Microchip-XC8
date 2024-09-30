@@ -5,7 +5,7 @@ UART can use 8bit or 9bit data signal depended on the module configuration.
 <br/>
 <br/>
 
-![USB-To-UART-Bridge](https://github.com/user-attachments/assets/233cfec1-8dc0-45b6-83d1-bb5af198d674)
+![USB-To-UART-Bridge](https://github.com/user-attachments/assets/b588fa5b-7bc9-408e-927f-27dbb1b14b61)
 <br/>
 Intergrated circuit module in the picture above is an USB to UART bridge device which can be used to transfer data between MCU and a computer using virtual com port, VCP. 
 Device [driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) is needed to use VCP. 
