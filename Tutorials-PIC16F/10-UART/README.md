@@ -13,9 +13,11 @@ Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-
 <br/>
 <br/>
 
-Schematic 10.1
+![Circuit-VCP](https://github.com/user-attachments/assets/339b2672-c588-4c77-a806-0c7534be2eff)
+<br/>
+Circuit 10.1
 
-Explaination.
+UART communication wires are cross connected to each other between tranmit and receive pin and vice versa. RC6 is the MCU transmit pin while RC7 is the receive pin.
 <br/>
 
 <br/>
