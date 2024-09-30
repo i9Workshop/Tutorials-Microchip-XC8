@@ -11,7 +11,7 @@ Intergrated circuit module in the picture above is an USB to UART bridge device 
 Device [driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) is needed to use VCP. 
 Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf) and [user guide](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=documentation).
 
-A software is also needed to monitor serial data transmitted or received in a computer. Thus, software can be developed to control a MCU from a computer.
+A software is also needed to monitor serial data transmitted or received in a computer. Thus, software can be developed to monitor and control a MCU from a computer.
 <br/>
 <br/>
 
