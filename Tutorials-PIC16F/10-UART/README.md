@@ -12,6 +12,8 @@ Device [driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers
 Refer to CP2102 device [datasheet](https://www.silabs.com/documents/public/data-sheets/CP2102-9.pdf) and [user guide](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=documentation).
 
 A software is also needed to monitor serial data transmitted or received in a computer. Thus, software can be developed to monitor and control a MCU from a computer.
+
+Besides computer, communication of two MCUs can also use UART. There are other device that use UART such as GSM and GPS module.
 <br/>
 <br/>
 
