@@ -13,7 +13,7 @@ Servo motor used PWM with period of 2ms to communicate with internal controller 
 
 ![Circuit-Servo-Motor-Angle](https://github.com/user-attachments/assets/d8c74132-e34e-4e30-964f-c6ac0f7dd1dc)
 <br/>
-Circuit 8.1
+Diagram 8.1
 
 Servo motor only needs power supply depended on its own specification usually 6V. RB0 is GPIO pin from microcontroller.
 <br/>
