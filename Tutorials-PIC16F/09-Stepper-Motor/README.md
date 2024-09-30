@@ -28,9 +28,9 @@ Rotation of stepper motor needs sequencial coil activation to move the rotor. Th
 
 ![Circuit-Bipolar-Stepper-Motor](https://github.com/user-attachments/assets/2b538998-2047-4957-ae03-ff01379ccd49)
 <br/>
-Schematic 9.2
+Diagram 9.2
 
-Schematic 9.2 shows a circuit of dual motor driver to drive bipolar stepper motor. $In_{1}$ and $In_{2}$ will control $M_{1}$ output while $In_{3}$ and $In_{4}$ will control $M_{2}$ output.
+Diagram 9.2 shows a circuit of dual motor driver to drive bipolar stepper motor. $In_{1}$ and $In_{2}$ will control $M_{1}$ output while $In_{3}$ and $In_{4}$ will control $M_{2}$ output.
 <br/>
 
 <br/>
