@@ -15,11 +15,11 @@ A software is also needed to monitor serial data transmitted or received in a co
 <br/>
 <br/>
 
-![Circuit-VCP](https://github.com/user-attachments/assets/339b2672-c588-4c77-a806-0c7534be2eff)
+![Circuit-UART-Bridge](https://github.com/user-attachments/assets/fe6e34b0-97ea-47b8-9504-826c5b1ca26b)
 <br/>
 Circuit 10.1
 
-UART communication wires are cross connected to each other between tranmit and receive, such that MCU Tx pin connected to VCP Rx pin and vice versa. 
+UART communication wires are cross connected to each other between transmit and receive, such that MCU Tx pin connected to UART bridge Rx pin and vice versa. 
 RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
 
