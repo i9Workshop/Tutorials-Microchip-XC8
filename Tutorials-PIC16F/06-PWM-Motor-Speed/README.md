@@ -13,7 +13,7 @@ Circuit 6.1
 <br/>
 
 Circuit 6.1 shows a typical connections for a dc brush motor driver sold in markets. Power supply voltage for the motor, $V_{Motor}$ is depended on both driver and motor rating itself. 
-Pin labeled **Dir** on the driver of Diagram 6.1 is the control for motor direction. Pin labeled **PWM** on the driver of Diagram 6.1 usualy is the driver enable gate controlled by PWM.
+Pin labeled **Dir** on the driver of Circuit 6.1 is the control for motor direction. Pin labeled **PWM** on the driver of Circuit 6.1 usualy is the driver enable gate controlled by PWM.
 <br/>
 
 <br/>
