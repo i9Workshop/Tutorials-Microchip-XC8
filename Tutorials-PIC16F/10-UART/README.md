@@ -29,4 +29,75 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Initialize Peripheral
 
+* Set pin direction of RC6 to output and RC7 to input at register TRISC - Page 125
+* Set alternate pin function control register APFCON at TXSEL and RXSEL to use RC6 and RC7 respectively - Page 111
+  
+  ```
+      // Tx pin
+      TRISCbits.TRISC6 = 0;
+      APFCONbits.TXSEL = 0;
+      
+      // Rx pin
+      TRISCbits.TRISC7 = 1;
+      APFCONbits.RXSEL = 0;
+  ```
+
+<br/>
+
+* Define CPU frequency and create a function to initalize UART module with desired baudrate.
+  
+  ```
+  #define _User_FOSC      32000000
+  ```
+  
+  ```
+      void uart_Initialize(uint32_t fosc, uint32_t baudrate);
+  ```
+  
+  ```
+  void uart_Initialize(uint32_t fosc, uint32_t baudrate) {
+      // Datasheet page 320
+      TXSTAbits.CSRC = 0;     // UART module clock source generated internally from BRG
+      TXSTAbits.TX9 = 0;      // Disable 9bit transmission
+      TXSTAbits.TXEN = 1;     // Set enable UART module
+      TXSTAbits.SYNC = 0;     // Set UART module to use asynchronous mode
+      TXSTAbits.BRGH = 0;     // Set UART module to use low speed baud rate
+      
+      // Datasheet page 321
+      RCSTAbits.SPEN = 1;     // Set enable serial port
+      RCSTAbits.RX9 = 0;      // Set UART module to use 8bit reception mode
+      RCSTAbits.CREN = 1;     // Set enable receiver
+      
+      BAUDCONbits.BRG16 = 1;  // Set UART module baud rate period to use 16bit register
+      BAUDCONbits.ABDEN = 0;  // Set UART module not to use baud rate auto detect mode
+      
+      // Calculate baud rate generator period using formula, SPBRG = FOSC/[4 (n+1)]
+      // Refer to table 27-3: Baud Rate Formula - Page 324
+      uint16_t brgPeriod = (uint16_t)(((fosc/baudrate)/16) - 1);
+      
+      SPBRGH = (uint8_t)(brgPeriod << 8);
+      SPBRGL = (uint8_t)brgPeriod;
+      
+      delay_x1o5us(23); // Wait for UART to reconfigure BRG - Page 373 from I/O pin timing
+  }
+  ```
+<br/>
+
+<br/>
+
+## Create UART Function
+
+
+<br/>
+
+## Example Program
+
+
+<br/>
+
+## MPLabX Code
+
+
+<br/>
+
 <br/>
