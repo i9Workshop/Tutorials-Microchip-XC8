@@ -248,7 +248,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## MPLabX Code
 
-* link
+* https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-UartExampleCmdLed
 <br/>
 
 <br/>
