@@ -10,7 +10,7 @@ Refer to [DS3231](https://www.farnell.com/datasheets/2345152.pdf?_gl=1*1p7rxu4*_
 Circuit 11.1.1
 <br/>
 
-RC3 connected to SCl is MCU master clock while RC4 connected to SDa is MCU data pin.
+RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU data pin.
 <br/>
 
 <br/>
