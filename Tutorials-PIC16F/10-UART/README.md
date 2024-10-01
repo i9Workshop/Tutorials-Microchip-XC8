@@ -254,4 +254,10 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * Java LED Control
 <br/>
 
+
+## Notice
+
+Kindly donate to [i9 Workshop](https://i9workshop.github.io/) for multiple byte UART receive tutorial.
+<br/>
+
 <br/>
