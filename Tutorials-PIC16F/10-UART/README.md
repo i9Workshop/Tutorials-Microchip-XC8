@@ -47,7 +47,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * Define CPU frequency and create a function to initalize UART module with changeable desired baud rate.
   
   ```
-  #define _User_FOSC      32000000
+  #define _User_FOSC      32000000 // CPU Clock Frequency
   ```
   
   ```
