@@ -212,37 +212,37 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 <br/>
 
-  - Evample 1 : Display UART receive register on LCD
-  
-  ```
-  void uart_ScanRxRegister(void) {
-      // Single byte data receiver
-      if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
-          while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
-                                 // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
-          RxData = RCREG; // Write RCREG register into RxData - Page 318
-          
-          lcd_Goto(1, 0);
-          lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
-      }
-  }
-  ```
-  
-  - Evample 2 : Control LED using UART receive register
-  
-  ```
-  void uart_ScanRxRegister(void) {
-      // Single byte data receiver
-      if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
-          while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
-                                 // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
-          RxData = RCREG; // Write RCREG register into RxData - Page 318
-          
-          lcd_Goto(1, 0);
-          lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
-      }
-  }
-  ```
+  - Example 1 : Display UART receive register on LCD
+    
+    ```
+    void uart_ScanRxRegister(void) {
+        // Single byte data receiver
+        if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
+            while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
+                                   // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
+            RxData = RCREG; // Write RCREG register into RxData - Page 318
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
+        }
+    }
+    ```
+    
+  - Example 2 : Control LED using UART receive register
+    
+    ```
+    void uart_ScanRxRegister(void) {
+        // Single byte data receiver
+        if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
+            while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
+                                   // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
+            RxData = RCREG; // Write RCREG register into RxData - Page 318
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
+        }
+    }
+    ```
 <br/>
 
 <br/>
