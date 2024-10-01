@@ -44,7 +44,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 <br/>
 
-* Define CPU frequency and create a function to initalize UART module with desired baudrate.
+* Define CPU frequency and create a function to initalize UART module with changeable desired baud rate.
   
   ```
   #define _User_FOSC      32000000
@@ -148,6 +148,10 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * Create a global variable to store data from UART receive register, RXREG and create function to read the register.
   
   ```
+      void uart_ScanRxRegister(void);
+  ```
+  
+  ```
   uint8_t RxData = 0; // Variable for UART module receive register, RXREG
   
   void uart_ScanRxRegister(void) {
@@ -167,6 +171,79 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Example Program
 
+* Initialize UART with desired baud rate.
+  
+  ```
+  void programInitialize(void) {
+      uart_Initialize(_User_FOSC, 115200);
+      uart_PrintString("UART Transceiver\n");
+  }
+  ```
+
+<br/>
+
+* Loop program to scan UART data.
+  
+  ```
+  void programLoop(void) {
+      if(!pb_Up) {
+          uart_PrintString("Up button pressed\n");
+          pb_DelayDebounce();
+      }
+      
+      else if(!pb_Down) {
+          uart_PrintString("Down button pressed\n");
+          pb_DelayDebounce();
+      }
+      
+      else if(!pb_Left) {
+          uart_PrintString("Left button pressed\n");
+          pb_DelayDebounce();
+      }
+      
+      else if(!pb_Right) {
+          uart_PrintString("Right button pressed\n");
+          pb_DelayDebounce();
+      }
+      
+      uart_ScanRxRegister();
+  }
+  ```
+
+<br/>
+
+  - Evample 1 : Display UART receive register on LCD
+  
+  ```
+  void uart_ScanRxRegister(void) {
+      // Single byte data receiver
+      if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
+          while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
+                                 // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
+          RxData = RCREG; // Write RCREG register into RxData - Page 318
+          
+          lcd_Goto(1, 0);
+          lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
+      }
+  }
+  ```
+  
+  - Evample 2 : Control LED using UART receive register
+  
+  ```
+  void uart_ScanRxRegister(void) {
+      // Single byte data receiver
+      if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
+          while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
+                                 // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
+          RxData = RCREG; // Write RCREG register into RxData - Page 318
+          
+          lcd_Goto(1, 0);
+          lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
+      }
+  }
+  ```
+<br/>
 
 <br/>
 
