@@ -257,7 +257,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Notice
 
-Kindly donate to [i9 Workshop](https://i9workshop.github.io) for multiple byte UART receive tutorial.
+Kindly donate to [i9 Workshop](https://i9workshop.github.io) for multiple bytes UART receive tutorial.
 <br/>
 
 <br/>
