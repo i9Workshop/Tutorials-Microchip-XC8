@@ -38,7 +38,7 @@ Servo motor only needs power supply depended on its own specification usually 6V
 
 ## Create Motor Function
 
-Oscilloscope needed to observe PWM signal thus measure the duty cycle. Kindly donate to [i9 Workroom](https://github.com/i9Workshop) for R&D.
+Oscilloscope needed to observe PWM signal thus measure the duty cycle. Kindly donate to [i9 Workroom](https://i9workshop.github.io/) for R&D.
 <br/>
 
 <br/>
