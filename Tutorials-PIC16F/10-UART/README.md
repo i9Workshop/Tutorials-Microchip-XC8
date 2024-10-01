@@ -87,7 +87,13 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Create UART Function
 
-* Create function to transmit a byte data.
+* Create function to transmit data.
+
+  ```
+      void uart_PrintChar(char character);
+      void uart_PrintString(char *string);
+      void uart_PrintInt32(int32_t number);
+  ```
   
   ```
   void uart_PrintChar(char character) {
@@ -95,14 +101,63 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       while(!TXSTAbits.TRMT); // Polling to hold program to wait all byte in TXREG register is tranmitted
                               // Condition is true if TXREG if full - Page 320
   }
+  
+  void uart_PrintString(char *string) {
+      while(*string!=0) {
+          uart_PrintChar(*string);
+          string++;
+      }
+  }
+  
+  void uart_PrintInt32(int32_t number) {
+      uint8_t i1 = 0,
+              i2 = 0,
+              totalDigit = 0;
+      
+      char numberRevChar[11];
+      char numberChar[11];
+      
+      memset(numberRevChar, 0, 11);
+      memset(numberChar, 0, 11);
+      
+      if(number<0) {
+          uart_PrintChar('-');
+          number = labs(number);
+      }
+      
+      do {
+          int32_t tempN = number;
+          number /= 10;
+          char tempC = (char)(tempN -10 * number);
+          numberRevChar[i1] = tempC + 48;
+          i1++;
+      } while(number);
+      
+      totalDigit = i1;
+      
+      for(i1=totalDigit, i2=0; i1>0; i1--, i2++) {
+          numberChar[i2] = numberRevChar[i1-1];
+      }
+      
+      uart_PrintString(numberChar);
+  }
   ```
 
 <br/>
 
-* Create a global variable to store data from UART recieve register.
+* Create a global variable to store data from UART recieve register, RXREG and create function to read the register.
   
   ```
-  uint8_t RxData = 0; // Variable for UART module recieved data register, RXREG
+  uint8_t RxData = 0; // Variable for UART module recieve register, RXREG
+  
+  void uart_Scan(void) {
+      // Single byte data receiver
+      if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
+          while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
+                                 // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
+          RxData = RCREG; // Write RCREG register into RxData - Page 318
+      }
+  }
   ```
 <br/>
 
