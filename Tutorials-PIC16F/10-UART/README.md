@@ -174,6 +174,9 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   void programInitialize(void) {
       uart_Initialize(_User_FOSC, 115200);
       uart_PrintString("UART Transceiver\n");
+      
+      lcd_Goto(1, 0);
+      lcd_PrintDigitInt32(RxData, 3, false, true);
   }
   ```
 
