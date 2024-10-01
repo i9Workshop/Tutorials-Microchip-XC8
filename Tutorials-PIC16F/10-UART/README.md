@@ -71,7 +71,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       BAUDCONbits.BRG16 = 1;  // Set UART module baud rate period to use 16bit register
       BAUDCONbits.ABDEN = 0;  // Set UART module not to use baud rate auto detect mode
       
-      // Calculate baud rate generator period using formula, SPBRG = FOSC/[16 (n+1)]
+      // Calculate baud rate generator period using formula, SPBRG = FOSC/[16(n+1)]
       // Refer to table 27-3: Baud Rate Formula - Page 324
       uint16_t brgPeriod = (uint16_t)(((fosc/baudrate)/16) - 1);
       
