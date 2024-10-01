@@ -87,6 +87,24 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Create UART Function
 
+* Create function to transmit a byte data.
+  
+  ```
+  void uart_PrintChar(char character) {
+      TXREG = character;      // Set register value from argument character - Page 312
+      while(!TXSTAbits.TRMT); // Polling to hold program to wait all byte in TXREG register is tranmitted
+                              // Condition is true if TXREG if full - Page 320
+  }
+  ```
+
+<br/>
+
+* Create a global variable to store data from UART recieve register.
+  
+  ```
+  uint8_t RxData = 0; // Variable for UART module recieved data register, RXREG
+  ```
+<br/>
 
 <br/>
 
