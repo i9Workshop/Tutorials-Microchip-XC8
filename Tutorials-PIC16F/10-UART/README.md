@@ -255,10 +255,8 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## Related Software
 
-* Serial Monitor
-  - [Java](https://github.com/i9Workshop/Java-SerialMonitorV1)
-* LED Control
-  - [Java]
+* [Java Serial Monitor](https://github.com/i9Workshop/Java-SerialMonitorV1)
+* Java LED Control
 <br/>
 
 <br/>
