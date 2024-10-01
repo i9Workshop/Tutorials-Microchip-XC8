@@ -1,3 +1,3 @@
-# I<sup>2</sup>C Master - RTCC
+# I<sup>2</sup>C Master - Slave RTCC
 
 <br/>
