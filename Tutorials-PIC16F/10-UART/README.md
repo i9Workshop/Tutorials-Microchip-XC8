@@ -209,6 +209,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       uart_ScanRxRegister();
   }
   ```
+<br/>
 
 <br/>
 
@@ -240,6 +241,21 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
             
             lcd_Goto(1, 0);
             lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
+            
+            // Condition to control LEDs using RxData received
+            // Refer to ASCII table to use software Serial Monitor
+            
+            if(RxData=='1') {
+                led1 = 1;
+            } else if(RxData=='2'){
+                led1 = 0;
+            }
+            
+            else if(RxData=='3') {
+                led2 = 1;
+            } else if(RxData=='4'){
+                led2 = 0;
+            }
         }
     }
     ```
