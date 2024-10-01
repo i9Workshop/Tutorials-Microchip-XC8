@@ -226,7 +226,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
           lcd_PrintDigitInt32(RxData, 3, false, true); // Display RxData on LCD
           
           // Condition to control LEDs using RxData received
-          // Refer to ASCII table to use software Serial Monitor
+          // Refer to ASCII table to use software serial monitor
           
           if(RxData=='1') {
               led1 = 1;
@@ -248,7 +248,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 ## MPLabX Code
 
-
+* link
 <br/>
 
 <br/>
