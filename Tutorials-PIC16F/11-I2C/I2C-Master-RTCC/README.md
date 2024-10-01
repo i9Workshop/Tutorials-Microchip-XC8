@@ -17,6 +17,37 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 ## Initialize Peripheral
 
+* Set pin direction of RC3 to output and initialy RC4 to output at register TRISC - Page 125
+* Set alternate pin function control register APFCON at SCKSEL and SDISEL to use RC3 and RC4 respectively - Page 111
+  
+  ```
+      // SCl pin
+      TRISCbits.TRISC3 = 1;
+      APFCONbits.SCKSEL = 0;
+      
+      // SDa pin
+      TRISCbits.TRISC4 = 0;
+      APFCONbits.SDISEL = 0;
+  ```
+
+<br/>
+
+* Define CPU frequency and create a function to initalize MSSP module with changeable desired baud rate.
+
+  ```
+  ```
+<br/>
+
+## Create I<sup>2</sup>C Function
+
+<br/>
+
+## Example Program
+
+<br/>
+
+## MPLabX Code
+
 <br/>
 
 <br/>
