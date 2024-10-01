@@ -8,6 +8,7 @@ Refer to [DS3231](https://www.farnell.com/datasheets/2345152.pdf?_gl=1*1p7rxu4*_
 
 <br/>
 Circuit 11.1.1
+<br/>
 
 <br/>
 
