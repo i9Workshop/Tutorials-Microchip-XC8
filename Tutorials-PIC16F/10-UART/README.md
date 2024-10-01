@@ -156,6 +156,8 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
           while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
                                  // Refer datasheet topic 27.1.2.2 Receiving Data in page 315 and register table page 318
           RxData = RCREG; // Write RCREG register into RxData - Page 318
+
+          // User code if data received
       }
   }
   ```
