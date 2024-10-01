@@ -1,1 +1,3 @@
-# # I<sup>2</sup>C
+# Inter-Intergrated circuit Communication
+
+<br/>
