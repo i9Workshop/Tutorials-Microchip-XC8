@@ -145,10 +145,10 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 <br/>
 
-* Create a global variable to store data from UART recieve register, RXREG and create function to read the register.
+* Create a global variable to store data from UART receive register, RXREG and create function to read the register.
   
   ```
-  uint8_t RxData = 0; // Variable for UART module recieve register, RXREG
+  uint8_t RxData = 0; // Variable for UART module receive register, RXREG
   
   void uart_ScanRxRegister(void) {
       // Single byte data receiver
