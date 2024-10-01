@@ -25,7 +25,6 @@ UART communication wires are cross connected to each other between transmit and 
 RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
 
-<br/>
 
 ## Initialize Peripheral
 
@@ -83,7 +82,6 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   ```
 <br/>
 
-<br/>
 
 ## Create UART Function
 
@@ -167,7 +165,6 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   ```
 <br/>
 
-<br/>
 
 ## Example Program
 
@@ -244,7 +241,6 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   ```
 <br/>
 
-<br/>
 
 ## MPLabX Code
 
