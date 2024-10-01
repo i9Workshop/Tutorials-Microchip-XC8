@@ -150,7 +150,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   ```
   uint8_t RxData = 0; // Variable for UART module recieve register, RXREG
   
-  void uart_Scan(void) {
+  void uart_ScanRxRegister(void) {
       // Single byte data receiver
       if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
           while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
