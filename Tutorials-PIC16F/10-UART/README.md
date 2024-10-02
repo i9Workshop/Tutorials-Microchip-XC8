@@ -231,13 +231,13 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
           
           if(RxData=='1') {
               led1 = 1;
-          } else if(RxData=='2'){
+          } else if(RxData=='2') {
               led1 = 0;
           }
           
           else if(RxData=='3') {
               led2 = 1;
-          } else if(RxData=='4'){
+          } else if(RxData=='4') {
               led2 = 0;
           }
       }
