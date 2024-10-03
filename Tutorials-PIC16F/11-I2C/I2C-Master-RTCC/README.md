@@ -33,7 +33,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 <br/>
 
 * Define CPU frequency and create a function to initalize MSSP module with changeable desired baud rate.
-  - Baud rate is byte per second, $B_d$ thus the bit rate, $B_R$ for I<sup>2</sup>C is
+  - Baud rate is word per second, $B_d$ thus the bit rate, $B_R$ for I<sup>2</sup>C is
     >$B_R = B_d \times{} 9bit$
   
   ```
