@@ -81,7 +81,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   ```
   void i2c_BusIdle(void) { // Wait for I2C bus to be idle
       while(SSPCON2 & 0b00011111); // Polling to hold program when one of SSPCON2 bit from 4th to 0th is 1 - Page 307
-                                   // The registers are ACKEN, RCEN, PEN, RSEN and SEN.
+                                   // The registers are ACKEN, RCEN, PEN, RSEN or SEN.
   }
   
   void i2c_MasterStart(void) { // Initiate start condition to bus
