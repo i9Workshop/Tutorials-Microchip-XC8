@@ -5,7 +5,7 @@
 Refer to DS3231 RTCC module [datasheet](https://www.farnell.com/datasheets/2345152.pdf?_gl=1*1p7rxu4*_gcl_aw*R0NMLjE3MjYxMDYzNTIuQ2p3S0NBandfNFMzQmhBQUVpd0FfNjRZaHNVMEF0WnZRZFJON2Fac1l3ajlPZTRrMG80SVZuQXpXWTVyNHk3bFVmZzdMRGo5SGFEd0RSb0NMeG9RQXZEX0J3RQ..*_gcl_au*MTg2Mzg2NDUxNS4xNzI2MTA1NTU4).
 <br/>
 
-![Circuit-RTCC-DS3231](https://github.com/user-attachments/assets/c569d453-6aa1-4ab7-97d6-7d3623187773)
+![Circuit-RTCC-DS3231](https://github.com/user-attachments/assets/96f3352a-1052-4173-a20c-6f6a4f9af7c4)
 <br/>
 Circuit 11.1.1
 <br/>
