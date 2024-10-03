@@ -64,7 +64,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 <br/>
 
-## Create I<sup>2</sup>C Function
+## Create I<sup>2</sup>C Functions
 
 * Refer to datasheet page 291 and 293 to create these fuctions that will be use repeatedly to read and write in sequence on I<sup>2</sup>C bus.
   
@@ -186,6 +186,12 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       return data;
   }
   ```
+<br/>
+
+<br/>
+
+## Create RTCC Display Functions
+
 <br/>
 
 <br/>
