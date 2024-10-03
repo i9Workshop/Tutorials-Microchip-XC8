@@ -144,7 +144,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   ```
 <br/>
 
-* Function to read and write sequence for RTCC slave. Slave address used will be shifted one to the right where one word slave address can only support 7bit number of devices only, 128.
+* Create functions to read and write sequence for RTCC slave. Slave address used will be shifted one to the left where one word slave address can only support 7bit number of devices only, 128.
   Slave address LSB is used for read or write instruction. Refer to RTCC datasheet to arange the sequences in page 16 and 17.
   
   ```
