@@ -84,7 +84,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
 
 
-## Create UART Function
+## Create UART Functions
 
 * Create function to transmit data.
 
