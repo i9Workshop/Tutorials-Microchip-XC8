@@ -61,11 +61,94 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   ```
 <br/>
 
+<br/>
+
 ## Create I<sup>2</sup>C Function
+
+* Refer to datasheet page 291 and 293 to create these fuctions that will be use repeatedly to read and write in sequence on I<sup>2</sup>C bus.
+  
+  ```
+      void i2c_Initialize(uint32_t fosc, uint16_t baudrate);
+      void i2c_BusIdle(void);
+      void i2c_MasterStart(void);
+      void i2c_MasterRstart(void);
+      void i2c_MasterStop(void);
+      void i2c_MasterWrite(uint8_t byte);
+      uint8_t i2c_MasterRead(uint8_t ack);
+  ```
+  
+  ```
+  void i2c_BusIdle(void) { // Wait for I2C bus to be idle
+      while(SSPCON2 & 0b00011111); // Polling to hold program when one of SSPCON2 bit from 4th to 0th is 1 - Page 307
+                                   // The registers are ACKEN, RCEN, PEN, RSEN and SEN.
+  }
+  
+  void i2c_MasterStart(void) { // Initiate start condition to bus
+      i2c_BusIdle();
+      
+      SSPCON2bits.SEN = 1; // Set to initiate start condition - Page 307
+      NOP(); // Wait for start condition setup time - Page 385
+      NOP(); // Tdelay = THD:STA, minimum high speed
+      NOP(); // Tdelay = 600ns / 0.125us = 4.8
+      NOP();
+      NOP();
+  }
+  
+  void i2c_MasterRstart(void) { // Initiate repeat start condition to bus
+      i2c_BusIdle();
+      
+      SSPCON2bits.RSEN = 1; // Set to initiate repeat start condition - Page 307
+      NOP(); // Wait for start condition setup time - Page 385
+      NOP(); // Tdelay = THD:STA, minimum high speed
+      NOP(); // Tdelay = 600ns / 0.125us = 4.8
+      NOP();
+      NOP();
+  }
+  
+  void i2c_MasterStop(void) { // Initiate stop condition to bus
+      i2c_BusIdle();
+      
+      SSPCON2bits.PEN = 1; // Set to initiate stop condition - Page 307
+      
+      delay_x1o5us(7); // Wait for stop condition setup time - Page 385 and 386
+                       // Tdelay = TR + TSU:STO + TBUF
+                       // delay = Tdelay / 1.5us = (1000ns + 4700ns + 4.7uf) / 1.5uf = 6.9
+                       // Value in datasheet not tested note as * in page 386
+      
+      delay_x24o25us(83); // Additional time the bus must be free before a new transmission can start - tested
+  }
+  
+  void i2c_MasterWrite(uint8_t byte) { // Write a byte to bus
+      i2c_BusIdle();
+      
+      SSPBUF = byte;          // Write to MSSP register to transmit data - Page 291
+      
+      while(SSPSTATbits.BF);  // Polling to hold program while MSSP module transmit not complete  - Page 293
+  }
+  
+  uint8_t i2c_MasterRead(uint8_t ack) { // Read a byte from bus
+      uint8_t data = 0;        // Declare a variable to read MSSP receive register
+      
+      i2c_BusIdle();
+      
+      SSPCON2bits.RCEN = 1;    // Set enable MSSP receive mode - Page 307
+      
+      while(!SSPSTATbits.BF);  // Polling to hold program while MSSP module receive not complete - Page 293
+      
+      data = SSPBUF;           // Read MSSP receive register - Page 305
+      
+      SSPCON2bits.ACKEN = ack; // Set variable ack value to acknowledge sequence - Page 307
+      
+      return data;
+  }
+  ```
+<br/>
 
 <br/>
 
 ## Example Program
+
+<br/>
 
 <br/>
 
