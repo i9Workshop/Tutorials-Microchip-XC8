@@ -144,6 +144,49 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   ```
 <br/>
 
+* Function to read and write sequence for RTCC slave. Slave address used will be shifted one to the right where one word slave address can only support 7bit number of devices only, 128.
+  Slave address LSB is used for read or write instruction. Refer to RTCC datasheet to arange the sequences in page 16 and 17.
+  
+  ```
+      void i2c_MasterByteWriteSlave(uint8_t addrDev, uint8_t addrReg, uint8_t data);
+      uint8_t i2c_MasterByteReadSlave(uint8_t addrDev, uint8_t addrReg);
+  ```
+  
+  ```
+  void i2c_MasterByteWriteSlave(uint8_t addrDev, uint8_t addrReg, uint8_t data) {
+      i2c_MasterStart();
+      
+      i2c_MasterWrite((uint8_t)(addrDev << 1)); // Device write address
+      
+      i2c_MasterWrite(addrReg);
+      
+      i2c_MasterWrite(data);
+      
+      i2c_MasterStop();
+  }
+  
+  uint8_t i2c_MasterByteReadSlave(uint8_t addrDev, uint8_t addrReg) {
+      uint8_t data = 0;
+      
+      i2c_MasterStart();
+      
+      i2c_MasterWrite((uint8_t)(addrDev << 1)); // Device write address
+      
+      i2c_MasterWrite(addrReg);
+      
+      i2c_MasterRstart();
+      
+      i2c_MasterWrite((uint8_t)((addrDev << 1) | 1)); // Device read address
+      
+      data = i2c_MasterRead(0);
+      
+      i2c_MasterStop();
+      
+      return data;
+  }
+  ```
+<br/>
+
 <br/>
 
 ## Example Program
