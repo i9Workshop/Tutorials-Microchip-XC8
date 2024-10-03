@@ -22,7 +22,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   
   ```
       // SCl pin
-      TRISCbits.TRISC3 = 1;
+      TRISCbits.TRISC3 = 0;
       APFCONbits.SCKSEL = 0;
       
       // SDa pin
