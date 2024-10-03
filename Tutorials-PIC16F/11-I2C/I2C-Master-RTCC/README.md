@@ -33,6 +33,8 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 <br/>
 
 * Define CPU frequency and create a function to initalize MSSP module with changeable desired baud rate.
+  - Baud rate is byte per second thus the bit rate for I<sup>2</sup>C is
+    >
   
   ```
   #define _User_FOSC      32000000 // CPU Clock Frequency
