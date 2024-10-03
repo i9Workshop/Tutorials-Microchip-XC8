@@ -53,7 +53,8 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       
       SSPCON3bits.SDAHT = 0; // Set 100ns for minimum SDA hold time - Page 308
       
-      if(baudrate>2223) baudrate = 2223; // Set maximum baud rate to 2223 - baud rate tested and worked
+      if(baudrate>2223) baudrate = 2223; // Set maximum baud rate to 2223 - baud rate tested and worked below 2224
+      else if(baudrate<1113) baudrate = 1113; // Set minimum baud rate to 1113 - baud rate tested and worked above 1112
       SSPADD = (uint8_t)((fosc/baudrate) / 4 - 1); // Set baud rate generator register - Page 309
       
       delay_x1o5us(23); // Wait for MSSP module to be ready - Page 373 from I/O pin timing
@@ -115,7 +116,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
                        // delay = Tdelay / 1.5us = (1000ns + 4700ns + 4.7uf) / 1.5uf = 6.9
                        // Value in datasheet not tested note as * in page 386
       
-      delay_x24o25us(83); // Additional time the bus must be free before a new transmission can start - tested
+      delay_x24o25us(60); // Additional time the bus must be free before a new transmission can start - tested
   }
   
   void i2c_MasterWrite(uint8_t byte) { // Write a byte to bus
