@@ -17,16 +17,16 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 ## Initialize Peripheral
 
-* Set pin direction of RC3 to output and initialy RC4 to output at register TRISC - Page 125
+* Set pin direction of RC3 and RC4 to input at register TRISC - Page 306 at note 3
 * Set alternate pin function control register APFCON at SCKSEL and SDISEL to use RC3 and RC4 respectively - Page 111
   
   ```
       // SCl pin
-      TRISCbits.TRISC3 = 0;
+      TRISCbits.TRISC3 = 1;
       APFCONbits.SCKSEL = 0;
       
       // SDa pin
-      TRISCbits.TRISC4 = 0;
+      TRISCbits.TRISC4 = 1;
       APFCONbits.SDISEL = 0;
   ```
 
