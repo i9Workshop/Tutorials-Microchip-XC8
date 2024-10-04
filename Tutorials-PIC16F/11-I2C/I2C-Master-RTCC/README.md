@@ -190,7 +190,7 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 <br/>
 
-## Create RTCC Display Functions
+## Create RTCC Functions
 
 <br/>
 
