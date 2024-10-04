@@ -65,7 +65,7 @@ Circuit 9.2 shows a circuit of dual motor driver to drive bipolar stepper motor.
   ```
 <br/>
 
-## Create Function for Stepper Motor
+## Create Functions for Stepper Motor
   
 * Stepper motor coil activation function.
   ```
