@@ -159,9 +159,9 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       
       i2c_MasterWrite((uint8_t)(addrDev << 1)); // Device write address
       
-      i2c_MasterWrite(addrReg);
+      i2c_MasterWrite(addrReg); // RTCC register address
       
-      i2c_MasterWrite(data);
+      i2c_MasterWrite(data); // Data write to RTCC register
       
       i2c_MasterStop();
   }
@@ -173,13 +173,13 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       
       i2c_MasterWrite((uint8_t)(addrDev << 1)); // Device write address
       
-      i2c_MasterWrite(addrReg);
+      i2c_MasterWrite(addrReg); // RTCC register address
       
       i2c_MasterRstart();
       
       i2c_MasterWrite((uint8_t)((addrDev << 1) | 1)); // Device read address
       
-      data = i2c_MasterRead(0);
+      data = i2c_MasterRead(0); // Data from RTCC register
       
       i2c_MasterStop();
       
