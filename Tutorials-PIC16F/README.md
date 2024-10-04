@@ -69,7 +69,7 @@ Deciding value for resistor R1 is depending on voltage at pin $\overline{MClr}$,
 * If R1 is less than $7.1k\Omega$, make sure pull down current accross it when button is pressed not high to cause interruption of MCU required current operation.
 <br/>
 
-## 3.  Create Delay Function
+## 3.  Create Delay Functions
 
 * This function will be used in many applications for this tutorial.
 <br/>
