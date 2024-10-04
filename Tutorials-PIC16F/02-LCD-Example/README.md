@@ -120,7 +120,7 @@ These fuctions will be used to control pin RS, E and all data pins D4, D5, D6 an
   ```
 <br/>
 
-* Write to LCD function
+* Write to LCD functions
 
   ```
       void lcd_PrintCmd(uint8_t command);
