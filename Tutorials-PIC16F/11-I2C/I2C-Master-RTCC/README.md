@@ -192,6 +192,118 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 ## Create RTCC Functions
 
+* Create binary coded decimal, BCD number to decimal, DEC number converter function and vice versa.
+  
+  ```
+      uint8_t rtcc_ConvertBcdToDec(uint8_t bcd);
+      uint8_t rtcc_ConvertDecToBcd(uint8_t dec);
+  ```
+  
+  ```
+  uint8_t rtcc_ConvertBcdToDec(uint8_t bcd) {
+      return ((bcd >> 4) & 0x0F) * 10 + (bcd & 0x0F);
+  }
+  
+  uint8_t rtcc_ConvertDecToBcd(uint8_t dec) {
+      uint8_t msb = (uint8_t)(dec/10);
+      uint8_t lsb = dec - (msb * 10);
+      
+      return (uint8_t)((msb << 4) | lsb);
+  }
+  ```
+<br/>
+
+* Create fuction to write and display RTCC on LCD.
+  
+  ```
+      void rtcc_WriteRegister(uint8_t day, uint8_t date, 
+          uint8_t month, uint8_t century, uint8_t year, 
+          uint8_t hour, uint8_t minute, uint8_t second);
+      void rtcc_LcdDisplay(uint8_t day, uint8_t date,
+          uint8_t month, uint8_t century, uint8_t year,
+          uint8_t hour, uint8_t minute, uint8_t second);
+  ```
+  
+  ```
+  void rtcc_WriteRegister(uint8_t day, uint8_t date,
+          uint8_t month, uint8_t century, uint8_t year,
+          uint8_t hour, uint8_t minute, uint8_t second) { // Write data to RTCC register
+      // Write all RTCC data, refer to table timekeeping registers in RTCC datasheet page 11
+      i2c_MasterByteWriteSlave(_Address_RTCC, 3, day);
+      i2c_MasterByteWriteSlave(_Address_RTCC, 6, rtcc_ConvertDecToBcd(year));
+      i2c_MasterByteWriteSlave(_Address_RTCC, 5, (uint8_t)(rtcc_ConvertDecToBcd(month) | (century << 7)));
+      i2c_MasterByteWriteSlave(_Address_RTCC, 4, rtcc_ConvertDecToBcd(date));
+      i2c_MasterByteWriteSlave(_Address_RTCC, 2, rtcc_ConvertDecToBcd(hour));
+      i2c_MasterByteWriteSlave(_Address_RTCC, 1, rtcc_ConvertDecToBcd(minute));
+      i2c_MasterByteWriteSlave(_Address_RTCC, 0, 0);
+  }
+  
+  void rtcc_LcdDisplay(uint8_t day, uint8_t date, 
+          uint8_t month, uint8_t century, uint8_t year, 
+          uint8_t hour, uint8_t minute, uint8_t second) {
+      lcd_Goto(0, 0);
+      lcd_PrintString("I2C RTCC");
+      
+      lcd_Goto(0, 11);
+      lcd_PrintDigitInt32(date, 2, false, true);
+      lcd_PrintChar('/');
+      
+      lcd_Goto(0, 14);
+      lcd_PrintDigitInt32(month, 2, false, true);
+      
+      lcd_Goto(1, 12);
+      lcd_PrintDigitInt32(century, 2, false, true);
+      
+      lcd_Goto(1, 14);
+      lcd_PrintDigitInt32(year, 2, false, true);
+      
+      lcd_Goto(1, 0);
+      lcd_PrintDigitInt32(hour, 2, false, true);
+      lcd_PrintChar(':');
+      
+      lcd_Goto(1, 3);
+      lcd_PrintDigitInt32(minute, 2, false, true);
+      lcd_PrintChar(':');
+      
+      lcd_Goto(1, 6);
+      lcd_PrintDigitInt32(second, 2, false, true);
+      
+      lcd_Goto(1, 9);
+      switch(day) {
+          case 1:
+              lcd_PrintString("Su");
+              break;
+              
+          case 2:
+              lcd_PrintString("Mo");
+              break;
+              
+          case 3:
+              lcd_PrintString("Tu");
+              break;
+              
+          case 4:
+              lcd_PrintString("We");
+              break;
+              
+          case 5:
+              lcd_PrintString("Th");
+              break;
+              
+          case 6:
+              lcd_PrintString("Fr");
+              break;
+              
+          case 7:
+              lcd_PrintString("Sa");
+              break;
+              
+          default:
+              lcd_PrintString("Dd");
+              break;
+      }
+  }
+  ```
 <br/>
 
 <br/>
