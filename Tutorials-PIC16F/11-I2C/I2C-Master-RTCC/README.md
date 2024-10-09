@@ -311,6 +311,10 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 ## Example Program
 
 ```
+#define _Address_RTCC   0x68 // RTCC device address
+```
+
+```
 void programInitialize(void) {
     lcd_Initialize();
     
