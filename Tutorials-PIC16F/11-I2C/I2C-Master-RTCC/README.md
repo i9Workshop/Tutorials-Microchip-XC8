@@ -310,6 +310,72 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
 
 ## Example Program
 
+```
+void programInitialize(void) {
+    lcd_Initialize();
+    
+    rtcc_LcdDisplay(0, 0, 0, 0, 0, 0, 0, 0);
+    
+    i2c_Initialize(_User_FOSC, 1200); // Set bit rate x9bit/baud = 10.8kHz
+}
+```
+
+```
+void programLoop(void) {
+    uint8_t bcdSecond = 0; // Variable for current second
+    uint8_t bcdSecondPrev = 0; // Variable for previous second
+    uint8_t decSecond = 0;
+    
+    uint8_t bcdMinute = 0;
+    uint8_t bcdHour = 0;
+    uint8_t bcdDate = 0;
+    uint8_t bcdMonth = 0;
+    uint8_t bcdYear = 0;
+    
+    uint8_t decMinute = 0;
+    uint8_t decHour = 0;
+    uint8_t decDate = 0;
+    uint8_t decMonth = 0;
+    uint8_t decYear = 0;
+    uint8_t decCentury = 0;
+    
+    uint8_t day = 0;
+    
+    // rtcc_WriteRegister(2, 7, 10, 0, 24, 14, 20, 0); // Use this function to set RTCC module
+    
+    while(1) {
+        bcdSecond = i2c_MasterByteReadSlave(_Address_RTCC, 0); // Read RTCC second
+        
+        if(bcdSecond != bcdSecondPrev) { // Condition is true if variable bcdSec not same as bcdSecPrev
+            // Read all RTCC data, refer to table timekeeping registers in RTCC datasheet page 11
+            
+            bcdMinute = i2c_MasterByteReadSlave(_Address_RTCC, 1);
+            bcdHour = i2c_MasterByteReadSlave(_Address_RTCC, 2);
+            day = i2c_MasterByteReadSlave(_Address_RTCC, 3);
+            bcdDate = i2c_MasterByteReadSlave(_Address_RTCC, 4);
+            bcdMonth = i2c_MasterByteReadSlave(_Address_RTCC, 5);
+            bcdYear = i2c_MasterByteReadSlave(_Address_RTCC, 6);
+            
+            // Convert BCD to DEC number
+            
+            decSecond = rtcc_ConvertBcdToDec(bcdSecond);
+            decMinute = rtcc_ConvertBcdToDec(bcdMinute);
+            decHour = rtcc_ConvertBcdToDec(bcdHour);
+            decDate = rtcc_ConvertBcdToDec(bcdDate);
+            decMonth = rtcc_ConvertBcdToDec(bcdMonth & 0x1F); // Register address 05h, read 4th bit until 0th bit
+            decYear = rtcc_ConvertBcdToDec(bcdYear);
+            decCentury = bcdMonth >> 7; // Register address 05h, read 7th bit only
+            
+            rtcc_LcdDisplay(day , decDate, decMonth, 20 + decCentury, decYear,
+                decHour, decMinute, decSecond);
+        }
+        
+        bcdSecondPrev = bcdSecond;
+        
+        delay_ms(200); // RTCC refresh rate
+    }
+}
+```
 <br/>
 
 <br/>
