@@ -20,8 +20,12 @@ Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/T
 
 <br/>
 
+<br/>
+
 ## Example Program
 Long studies needed. Will be continued later...
+<br/>
+
 <br/>
 
 ## MPLabX Code
