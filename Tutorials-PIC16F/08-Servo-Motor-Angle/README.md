@@ -45,6 +45,7 @@ Oscilloscope needed to observe PWM signal thus measure the duty cycle. Kindly do
 
 ## Example Program
 
+Example program at MPLabX Code section use uncalibrated PWM which can control motor angle between $0^\circ$ til $180^\circ$.
 <br/>
 
 ## MPLabX Code
