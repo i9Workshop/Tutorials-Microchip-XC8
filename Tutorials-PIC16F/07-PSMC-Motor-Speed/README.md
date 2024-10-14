@@ -44,7 +44,7 @@ Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/T
 
 ## Create Motor Functions
 
-* RC1 use PSMC1B output thus complementary output pwm is needed - Page 11 and 200
+* RC1 will used PSMC1B output thus complementary PWM output is needed - Page 11 and 200
 
 * Initialize PSMC module for motor
   
