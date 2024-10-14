@@ -26,7 +26,7 @@ Rotation of stepper motor needs sequencial coil activation to move the rotor. Th
 
 <br/>
 
-![Circuit-Bipolar-Stepper-Motor](https://github.com/user-attachments/assets/530083e0-1f2e-4fff-a65c-2b98f281be30)
+![Circuit-Bipolar-Stepper-Motor](https://github.com/user-attachments/assets/45dfb781-695e-4213-99d6-4ee01e1b6889)
 <br/>
 Circuit 9.2
 
