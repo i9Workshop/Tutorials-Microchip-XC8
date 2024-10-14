@@ -7,7 +7,7 @@ PSMC module has 16bit duty cycle resolution. PSMC module has its own timer thus 
 Besides that, PSMC can be used to control Electronics Speed Controller, ESC a driver for three phase brushless, BLDC motor.
 <br/>
 
-![Circuit-DC-Brush-Motor-PSMC](https://github.com/user-attachments/assets/9913a465-a0c6-485b-9c1b-a10e87f14319)
+![Circuit-DC-Brush-Motor-PSMC](https://github.com/user-attachments/assets/71e53762-b541-472e-90a0-ca323b06d60e)
 <br/>
 Circuit 7.1
 
