@@ -17,7 +17,7 @@ Besides computer, communication of two MCUs can also use UART. There are other d
 <br/>
 <br/>
 
-![Circuit-UART-Bridge](https://github.com/user-attachments/assets/2968cac9-9230-44ba-80d2-58b6b94a516c)
+![Circuit-UART-Bridge](https://github.com/user-attachments/assets/5a2c05ba-40d6-497d-bb65-2307bf691a6a)
 <br/>
 Circuit 10.1
 
