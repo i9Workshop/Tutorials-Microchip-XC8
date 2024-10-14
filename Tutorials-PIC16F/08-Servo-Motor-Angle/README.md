@@ -11,7 +11,7 @@ Servo motor used PWM with period of 2ms to communicate with internal controller 
 * Rotor position can be steered using $T_{ON}$ between 1ms to 2ms.
 <br/>
 
-![Circuit-Servo-Motor-Angle](https://github.com/user-attachments/assets/d8c74132-e34e-4e30-964f-c6ac0f7dd1dc)
+![Circuit-Servo-Motor-Angle](https://github.com/user-attachments/assets/3e47665f-6ef3-48b5-ac90-7e2524453ced)
 <br/>
 Circuit 8.1
 
