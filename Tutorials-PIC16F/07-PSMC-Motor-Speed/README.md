@@ -103,7 +103,105 @@ Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/T
 <br/>
 
 ## Example Program
-Long studies needed. Will be continued later...
+
+```
+void programInitialize(void) {
+    lcd_Initialize();
+    motor_Initialize();
+}
+```
+
+```
+void programLoop(void) {
+    uint32_t motorSpeed = 0;
+    
+    motor_SetSpeed((uint16_t)motorSpeed);
+    
+    lcd_Goto(0, 0);
+    lcd_PrintString("PWM Motor Speed");
+    
+    lcd_Goto(1, 0);
+    lcd_PrintDigitInt32((uint16_t)motorSpeed, 5, false, true);
+    
+    while(1) {
+        if(!pb_Up) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Up   "); // Print on LCD
+            
+            if(motorSpeed < 65535) motorSpeed +=1000; // motorSpeed increment by 1000
+                                                      // Stop increment if motorSpeed is more than 65535
+            
+            if(motorSpeed > 65535) motorSpeed = 65000; // Set maximum value for motor speed is 65000
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32((uint16_t)motorSpeed, 5, false, true);
+            
+            delay_ms(90); // Wait for a while
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     "); // Print nothing on LCD
+            
+            delay_ms(10); // Wait for a while
+        }
+        
+        if(!pb_Down) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Down ");
+            
+            if(motorSpeed > 0) motorSpeed -=1000; // motorSpeed decrement by 1000
+                                                  // Stop decrement if motorSpeed is less than 0
+            
+            lcd_Goto(1, 0);
+            lcd_PrintDigitInt32((uint16_t)motorSpeed, 5, false, true);
+            
+            delay_ms(90);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            delay_ms(10);
+        }
+        
+        if(!pb_Left) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Left ");
+            
+            if(motorSpeed > 65535) motor_SetSpeed(65535);
+            else motor_SetSpeed((uint16_t)motorSpeed);
+            
+            motor_Left();
+            
+            while(!pb_Left);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            pb_DelayDebounce();
+        } else {
+            motor_SetSpeed(0);
+        }
+        
+        if(!pb_Right) {
+            lcd_Goto(1, 6);
+            lcd_PrintString("Right");
+            
+            if(motorSpeed > 65535) motor_SetSpeed(65535);
+            else motor_SetSpeed((uint16_t)motorSpeed);
+            
+            motor_Right();
+            
+            while(!pb_Right);
+            
+            lcd_Goto(1, 6);
+            lcd_PrintString("     ");
+            
+            pb_DelayDebounce();
+        } else {
+            motor_SetSpeed(0);
+        }
+    }
+}
+```
 <br/>
 
 <br/>
