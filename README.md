@@ -7,9 +7,9 @@ Tutorials for PIC16F and PIC18F.
 ## MCU Starter Board
 
 ### StarterBoardV1-PIC16F1783
-![StarterBoardPic16F-20pins-Picture2 jpg](https://github.com/user-attachments/assets/a62a0d4e-c95f-4abe-9d0f-82e27d2ce919)
+![StarterBoardPic16F-20pins-Picture2](https://github.com/user-attachments/assets/c5c9386a-fe87-4ee6-98d4-d8ebf32b2c8b)
 
-![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/36d0c4f4-b2d7-421a-9e7b-e07e6f48ff50)
+![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/d55a0fa1-eeec-46bb-8aa1-0dabff78bbc3)
 
 ![StarterBoardV1-PIC16F1783-Label](https://github.com/user-attachments/assets/8d854277-ae45-4009-ad95-4076925fbb21)
 
