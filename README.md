@@ -11,7 +11,7 @@ Tutorials for PIC16F and PIC18F.
 
 ![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/6970f0fa-cc0c-43e6-b1a1-52112272362e)
 
-![StarterBoardV1-PIC16F1783-Label](https://github.com/user-attachments/assets/8d854277-ae45-4009-ad95-4076925fbb21)
+![Uploading StarterBoardV1-PIC16F1783-Label.jpg…]()
 <br/>
 
 ## Create MPLabX Project
