@@ -7,12 +7,11 @@ Tutorials for PIC16F and PIC18F.
 ## MCU Starter Board
 
 ### StarterBoardV1-PIC16F1783
-![StarterBoardPic16F-20pins-Picture2](https://github.com/user-attachments/assets/c5c9386a-fe87-4ee6-98d4-d8ebf32b2c8b)
+![StarterBoardPic16F-20pins-Picture2](https://github.com/user-attachments/assets/ccdb4411-6129-4de9-bf6c-6f39d80e865e)
 
-![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/d55a0fa1-eeec-46bb-8aa1-0dabff78bbc3)
+![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/6970f0fa-cc0c-43e6-b1a1-52112272362e)
 
 ![StarterBoardV1-PIC16F1783-Label](https://github.com/user-attachments/assets/8d854277-ae45-4009-ad95-4076925fbb21)
-
 <br/>
 
 ## Create MPLabX Project
