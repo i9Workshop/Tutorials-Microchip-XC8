@@ -10,6 +10,9 @@ Schematic 10.1 shows the connection of LEDs for 3 x 3 matrix with common cathode
 
 ## Initialize Peripheral
 
+* Set pin direction to output at register TRISA - Page 114
+* Set pin for digital I/O purpose at register ANSELA - Page 115
+* Defined output pin as another name desired.
 <br/>
 
 <br/>
