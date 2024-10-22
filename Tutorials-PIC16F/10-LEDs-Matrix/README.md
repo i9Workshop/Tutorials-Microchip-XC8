@@ -122,8 +122,6 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
 ## Loop Program
 
 * LEDs swiping.
-<br/>
-
   ```
       uint8_t i = 0;
       
@@ -146,8 +144,6 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
 <br/>
 
 * LEDs displaying push button and switch inputs.
-<br/>
-
   ```
   // Rearrange push buttons and switches input in 9bit binary number
   uint16_t input = (uint16_t)(!pb_No1 << 8) | (uint16_t)(!pb_No2 << 7) |
