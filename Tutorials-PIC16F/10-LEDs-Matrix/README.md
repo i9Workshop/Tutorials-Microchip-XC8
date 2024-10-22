@@ -53,21 +53,26 @@ Schematic 10.1 shows the connection of LEDs for 3 x 3 matrix with common cathode
 ## LEDs Display Function
 
 ```
+    void ledMatrix_AllOff(void);
     void ledMatrix_SetDisplay(uint16_t ledWord);
 ```
 
 ```
-void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binary word
-    uint16_t delay = 200;
-    
-    // First row
-    
+void ledMatrix_AllOff(void) { // Turn off all LEDs
     led_VccColumn1 = 0;
     led_VccColumn2 = 0;
     led_VccColumn3 = 0;
     led_GndRow1 = 0;
     led_GndRow2 = 0;
     led_GndRow3 = 0;
+}
+
+void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binary word
+    uint16_t delay = 200;
+    
+    // First row
+    
+    ledMatrix_AllOff();
     
     led_VccColumn1 = (bool)(ledWord & 0b100000000);
     led_VccColumn2 = (bool)(ledWord & 0b010000000);
@@ -80,12 +85,7 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
     
     // Second row
     
-    led_VccColumn1 = 0;
-    led_VccColumn2 = 0;
-    led_VccColumn3 = 0;
-    led_GndRow1 = 0;
-    led_GndRow2 = 0;
-    led_GndRow3 = 0;
+    ledMatrix_AllOff();
     
     led_VccColumn1 = (bool)(ledWord & 0b000100000);
     led_VccColumn2 = (bool)(ledWord & 0b000010000);
@@ -98,12 +98,7 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
     
     // Third row
     
-    led_VccColumn1 = 0;
-    led_VccColumn2 = 0;
-    led_VccColumn3 = 0;
-    led_GndRow1 = 0;
-    led_GndRow2 = 0;
-    led_GndRow3 = 0;
+    ledMatrix_AllOff();
     
     led_VccColumn1 = (bool)(ledWord & 0b000000100);
     led_VccColumn2 = (bool)(ledWord & 0b000000010);
@@ -158,6 +153,8 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
 
 ## MPLabX Code
 
+* https://github.com/i9Workshop/StarterSlaveBoardV1-PIC16F1783-LedSwiping
+* https://github.com/i9Workshop/StarterSlaveBoardV1-PIC16F1783-LedReadPushButtonsAndSwitches
 <br/>
 
 <br/>
