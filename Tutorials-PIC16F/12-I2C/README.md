@@ -5,7 +5,7 @@ One wire is specificaly to generate communication clock and the other to transmi
 I<sup>2</sup>C master device send 8bit data with address byte and data byte to slave devices, thus only the slave device with address intended will receive or transmit data.
 <br/>
 
-![Diagram-I2C-Communication](https://github.com/user-attachments/assets/114b41ac-7169-4cf4-b949-a750a103c9d2)
+![Diagram-I2C-Communication](https://github.com/user-attachments/assets/c7618522-11e6-4f00-b3b5-c6ee47343ee9)
 <br/>
 
 Diagram above shows the connection of serial clock, SCl and serial data, SDa between single master device and multiple slave devices.
