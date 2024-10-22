@@ -1,5 +1,6 @@
 # LEDs Matrix
-LEDs matrix used [persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision) effect to appear as each LEDs turned on at the same time.
+LEDs matrix used [persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision) effect of human eye to appear as each LEDs turned on at the same time. 
+In fact, only LEDs that share the same common connection can be turned on at the same time.
 <br/>
 
 ![LED-Matrix-Schematic](https://github.com/user-attachments/assets/e9a5025c-eb2d-4959-af3a-1a166a27fa6a)
