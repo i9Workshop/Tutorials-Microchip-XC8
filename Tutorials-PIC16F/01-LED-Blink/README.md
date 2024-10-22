@@ -16,7 +16,7 @@ Refer to LED datasheet to avoid exceeding the maximum I<sub>F</sub>.
 * Set pin for digital I/O purpose at register ANSELB - Page 121
   - RB6 and RB7 does not connected to analog input peripheral - Page 10 and 11
 * Set pin desired output by writing to register LATB - Page 120
-* Output pin can be defined as another name desired.
+* Output pins can be defined as another name desired.
 <br/>
 
 ```
