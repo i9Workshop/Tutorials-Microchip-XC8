@@ -52,12 +52,110 @@ Schematic 10.1 shows the connection of LEDs for 3 x 3 matrix with common cathode
 
 ## LEDs Display Function
 
+```
+    void ledMatrix_SetDisplay(uint16_t ledWord);
+```
+
+```
+void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binary word
+    uint16_t delay = 200;
+    
+    // First row
+    
+    led_VccColumn1 = 0;
+    led_VccColumn2 = 0;
+    led_VccColumn3 = 0;
+    led_GndRow1 = 0;
+    led_GndRow2 = 0;
+    led_GndRow3 = 0;
+    
+    led_VccColumn1 = (bool)(ledWord & 0b100000000);
+    led_VccColumn2 = (bool)(ledWord & 0b010000000);
+    led_VccColumn3 = (bool)(ledWord & 0b001000000);
+    led_GndRow1 = 0;
+    led_GndRow2 = 1;
+    led_GndRow3 = 1;
+    
+    delay_x24o25us(delay);
+    
+    // Second row
+    
+    led_VccColumn1 = 0;
+    led_VccColumn2 = 0;
+    led_VccColumn3 = 0;
+    led_GndRow1 = 0;
+    led_GndRow2 = 0;
+    led_GndRow3 = 0;
+    
+    led_VccColumn1 = (bool)(ledWord & 0b000100000);
+    led_VccColumn2 = (bool)(ledWord & 0b000010000);
+    led_VccColumn3 = (bool)(ledWord & 0b000001000);
+    led_GndRow1 = 1;
+    led_GndRow2 = 0;
+    led_GndRow3 = 1;
+    
+    delay_x24o25us(delay);
+    
+    // Third row
+    
+    led_VccColumn1 = 0;
+    led_VccColumn2 = 0;
+    led_VccColumn3 = 0;
+    led_GndRow1 = 0;
+    led_GndRow2 = 0;
+    led_GndRow3 = 0;
+    
+    led_VccColumn1 = (bool)(ledWord & 0b000000100);
+    led_VccColumn2 = (bool)(ledWord & 0b000000010);
+    led_VccColumn3 = (bool)(ledWord & 0b000000001);
+    led_GndRow1 = 1;
+    led_GndRow2 = 1;
+    led_GndRow3 = 0;
+    
+    delay_x24o25us(delay);
+}
+```
 <br/>
 
 <br/>
 
 ## Loop Program
 
+* LEDs swiping.
+<br/>
+
+  ```
+      uint8_t i = 0;
+      
+      for(i=0; i<50; i++) {
+          ledMatrix_SetDisplay(0b100100100);
+      }
+      
+      for(i=0; i<50; i++) {
+          ledMatrix_SetDisplay(0b010010010);
+      }
+      
+      for(i=0; i<50; i++) {
+          ledMatrix_SetDisplay(0b001001001);
+      }
+      
+      for(i=0; i<50; i++) {
+          ledMatrix_SetDisplay(0b010010010);
+      }
+  ```
+<br/>
+
+* LEDs displaying push button and switch inputs.
+<br/>
+
+  ```
+  // Rearrange push buttons and switches input in 9bit binary number
+  uint16_t input = (uint16_t)(!pb_No1 << 8) | (uint16_t)(!pb_No2 << 7) |
+                   (uint16_t)(!sw_No1 << 5) | (uint16_t)(!sw_No2 << 4) |
+                   (uint16_t)(!sw_No3 << 2) | (uint16_t)(!sw_No4 << 1);
+  
+  ledMatrix_SetDisplay(input);
+  ```
 <br/>
 
 <br/>
