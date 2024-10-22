@@ -11,3 +11,18 @@ Schematic 10.1 shows the connection of LEDs for 3 x 3 matrix with common cathode
 ## Initialize Peripheral
 
 <br/>
+
+<br/>
+
+## Loop Program
+
+<br/>
+
+<br/>
+
+## MPLabx Program
+
+<br/>
+
+<br/>
+
