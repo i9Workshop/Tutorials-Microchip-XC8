@@ -1,1 +1,3 @@
-#  SPI
+#  Serial Peripheral Interface
+
+<br/>
