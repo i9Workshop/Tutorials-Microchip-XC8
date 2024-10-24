@@ -46,9 +46,9 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   
   ```
   void i2c_Initialize(uint32_t fosc, uint16_t baudrate) {
-      SSPCON1bits.SSPM = 8; // Set MSSP module for I2C master mode with clock = FOSC/(4*(SSPADD+1)) - Page 306
-      
       SSPSTATbits.SMP = 1; // Set disabled slew rate control for standard speed mode - Page 304
+      
+      SSPCON1bits.SSPM = 8; // Set MSSP module for I2C master mode with clock = FOSC/(4*(SSPADD+1)) - Page 306
       
       SSPCON3bits.SDAHT = 0; // Set 100ns for minimum SDA hold time - Page 308
       
