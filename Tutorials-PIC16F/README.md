@@ -128,7 +128,7 @@ void delay_ms(uint32_t delay) {
   
   ```
   void main(void) {
-      delay_ms(200); // Wait for PSU power up
+      delay_ms(100); // Wait for PSU power up
       delay_ms(141); // Wait for device to start up
       
       programInitialize(); // Initialize prorgram
