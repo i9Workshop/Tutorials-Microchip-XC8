@@ -8,7 +8,7 @@ I<sup>2</sup>C master device send 8bit data with address byte and data byte to s
 ![Diagram-I2C-Communication](https://github.com/user-attachments/assets/c7618522-11e6-4f00-b3b5-c6ee47343ee9)
 <br/>
 
-Diagram above shows the connection of serial clock, SCl and serial data, SDa between single master device and multiple slave devices.
+Diagram above shows the connection of serial clock, $SCl$ and serial data, $SDa$ between single master device and multiple slave devices.
 <br/>
 
 <br/>
