@@ -58,7 +58,6 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       // Datasheet page 320
       TXSTAbits.CSRC = 0;     // UART module clock source generated internally from BRG
       TXSTAbits.TX9 = 0;      // Disable 9bit transmission
-      TXSTAbits.TXEN = 1;     // Set enable UART module
       TXSTAbits.SYNC = 0;     // Set UART module to use asynchronous mode
       TXSTAbits.BRGH = 0;     // Set UART module to use low speed baud rate
       
@@ -77,6 +76,8 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       
       SPBRGH = (uint8_t)(brgPeriod << 8);
       SPBRGL = (uint8_t)brgPeriod;
+      
+      TXSTAbits.TXEN = 1;     // Set enable UART module - Page 320
       
       delay_x1o5us(23); // Wait for UART to reconfigure BRG - Page 373 from I/O pin timing
   }
