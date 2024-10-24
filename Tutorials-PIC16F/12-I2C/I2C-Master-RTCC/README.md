@@ -46,7 +46,6 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
   
   ```
   void i2c_Initialize(uint32_t fosc, uint16_t baudrate) {
-      SSPCON1bits.SSPEN = 1; // Set enable MSSP module - Page 306
       SSPCON1bits.SSPM = 8; // Set MSSP module for I2C master mode with clock = FOSC/(4*(SSPADD+1)) - Page 306
       
       SSPSTATbits.SMP = 1; // Set disabled slew rate control for standard speed mode - Page 304
@@ -56,6 +55,8 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       if(baudrate>2223) baudrate = 2223; // Set maximum baud rate to 2223 - baud rate tested and worked below 2224
       else if(baudrate<1113) baudrate = 1113; // Set minimum baud rate to 1113 - baud rate tested and worked above 1112
       SSPADD = (uint8_t)((fosc/baudrate) / 4 - 1); // Set baud rate generator register - Page 309
+      
+      SSPCON1bits.SSPEN = 1; // Set enable MSSP module - Page 306
       
       delay_x1o5us(23); // Wait for MSSP module to be ready - Page 373 from I/O pin timing
   }
