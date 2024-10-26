@@ -122,7 +122,7 @@ void delay_ms(uint32_t delay) {
 * Refer to MCU datasheet for device start up timing, $T_{DSU}$.
   - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from oscillator start-up timer timing, $T_{OST}$ as refered to Table 30-10 in page 374.
     
-    >$T_{DSU} = T_{OST} = 1024Cycle_{Instruction} = 1024 \times{} \frac{1}{32Mhz} \times{} 4 = 128\mu s
+    >$T_{DSU} = T_{OST} = 1024Cycle_{Instruction} = 1024 \times{} \frac{1}{32Mhz} \times{} 4 = 128\mu s$
     <br/>
   
   ```
