@@ -120,16 +120,15 @@ void delay_ms(uint32_t delay) {
 * Power supply unit timing to power up is depended on the circuit specification.
 
 * Refer to MCU datasheet for device start up timing, $T_{DSU}$.
-  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from power-up timer timing, $T_{PWRT}$  and oscillator start-up timer timing, $T_{OST}$.
-    Value for $T_{PWRT}$ and $T_{OST}$ are refered to Table 30-10 in page 374.
+  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from oscillator start-up timer timing, $T_{OST}$ as refered to Table 30-10 in page 374.
     
-    >$T_{DSU} = T_{PWRT} + T_{OST} = 140ms + 1024Cycle_{Instruction} = 140ms + (1024 \times{} \frac{1}{32Mhz} \times{} 4) = 140ms + 128\mu s = 140.128ms$
+    >$T_{DSU} = T_{OST} = 1024Cycle_{Instruction} = 1024 \times{} \frac{1}{32Mhz} \times{} 4 = 128\mu s
     <br/>
   
   ```
   void main(void) {
       delay_ms(100); // Wait for PSU power up
-      delay_ms(141); // Wait for device to start up
+      delay_x1o5us(86); // Wait for device to start up, Tost = 128us
       
       programInitialize(); // Initialize prorgram
       
