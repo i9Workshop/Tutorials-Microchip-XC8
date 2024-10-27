@@ -63,7 +63,7 @@ Pin labeled **Dir** on the driver of Circuit 6.1 is the control for motor direct
       T2CONbits.TMR2ON = 1;       // Turn on timer 2 module - Page 188
       
       delay_x1o5us(2); // Wait for timer 2 and CCP module configuration - Page 373 from I/O pin timing
-      		       // Tioz = 2us
+      		             // Tioz = 2us
   }
   ```
 <br/>
