@@ -61,9 +61,9 @@ Pin labeled **Dir** on the driver of Circuit 6.1 is the control for motor direct
       CCP1CONbits.CCP1M = 12;     // Set CCP register to use PWM mode - Page 255
       
       T2CONbits.TMR2ON = 1;       // Turn on timer 2 module - Page 188
-	    
-      delay_x1o5us(2); // Wait for timer 2 and CCP module configuration - Page 373 from I/O pin timing
-                       // Tioz = 2us
+      
+      delay_x1o5us(2); 		  // Wait for timer 2 and CCP module configuration - Page 373 from I/O pin timing
+				  // Tioz = 2us
   }
   ```
 <br/>
