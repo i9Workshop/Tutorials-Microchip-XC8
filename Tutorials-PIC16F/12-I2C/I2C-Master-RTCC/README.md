@@ -58,7 +58,8 @@ RC3 connected to SCl is MCU master clock pin while RC4 connected to SDa is MCU d
       
       SSPCON1bits.SSPEN = 1; // Set enable MSSP module - Page 306
       
-      delay_x1o5us(23); // Wait for MSSP module to be ready - Page 373 from I/O pin timing
+      delay_x1o5us(2); // Wait for MSSP module configuration - Page 373 from I/O pin timing
+                       // Tioz = 2us
   }
   ```
 <br/>
