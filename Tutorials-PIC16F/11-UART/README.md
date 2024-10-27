@@ -79,7 +79,8 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
       
       TXSTAbits.TXEN = 1;     // Set enable UART module - Page 320
       
-      delay_x1o5us(23); // Wait for UART to reconfigure BRG - Page 373 from I/O pin timing
+      delay_x1o5us(2); // Wait for UART module configuration - Page 373 from I/O pin timing
+                       // Tioz = 2us
   }
   ```
 <br/>
