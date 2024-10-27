@@ -56,12 +56,14 @@ Pin labeled **Dir** on the driver of Circuit 6.1 is the control for motor direct
       T2CONbits.T2OUTPS = 0;      // Set timer 2 output postscaler ratio to 1:1
       T2CONbits.T2CKPS = 2;       // Set timer 2 clock prescaler to 16
       
-      PR2 = 0xFF;                 // Set timer 2 period register to 0xFF
+      PR2 = 0xFF;                 // Set timer 2 period register to 0xFF - Page 189
       
-      T2CONbits.TMR2ON = 1;       // Turn on timer 2 module
+      CCP1CONbits.CCP1M = 12;     // Set CCP register to use PWM mode - Page 255
       
-      // Datasheet page 255
-      CCP1CONbits.CCP1M = 12;     // Set CCP register to use PWM mode
+      T2CONbits.TMR2ON = 1;       // Turn on timer 2 module - Page 188
+	    
+      delay_x1o5us(2); // Wait for timer 2 and CCP module configuration - Page 373 from I/O pin timing
+                       // Tioz = 2us
   }
   ```
 <br/>
@@ -76,8 +78,8 @@ Pin labeled **Dir** on the driver of Circuit 6.1 is the control for motor direct
   ```
   ```
   void motor_SetSpeed(uint16_t pwm) {
-      CCPR1L = (uint8_t)(pwm >> 2);   // CCPR1L is the MSB of the PWM duty cycle
-      CCP1CONbits.DC1B = pwm & 0x03;  // DC1B is the LSB of the PWM duty cycle
+      CCPR1L = (uint8_t)(pwm>>2);     // CCPR1L is the MSB of the PWM duty cycle - Page 252
+      CCP1CONbits.DC1B = pwm & 0x03;  // DC1B is the LSB of the PWM duty cycle - Page 255
   }
   ```
 <br/>
