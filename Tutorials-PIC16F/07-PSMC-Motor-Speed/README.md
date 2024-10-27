@@ -56,9 +56,7 @@ Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/T
   void motor_Initialize(void) {
       // PSMC module 1 setups
       
-      // Page 223
-      PSMC1CONbits.PSMC1EN = 1; // Set enable PSMC1 module
-      PSMC1CONbits.P1MODE = 1; // Set PSMC1 operating mode to single PWM with complementary output
+      PSMC1CONbits.P1MODE = 1; // Set PSMC1 operating mode to single PWM with complementary output - Page 223
       
       // Page 226
       PSMC1CLKbits.P1CPRE = 0; // Set PSMC1 clock pre-scaler to frequency/1
@@ -80,8 +78,14 @@ Refer to tutorial PWM for [DC brush motor speed](https://github.com/i9Workshop/T
       // 16bit period time - Page 238
       PSMC1PRH = 0xFF;
       PSMC1PRL = 0xFF;
+      
+      PSMC1CONbits.PSMC1EN = 1; // Set enable PSMC1 module - Page 223
+      
+      delay_x1o5us(2); // Wait for timer 2 and PSMC module configuration - Page 373 from I/O pin timing
+                       // Tioz = 2us
   }
   ```
+<br/>
 
 * Set PWM function
   
