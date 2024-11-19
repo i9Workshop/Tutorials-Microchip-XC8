@@ -51,7 +51,7 @@ uint8_t i2c_RxData = 0; // Variable to store received data
 uint8_t i2c_TxData = 0; // Variable to store transmit data
 
 
-void i2c_ScanRxRegister(void) {
+void i2c_ScanMaster(void) {
     // Single byte data receiver - Page 272
     // Single byte data transmit - Page 277
     if(PIR1bits.SSP1IF) { // Polling for MSSP module interrupt - Page 266
