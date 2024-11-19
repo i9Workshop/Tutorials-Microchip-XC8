@@ -155,7 +155,7 @@ void i2c_ScanMaster(void) {
   }
   
   void programLoop(void) {
-      ledMatrix_SetDisplay(i2c_RxData); // Display LEDs matrix from  variable i2c_RxData
+      ledMatrix_SetDisplay(i2c_RxData); // Display LEDs matrix from variable i2c_RxData
   }
   ```
   <br/>
