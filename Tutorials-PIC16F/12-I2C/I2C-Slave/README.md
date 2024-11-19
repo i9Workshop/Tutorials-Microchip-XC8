@@ -22,7 +22,7 @@ Both will use same program with different address to display LED pattern and sen
   ```
   <br/>
 
-* Initialize I<sup>2</sup>C module as slave
+* Initialize I<sup>2</sup>C module as slave.
   ```
   void i2c_Initialize(uint8_t address) {
       SSPCON1bits.SSPM = 6; // I2C slave mode 7bit address - Page 306
@@ -74,5 +74,96 @@ void i2c_ScanRxRegister(void) {
 <br/>
 
 ## Example Program
+
+* LEDs display functions.
+  ```
+  void ledMatrix_DelayScanInput(uint16_t delay) { // Use this delay function to poll input peripherals status
+      for(uint16_t i=0; i<delay; i++) {
+          i2c_ScanRxRegister(); // Call I2C polling function
+          
+          i2c_TxData = (uint8_t)((pb_No1 << 5) | (pb_No2 << 4) | (sw_No1 << 3) | // Write switches status to variable i2c_TxData
+                       (sw_No2 << 2) | (sw_No3 << 1) | sw_No4);
+      }
+  }
+  
+  void ledMatrix_AllOff(void) {
+      led_VccColumn1 = 0;
+      led_VccColumn2 = 0;
+      led_VccColumn3 = 0;
+      led_GndRow1 = 0;
+      led_GndRow2 = 0;
+      led_GndRow3 = 0;
+  }
+  
+  void ledMatrix_SetDisplay(uint16_t ledWord) {
+      uint16_t delay = 200;
+      
+      // First row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b100000000);
+      led_VccColumn2 = (bool)(ledWord & 0b010000000);
+      led_VccColumn3 = (bool)(ledWord & 0b001000000);
+      led_GndRow1 = 0;
+      led_GndRow2 = 1;
+      led_GndRow3 = 1;
+      
+      ledMatrix_DelayScanInput(delay);
+      
+      // Second row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b000100000);
+      led_VccColumn2 = (bool)(ledWord & 0b000010000);
+      led_VccColumn3 = (bool)(ledWord & 0b000001000);
+      led_GndRow1 = 1;
+      led_GndRow2 = 0;
+      led_GndRow3 = 1;
+      
+      ledMatrix_DelayScanInput(delay);
+      
+      // Third row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b000000100);
+      led_VccColumn2 = (bool)(ledWord & 0b000000010);
+      led_VccColumn3 = (bool)(ledWord & 0b000000001);
+      led_GndRow1 = 1;
+      led_GndRow2 = 1;
+      led_GndRow3 = 0;
+      
+      ledMatrix_DelayScanInput(delay);
+  }
+  ```
+  <br/>
+
+* Main program
+  ```
+  void programInitialize(void) {
+      // SCl pin
+      TRISCbits.TRISC3 = 1;
+      APFCONbits.SCKSEL = 0;
+      
+      // SDa pin
+      TRISCbits.TRISC4 = 1;
+      APFCONbits.SDISEL = 0;
+      
+      i2c_Initialize(0x10); // Initialize i2c module with desired address
+  }
+  
+  void programLoop(void) {
+      ledMatrix_SetDisplay(i2c_RxData); // Display led matrix from  variable i2c_RxData
+  }
+  ```
+  <br/>
+
+<br/>
+
+## MPLabX Code
+
+<br/>
 
 <br/>
