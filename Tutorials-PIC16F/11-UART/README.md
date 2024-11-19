@@ -25,6 +25,7 @@ UART communication wires are cross connected to each other between transmit and 
 RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
 
+<br/>
 
 ## Initialize Peripheral
 
