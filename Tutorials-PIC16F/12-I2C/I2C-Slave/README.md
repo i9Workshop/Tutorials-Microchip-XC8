@@ -1,6 +1,7 @@
 # I<sup>2</sup>C Slave MCU
 
-Slave devices used are two [StarterSlaveBoardV1-PIC16F1783](https://github.com/i9Workshop/Tutorials-Microchip-XC8).
+Slave devices used are two [StarterSlaveBoardV1-PIC16F1783](https://github.com/i9Workshop/Tutorials-Microchip-XC8). 
+Both will use same program with different address to display LED pattern and send input switches to master device.
 <br/>
 
 <br/>
