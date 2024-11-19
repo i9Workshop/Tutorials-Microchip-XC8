@@ -151,7 +151,7 @@ void i2c_ScanMaster(void) {
       TRISCbits.TRISC4 = 1;
       APFCONbits.SDISEL = 0;
       
-      i2c_Initialize(0x10); // Initialize i2c module with desired address
+      i2c_Initialize(0x10); // Initialize I2C module with desired address
   }
   
   void programLoop(void) {
