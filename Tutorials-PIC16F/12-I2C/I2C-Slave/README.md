@@ -19,6 +19,7 @@ Slave devices used are two [StarterSlaveBoardV1-PIC16F1783](https://github.com/i
       TRISCbits.TRISC4 = 1;
       APFCONbits.SDISEL = 0;
   ```
+  <br/>
 
 * Initialize I<sup>2</sup>C module as slave
   ```
