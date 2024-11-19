@@ -79,7 +79,7 @@ void i2c_ScanMaster(void) {
   ```
   void ledMatrix_DelayScanInput(uint16_t delay) { // Use this delay function to poll input peripherals status
       for(uint16_t i=0; i<delay; i++) {
-          i2c_ScanRxRegister(); // Call I2C polling function
+          i2c_ScanMaster(); // Call I2C polling function
           
           i2c_TxData = (uint8_t)((pb_No1 << 5) | (pb_No2 << 4) | (sw_No1 << 3) | // Write switches status to variable i2c_TxData
                        (sw_No2 << 2) | (sw_No3 << 1) | sw_No4);
