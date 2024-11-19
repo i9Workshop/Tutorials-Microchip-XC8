@@ -163,8 +163,16 @@ void i2c_ScanMaster(void) {
 <br/>
 
 ## MPLabX Code
+
 * https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-IicMasterLedMatrix
 * https://github.com/i9Workshop/StarterSlaveBoardV1-PIC16F1783-IicSlaveLedMatrix
+<br/>
+
+<br/>
+
+## Notice
+
+Kindly donate to [i9 Workshop](https://i9workshop.github.io) for multiple bytes I<sup>2</sup>C receive and transmit tutorial.
 <br/>
 
 <br/>
