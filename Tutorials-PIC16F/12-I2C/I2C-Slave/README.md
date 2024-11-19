@@ -42,7 +42,7 @@ Slave devices used are two [StarterSlaveBoardV1-PIC16F1783](https://github.com/i
 
 <br/>
 
-## Create I<sup>2</sup>C Scan Master Functions
+## Create I<sup>2</sup>C Scan Master Function
 
 ```
 // Global variable to be used in main program
@@ -68,3 +68,10 @@ void i2c_ScanRxRegister(void) {
     }
 }
 ```
+<br/>
+
+<br/>
+
+## Example Program
+
+<br/>
