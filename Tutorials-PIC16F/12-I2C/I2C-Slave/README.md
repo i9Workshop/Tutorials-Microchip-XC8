@@ -22,7 +22,7 @@ Both will use same program with different address to display LED pattern and sen
   ```
   <br/>
 
-* Initialize I<sup>2</sup>C module as slave with desired address.
+* Initialize I<sup>2</sup>C module as slave with desired addressSlaveSlave.
   ```
   void i2c_Initialize(uint8_t address) {
       SSPCON1bits.SSPM = 6; // I2C slave mode 7bit address - Page 306
@@ -140,7 +140,7 @@ void i2c_ScanMaster(void) {
   ```
   <br/>
 
-* Main program
+* Main program functions.
   ```
   void programInitialize(void) {
       // SCl pin
