@@ -9,7 +9,7 @@ I<sup>2</sup>C master device send 8bit data with address byte and data byte to s
 <br/>
 
 Diagram above shows the connection of serial clock, $SCl$ and serial data, $SDa$ between single master device and multiple slave devices. 
-Pull up resistors, $R_{1}$ and $R_{2}$ are required with recommended value $10k\Omega$
+Pull up resistors, $R_{1}$ and $R_{2}$ are required with recommended value $10k\Omega$.
 <br/>
 
 <br/>
