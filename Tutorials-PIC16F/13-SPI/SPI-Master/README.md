@@ -86,3 +86,37 @@ uint8_t spi_TransferByteSlave1(uint8_t data) {
 <br/>
 
 <br/>
+
+## Example Program
+
+```
+void programInitialize(void) {
+    spi_Initialize(_User_FOSC, 1000); // Set bit rate x8bit/baud = 8kHz
+}
+
+void programLoop(void) {
+    uint8_t i = 0; // Variable for delay
+    uint8_t dataReturn = 0; // Variable for data returned from slave
+    bool transferDoneFlag = false; // Variable to check status data had been transfered
+    
+    for(i=0; i<50; i++) {
+        if(!transferDoneFlag) { // Condition if data had not yet transfered
+            dataReturn = spi_TransferByteSlave1(counter++); // Transfer counter data to slave device 1
+            transferDoneFlag = true; // Set flag after data was transfered
+        }
+        
+        ledMatrix_SetDisplay(dataReturn); // Display LEDs matrix from variable dataReturn
+    }
+}
+```
+<br/>
+
+<br/>
+
+## MPLabX Code
+
+* https://github.com/i9Workshop/StarterSlaveBoardV1-PIC16F1783-SpiMasterLedMatrix
+<br/>
+
+<br/>
+
