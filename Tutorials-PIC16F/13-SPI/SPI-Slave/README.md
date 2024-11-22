@@ -49,7 +49,7 @@ Slave device used is [StarterSlaveBoardV1-PIC16F1783](https://github.com/i9Works
 ## Create SPI Scan Master Function
 
 ```
-void spi_ScanMaster(void)
+    void spi_ScanMaster(void);
 ```
 
 ```
