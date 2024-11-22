@@ -94,6 +94,9 @@ uint8_t spi_TransferByteSlave1(uint8_t data) {
 ## Example Program
 
 ```
+uint8_t counter = 0; // Variable for demo data transfer
+
+
 void programInitialize(void) {
     spi_Initialize(_User_FOSC, 1000); // Set bit rate x8bit/baud = 8kHz
 }
