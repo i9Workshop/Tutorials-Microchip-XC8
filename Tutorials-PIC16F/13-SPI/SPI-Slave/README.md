@@ -69,3 +69,29 @@ void spi_ScanMaster(void) {
 <br/>
 
 <br/>
+
+## Main Program
+
+```
+uint8_t spi_Data = 0; // Variable to store received data
+
+
+void programInitialize(void) {
+    spi_Initialize();
+}
+
+void programLoop(void) {
+    ledMatrix_SetDisplay(spi_Data); // Display LEDs matrix from variable spi_Data
+}
+```
+<br/>
+
+<br/>
+
+## MPLabX Code
+
+* 
+<br/>
+
+<br/>
+
