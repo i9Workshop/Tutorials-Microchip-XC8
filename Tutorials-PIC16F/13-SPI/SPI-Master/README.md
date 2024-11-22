@@ -60,6 +60,10 @@ Master device will send a single byte data to slave device and received back the
 ## Create SPI Master Transfer Data
 
 ```
+    uint8_t spi_TransferByteSlave1(uint8_t data);
+```
+
+```
 uint8_t spi_TransferByteSlave1(uint8_t data) {
     // Single byte data transmit and receive - Page 262
     
