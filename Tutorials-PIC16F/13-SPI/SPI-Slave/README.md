@@ -72,19 +72,88 @@ void spi_ScanMaster(void) {
 
 ## Main Program
 
-```
-uint8_t spi_Data = 0; // Variable to store received data
+* LEDs display functions.
+  ```
+      void ledMatrix_DelayScanInput(uint16_t delay);
+      void ledMatrix_AllOff(void);
+      void ledMatrix_SetDisplay(uint16_t ledWord);
+  ```
+  
+  ```
+  void ledMatrix_DelayScanInput(uint16_t delay) {
+      for(uint16_t i=0; i<delay; i++) {
+          spi_ScanMaster(); // Call SPI polling function
+      }
+  }
+  
+  void ledMatrix_AllOff(void) {
+      led_VccColumn1 = 0;
+      led_VccColumn2 = 0;
+      led_VccColumn3 = 0;
+      led_GndRow1 = 0;
+      led_GndRow2 = 0;
+      led_GndRow3 = 0;
+  }
+  
+  void ledMatrix_SetDisplay(uint16_t ledWord) {
+      uint16_t delay = 200;
+      
+      // First row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b100000000);
+      led_VccColumn2 = (bool)(ledWord & 0b010000000);
+      led_VccColumn3 = (bool)(ledWord & 0b001000000);
+      led_GndRow1 = 0;
+      led_GndRow2 = 1;
+      led_GndRow3 = 1;
+      
+      ledMatrix_DelayScanInput(delay);
+      
+      // Second row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b000100000);
+      led_VccColumn2 = (bool)(ledWord & 0b000010000);
+      led_VccColumn3 = (bool)(ledWord & 0b000001000);
+      led_GndRow1 = 1;
+      led_GndRow2 = 0;
+      led_GndRow3 = 1;
+      
+      ledMatrix_DelayScanInput(delay);
+      
+      // Third row
+      
+      ledMatrix_AllOff();
+      
+      led_VccColumn1 = (bool)(ledWord & 0b000000100);
+      led_VccColumn2 = (bool)(ledWord & 0b000000010);
+      led_VccColumn3 = (bool)(ledWord & 0b000000001);
+      led_GndRow1 = 1;
+      led_GndRow2 = 1;
+      led_GndRow3 = 0;
+      
+      ledMatrix_DelayScanInput(delay);
+  }
+  ```
+  <br/>
 
-
-void programInitialize(void) {
-    spi_Initialize();
-}
-
-void programLoop(void) {
-    ledMatrix_SetDisplay(spi_Data); // Display LEDs matrix from variable spi_Data
-}
-```
-<br/>
+* Main program functions.
+  ```
+  uint8_t spi_Data = 0; // Variable to store received data
+  
+  
+  void programInitialize(void) {
+      spi_Initialize();
+  }
+  
+  void programLoop(void) {
+      ledMatrix_SetDisplay(spi_Data); // Display LEDs matrix from variable spi_Data
+  }
+  ```
+  <br/>
 
 <br/>
 
