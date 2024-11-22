@@ -24,6 +24,10 @@ Both will use same program with different address to display LED pattern and sen
 
 * Initialize MSSP module as slave with desired address.
   ```
+      void i2c_Initialize(uint8_t address);
+  ```
+  
+  ```
   void i2c_Initialize(uint8_t address) {
       SSPCON1bits.SSPM = 6; // I2C slave mode 7bit address - Page 306
       
@@ -44,6 +48,10 @@ Both will use same program with different address to display LED pattern and sen
 <br/>
 
 ## Create I<sup>2</sup>C Scan Master Function
+
+```
+    void i2c_ScanMaster(void);
+```
 
 ```
 // Global variable to be used in main program
@@ -76,6 +84,12 @@ void i2c_ScanMaster(void) {
 ## Example Program
 
 * LEDs display functions.
+  ```
+      void ledMatrix_DelayScanInput(uint16_t delay);
+      void ledMatrix_AllOff(void);
+      void ledMatrix_SetDisplay(uint16_t ledWord);
+  ```
+  
   ```
   void ledMatrix_DelayScanInput(uint16_t delay) { // Use this delay function to poll input peripherals status
       for(uint16_t i=0; i<delay; i++) {
