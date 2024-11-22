@@ -29,7 +29,7 @@ Master device will send a single byte data to slave device and received back the
   ```
   <br/>
 
-* Initialize MSSP module as master with desired address.
+* Initialize MSSP module as master with desired baud rate.
   ```
   void spi_Initialize(uint32_t fosc, uint16_t baudrate) {
       SSPSTATbits.SMP = 1; // Set input data sampled at end of data output time
