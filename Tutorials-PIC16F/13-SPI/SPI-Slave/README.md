@@ -53,6 +53,10 @@ Slave device used is [StarterSlaveBoardV1-PIC16F1783](https://github.com/i9Works
 ```
 
 ```
+// Global variable to be used in main program
+uint8_t spi_Data = 0; // Variable to store received data
+
+
 void spi_ScanMaster(void) {
     // Single byte data transmit and receive - Page 263
     if(!spi_SS) { // Polling to wait for master communication
@@ -142,9 +146,6 @@ void spi_ScanMaster(void) {
 
 * Main program functions.
   ```
-  uint8_t spi_Data = 0; // Variable to store received data
-  
-  
   void programInitialize(void) {
       spi_Initialize();
   }
