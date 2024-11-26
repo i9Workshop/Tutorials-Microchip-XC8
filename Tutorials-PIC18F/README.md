@@ -131,12 +131,14 @@ void delay_ms(uint32_t delay) {
 
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
 
-* Power supply unit timing to power up is depended on the circuit specification.
+* PWRTS is enabled thus the program will start after 64ms.
+
+* Adiitional power supply unit timing to power up is depended on the circuit specification.
 
 * Refer to MCU datasheet for device start up timing, $T_{DSU}$.
-  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 49 which is from oscillator start-up timer timing, $T_{OST}$ as refered to Table 30-10 in page 374.
+  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 92 which is from oscillator start-up timer timing, $T_{OSC}$ as refered to Table 46-11 in page 755.
     
-    >$T_{DSU} = T_{OST} = 1024Cycle_{Instruction} = 1024 \times{} \frac{1}{32Mhz} \times{} 4 = 128\mu s$
+    >$T_{DSU} = T_{OSC} = 1024Cycle_{OSC} = 1024 \times{} \frac{1}{64Mhz} = 16\mu s$
     <br/>
   
   ```
