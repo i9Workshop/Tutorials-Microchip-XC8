@@ -71,7 +71,7 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 
 ## 2.  Master Reset Circuit
 
-![Schematic-Reset-Button](https://github.com/user-attachments/assets/3d5830bf-1a6e-449f-af5e-13e1481c1841)
+![Schematic-Reset-Button](https://github.com/user-attachments/assets/020ceedc-c67c-4179-83f2-5b07f9785c68)
 <br/>
 Schematic 0.2
 <br/>
