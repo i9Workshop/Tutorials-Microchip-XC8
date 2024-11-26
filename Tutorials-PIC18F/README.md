@@ -76,7 +76,7 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 Schematic 0.2
 <br/>
 
-Refer to datasheet page 15, value for R1 is $10k\Omega$ and R2 is $1k\Omega$.
+Refer to datasheet page 15, value for R1 is $10k\Omega$ and R2 is $100\Omega$.
 <br/>
 
 <br/>
@@ -131,7 +131,7 @@ void delay_ms(uint32_t delay) {
 
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
 
-* PWRTS is enabled thus the program will start after 64ms.
+* PWRTS is enabled thus cpu will start after 64ms.
 
 * Adiitional power supply unit timing to power up is depended on the circuit specification.
 
