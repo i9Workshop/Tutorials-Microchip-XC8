@@ -10,7 +10,6 @@ Tutorials for PIC16F and PIC18F.
 ![StarterBoardPic16F-20pins-Picture2](https://github.com/user-attachments/assets/ccdb4411-6129-4de9-bf6c-6f39d80e865e)
 
 ![StarterBoardPic16F-20pins-Picture1](https://github.com/user-attachments/assets/6970f0fa-cc0c-43e6-b1a1-52112272362e)
-
 ![StarterBoardV1-PIC16F1783-Label](https://github.com/user-attachments/assets/e017fddd-864e-4a6a-9fe5-d9f9d61d401e)
 <br/>
 
