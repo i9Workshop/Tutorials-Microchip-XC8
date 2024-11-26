@@ -4,6 +4,8 @@ Refer to Microchip product [datasheet](https://www.microchip.com/en-us/product/p
 and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/8bit-pic/enhanced-family/mrinst/#).<br/>
 <br/>
 
+<br/>
+
 ## 1.  Device and Clock Configuration
 
 ![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/ab182c40-9e38-42b5-b5cf-1f6537c42b45)
@@ -51,6 +53,8 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 ```
 <br/>
 
+<br/>
+
 ## 2.  Master Reset Circuit
 
 ![Schematic-Reset-Button](https://github.com/user-attachments/assets/3d5830bf-1a6e-449f-af5e-13e1481c1841)
@@ -67,6 +71,8 @@ Deciding value for resistor R1 is depending on voltage at pin $\overline{MClr}$,
   >$R1 = \frac{V_{CC} - V_{MClr}}{I_{R1}} = \frac{5V - 4V}{140\mu A} = 7.1k\Omega$
 * If R1 is more than $7.1k\Omega$, make sure $V_{MClr}$ does not fall below 4V.
 * If R1 is less than $7.1k\Omega$, make sure pull down current accross it when button is pressed not high to cause interruption of MCU required current operation.
+<br/>
+
 <br/>
 
 ## 3.  Create Delay Functions
@@ -115,6 +121,8 @@ void delay_ms(uint32_t delay) {
 ```
 <br/>
 
+<br/>
+
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
 
 * Power supply unit timing to power up is depended on the circuit specification.
@@ -137,6 +145,8 @@ void delay_ms(uint32_t delay) {
       }
   }
   ```
+<br/>
+
 <br/>
 
 ## MPLabX Code
