@@ -23,7 +23,7 @@ Tutorials for PIC16F and PIC18F.
 ### StarterSlaveBoardV1-PIC18F25K42
 ![StarterBoardPic18F-28pins-Picture2](https://github.com/user-attachments/assets/27508998-f04e-4b24-9998-0849dbb4914c)
 
-![StarterBoardV1-PIC18F25K42](https://github.com/user-attachments/assets/95c8abd6-18cf-4125-b6ed-f8816e5c273d)
+![StarterBoardV1-PIC18F25K42](https://github.com/user-attachments/assets/f6d5c8ea-f429-4912-af10-836a5b8721b5)
 <br/>
 
 <br/>
