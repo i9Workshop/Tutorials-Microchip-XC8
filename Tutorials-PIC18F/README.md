@@ -131,7 +131,7 @@ void delay_ms(uint32_t delay) {
 
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
 
-* PWRTS is enabled thus cpu will start after 64ms.
+* PWRTS is enabled thus CPU will start after 64ms.
 
 * Adiitional power supply unit timing to power up is depended on the circuit specification.
 
@@ -143,7 +143,7 @@ void delay_ms(uint32_t delay) {
   
   ```
   void main(void) {
-      delay_ms(10);     // Additional PSU power up timing after 64ms MCU power up timer, PWRTS
+      delay_ms(10);     // Additional PSU power up timing after 64ms CPU power up timer, PWRTS
       delay_x750ns(22); // Oscillator start up timing and I/O high impedance from reset
                         // Tosc = 16us
       
