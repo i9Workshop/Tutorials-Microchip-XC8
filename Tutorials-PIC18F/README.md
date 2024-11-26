@@ -4,6 +4,8 @@ Refer to Microchip product [datasheet](https://www.microchip.com/en-us/product/p
 and mid-range MCU [instruction set](https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/8bit-pic/enhanced-family/mrinst/#).<br/>
 <br/>
 
+<br/>
+
 ## 1.  Device and Clock Configuration
 
 ![Schematic-Crystal-Oscillator](https://github.com/user-attachments/assets/ab182c40-9e38-42b5-b5cf-1f6537c42b45)
@@ -65,6 +67,8 @@ In the documentation refer to page 7, Table 2-4: Typical Capacitor Selection for
 ```
 <br/>
 
+<br/>
+
 ## 2.  Master Reset Circuit
 
 ![Schematic-Reset-Button](https://github.com/user-attachments/assets/3d5830bf-1a6e-449f-af5e-13e1481c1841)
@@ -73,6 +77,8 @@ Schematic 0.2
 <br/>
 
 Refer to datasheet page 15, value for R1 is $10k\Omega$ and R2 is $1k\Omega$.
+<br/>
+
 <br/>
 
 ## 3.  Create Delay Functions
@@ -85,40 +91,42 @@ Refer to datasheet page 15, value for R1 is $10k\Omega$ and R2 is $1k\Omega$.
     - Instruction cycle values are calculated from acquired [data](https://github.com/i9Workshop/Tutorials-Microchip-XC8/blob/main/Tutorials-PIC16F/for_loop_instruction_cycle_data.txt) using software in MPLABX.
       
     - NOP( ) use 1 instruction cycle thus 4 clock cycle is used therefor
-      >$\frac{1}{32Mhz} \times{} 4 = 0.125\mu s$
+      >$\frac{1}{64Mhz} \times{} 4 = 62.5ns$
       
     - A loop by using 8bits variable in for loop use about 44 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 44 = 1.375\mu s$
+      >$\frac{1}{64Mhz} \times{} 44 = 687.5ns$
       
     - A loop by using 16bits variable in for loop use about 56 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 56 = 1.75\mu s$
+      >$\frac{1}{64Mhz} \times{} 56 = 875ns$
       
     - A loop by using 32bits variable in for loop use about 104 clock cycle which is
-      >$\frac{1}{32Mhz} \times{} 104 = 3.25\mu s$
+      >$\frac{1}{64Mhz} \times{} 104 = 1.625\mu s$
 <br/>
 
 ```
-    void delay_x1o5us(uint8_t delay);
-    void delay_x24o25us(uint16_t delay);
+    void delay_x750ns(uint8_t delay);
+    void delay_x21o125us(uint16_t delay);
     void delay_ms(uint32_t delay);
 ```
 
 ```
-// Delay x1.5us
-void delay_x1o5us(uint8_t delay) {
+// Delay x750ns
+void delay_x750ns(uint8_t delay) {
     for(uint8_t i=0; i<delay; i++) NOP();
 }
 
-// Delay x24.25us
-void delay_x24o25us(uint16_t delay) {
-    for(uint16_t i=0; i<delay; i++) delay_x1o5us(15);
+// Delay x21.125us
+void delay_x21o125us(uint16_t delay) {
+    for(uint16_t i=0; i<delay; i++) delay_x750ns(27);
 }
 
 // Delay x1ms
 void delay_ms(uint32_t delay) {
-    for(uint32_t i=0; i<delay; i++) delay_x24o25us(41);
+    for(uint32_t i=0; i<delay; i++) delay_x21o125us(47);
 }
 ```
+<br/>
+
 <br/>
 
 ## 4.  Wait for PSU Power Up and Device Start Up in Code
@@ -133,8 +141,9 @@ void delay_ms(uint32_t delay) {
   
   ```
   void main(void) {
-      delay_ms(100); // Wait for PSU power up
-      delay_x1o5us(86); // Wait for device to start up
+      delay_ms(10);     // Additional PSU power up timing after 64ms MCU power up timer, PWRTS
+      delay_x750ns(22); // Oscillator start up timing and I/O high impedance from reset
+                        // Tosc = 16us
       
       programInitialize(); // Initialize prorgram
       
@@ -147,7 +156,7 @@ void delay_ms(uint32_t delay) {
 
 ## MPLabX Code
 
-* https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-ClockConfigAndLedBlink
+* 
 <br/>
 
 <br/>
