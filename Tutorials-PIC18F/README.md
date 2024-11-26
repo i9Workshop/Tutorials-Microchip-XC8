@@ -136,9 +136,9 @@ void delay_ms(uint32_t delay) {
 * Adiitional power supply unit timing to power up is depended on the circuit specification.
 
 * Refer to MCU datasheet for device start up timing, $T_{DSU}$.
-  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 92 which is from oscillator start-up timer timing, $T_{OSC}$ as refered to Table 46-11 in page 755.
+  - Total device start up timing is acquired from Figure 5-3: Reset Start-Up Sequence in page 92 which is from oscillator start-up timer timing, $T_{Osc}$ as refered to Table 46-11 in page 755.
     
-    >$T_{DSU} = T_{OSC} = 1024Cycle_{OSC} = 1024 \times{} \frac{1}{64Mhz} = 16\mu s$
+    >$T_{DSU} = T_{Osc} = 1024Cycle_{Osc} = 1024 \times{} \frac{1}{64Mhz} = 16\mu s$
     <br/>
   
   ```
