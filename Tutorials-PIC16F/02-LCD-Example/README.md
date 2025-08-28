@@ -12,7 +12,7 @@ Refer to 16x2 LCD [datasheet](https://academy.cba.mit.edu/classes/output_devices
 Schematic 2.1
 <br/>
 
-R5 is used to set the maximum brightness of LCD backlight. R/W pin and D0 - D4 are connected to the ground so the LCD can be used in write and 4-bit mode.
+R5 is used to set the maximum brightness of LCD backlight. R/W pin and D3 - D0 are connected to the ground so the LCD can be used in write and 4-bit mode.
 <br/>
 
 <br/>
