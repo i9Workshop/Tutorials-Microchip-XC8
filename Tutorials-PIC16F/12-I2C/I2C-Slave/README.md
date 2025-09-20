@@ -183,10 +183,3 @@ void i2c_ScanMaster(void) {
 <br/>
 
 <br/>
-
-## Notice
-
-Kindly donate to [i9 Workshop](https://i9workshop.github.io) for multiple bytes I<sup>2</sup>C receive and transmit tutorial.
-<br/>
-
-<br/>
