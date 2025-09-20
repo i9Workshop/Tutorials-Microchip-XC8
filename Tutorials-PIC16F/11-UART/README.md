@@ -24,7 +24,6 @@ Circuit 11.1
 UART communication wires are cross connected to each other between transmit and receive, such that MCU Tx pin connected to UART bridge Rx pin and vice versa. 
 RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 <br/>
-
 <br/>
 
 ## Initialize Peripheral
@@ -85,7 +84,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   }
   ```
 <br/>
-
+<br/>
 
 ## Create UART Functions
 
@@ -168,7 +167,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   }
   ```
 <br/>
-
+<br/>
 
 ## Example Program
 
@@ -247,13 +246,13 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
   }
   ```
 <br/>
-
+<br/>
 
 ## MPLabX Code
 
 * https://github.com/i9Workshop/StarterBoardV1-PIC16F1783-UartExampleCmdLed
 <br/>
-
+<br/>
 
 ## Related Software
 
@@ -262,5 +261,4 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * [Visual Basic .NET Serial Monitor](https://github.com/i9Workshop/VB.NET-SerialMonitorV1)
 * [Visual Basic .NET LED Control](https://github.com/i9Workshop/VB.NET-SerialLedControlV1)
 <br/>
-
 <br/>
