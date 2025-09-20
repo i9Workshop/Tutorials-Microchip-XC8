@@ -164,10 +164,3 @@ void spi_ScanMaster(void) {
 <br/>
 
 <br/>
-
-## Notice
-
-Kindly donate to [i9 Workshop](https://i9workshop.github.io) for multiple bytes SPI receive and transmit tutorial.
-<br/>
-
-<br/>
