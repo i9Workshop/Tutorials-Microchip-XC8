@@ -38,13 +38,6 @@ Servo motor only needs power supply depended on its own specification usually 6V
 
 <br/>
 
-## Create Motor Function
-
-Oscilloscope needed to observe PWM signal thus measure the duty cycle. Kindly donate to [i9 Workroom](https://i9workshop.github.io) for R&D.
-<br/>
-
-<br/>
-
 ## Example Program
 
 Example program at MPLabX Code section used uncalibrated PWM which can control motor angle between $0^\circ$ til $180^\circ$.
