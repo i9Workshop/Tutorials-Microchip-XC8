@@ -158,4 +158,3 @@ void ledMatrix_SetDisplay(uint16_t ledWord) { // Set LED matrix using 9bit binar
 <br/>
 
 <br/>
-
