@@ -149,13 +149,13 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * Create a global variable to store data from UART receive register, RXREG and create function to read the register.
   
   ```
-      void uart_ScanRxRegister(void);
+      void uart_PollRxRegister(void);
   ```
   
   ```
   uint8_t RxData = 0; // Variable for UART module receive register, RXREG
   
-  void uart_ScanRxRegister(void) {
+  void uart_PollRxRegister(void) {
       // Single byte data receiver
       if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
           while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
@@ -185,7 +185,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 
 <br/>
 
-* Loop program to scan UART data.
+* Loop program to poll UART data.
   
   ```
   void programLoop(void) {
@@ -209,7 +209,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
           pb_DelayDebounce();
       }
       
-      uart_ScanRxRegister();
+      uart_PollRxRegister();
   }
   ```
 
@@ -218,7 +218,7 @@ RC6 is the MCU transmit pin, Tx while RC7 is the MCU receive pin, Rx.
 * Display UART receive register on LCD and control LED using the value.
   
   ```
-  void uart_ScanRxRegister(void) {
+  void uart_PollRxRegister(void) {
       // Single byte data receiver
       if(!BAUDCONbits.RCIDL) { // Start bit has been received - Page 322
           while(!PIR1bits.RCIF); // Polling to hold program to wait data filled into RCREG register
