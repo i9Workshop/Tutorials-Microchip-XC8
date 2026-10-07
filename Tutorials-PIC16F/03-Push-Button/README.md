@@ -44,7 +44,7 @@ Deciding value for resistor R7 is depending on voltage at pin RA1, $V_{RA1}$ and
 <br/>
 
 ## Read Pin Value
-Reads from PORTA register to read pin digital value as stated in datasheet page 114. Use if statement to practically use the register as switch. Create delay fuction to debounce mechanical noise.
+Poll only pins needed from PORTA register to read pin digital value as stated in datasheet page 114. Use if statement to practically use the register as switch. Create delay fuction to debounce mechanical noise.
 <br/>
 ```
     void pb_DelayDebounce(void);
