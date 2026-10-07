@@ -74,7 +74,7 @@ else if(!PORTAbits.RA1) { // Condition is true if pin RA1 is low
 
 ## Example Program
 ```
-    // Scan active low push buttons
+    // Poll active low push buttons
     
     if(!pb_Up) {
         lcd_Goto(1, 0);
